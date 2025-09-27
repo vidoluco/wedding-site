@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludovico & Fidelia - Wedding</title>
+    <meta name="description" content="Join us for the celebration of Ludovico & Fidelia's wedding. RSVP and get all the details about our special day.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#hero">Ludovico & Fidelia</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <!-- PHOTO COLLAGE NAV - START (comment out when disabling photo collage) -->
+                <li class="nav-item">
+                    <!-- <a href="#memories" class="nav-link">Memories</a> -->
+                </li>
+                <!-- PHOTO COLLAGE NAV - END -->
+                <li class="nav-item">
+                    <a href="#details" class="nav-link">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">RSVP</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <!-- Title ABOVE images -->
+            <h1 class="hero-title">
+                Ludovico <span class="ampersand">&</span> Fidelia Are<br>
+                Getting Married!
+            </h1>
+
+            <!-- Image layout with side images -->
+            <div class="hero-images-layout">
+                <div class="side-image left">
+                    <img src="assets/images/decorative-1.jpg" alt="Wedding decoration" loading="lazy">
+                </div>
+
+                <div class="hero-main-image">
+                    <img src="assets/images/hero-couple.jpg" alt="Ludovico and Fidelia in a field" loading="lazy">
+                </div>
+
+                <div class="side-image right">
+                    <img src="assets/images/decorative-2.jpg" alt="Wedding decoration" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Subtitle and button BELOW images -->
+            <p class="hero-subtitle">Join Us for Our Celebration of Love</p>
+
+            <button class="cta-button" onclick="scrollToSection('contact')">
+                RSVP Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Save the Date Section -->
+    <section id="save-the-date" class="save-the-date">
+        <div class="venue-background">
+            <img src="assets/images/venue-background.jpg" alt="Wedding venue" loading="lazy">
+
+            <!-- White draping/curtain effects -->
+            <div class="draping left"></div>
+            <div class="draping right"></div>
+
+            <!-- Decorative elements -->
+            <div class="floral-arrangement left"></div>
+            <div class="floral-arrangement right"></div>
+
+            <!-- Centered elegant save the date card -->
+            <div class="date-card">
+                <h2>Save the Date!</h2>
+                <p class="date-line">Friday, May 29th, 2026</p>
+                <p class="time-line">at five thirty in the evening</p>
+                <div class="divider">⟡</div>
+                <p class="year">2026</p>
+                <div class="divider">⟡</div>
+                <p class="venue-name">San Servolo Island</p>
+                <p class="venue-address">Isola di San Servolo, Venice, Italy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="about" class="our-story">
+        <div class="story-container">
+            <!-- Scattered artistic images -->
+            <div class="story-images-scattered">
+                <div class="story-image top-left">
+                    <img src="assets/images/story-1.jpg" alt="Our story" loading="lazy">
+                </div>
+
+                <div class="story-image top-right">
+                    <img src="assets/images/story-2.jpg" alt="Our story" loading="lazy">
+                </div>
+
+                <div class="story-image bottom-left">
+                    <img src="assets/images/story-3.jpg" alt="Our story" loading="lazy">
+                </div>
+
+                <div class="story-image bottom-right">
+                    <img src="assets/images/story-4.jpg" alt="Our story" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Centered story content -->
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p class="story-text">
+                    From the vibrant tech community of Bucharest to the enchanting waterways of Venice,
+                    Ludovico and Fidelia's love story bridges continents and cultures. Ludovico, an AI engineer
+                    bringing innovation from Romania's thriving tech scene, met Fidelia, whose Indonesian heritage
+                    brings the warmth and grace of archipelago traditions. Together, they weave a tapestry of
+                    Italian romance, Indonesian spirituality, and modern European elegance.
+                    <br><br>
+                    Their celebration on San Servolo Island represents not just a union of two hearts, but a
+                    beautiful fusion of cultures – from the serenades of Italy to the sacred rituals of Indonesia,
+                    from Romanian hospitality to Venetian splendor. Join us as we celebrate love that knows no
+                    borders, in a setting where East meets West on the timeless waters of the Venetian lagoon.
+                </p>
+
+                <button class="cta-button" onclick="scrollToSection('contact')">
+                    RSVP Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- PHOTO COLLAGE SECTION - DISABLED        -->
+    <!-- ========================================= -->
+    <!--
+    <section id="memories" class="photo-collage">
+        <div class="collage-container">
+            <h2 class="collage-title">Our Journey Together</h2>
+            <p class="collage-subtitle">Moments that brought us here</p>
+
+            <div class="masonry-grid">
+                <div class="photo-item photo-large">
+                    <img src="assets/images/collage/IMG_5245.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-medium">
+                    <img src="assets/images/collage/IMG_4687.JPG" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-small">
+                    <img src="assets/images/collage/IMG_5316.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-medium">
+                    <img src="assets/images/collage/IMG_5326.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-large">
+                    <img src="assets/images/collage/IMG_5335.JPG" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-small">
+                    <img src="assets/images/collage/IMG_5516.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-medium">
+                    <img src="assets/images/collage/IMG_5738.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-small">
+                    <img src="assets/images/collage/IMG_5989.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-large">
+                    <img src="assets/images/collage/IMG_6025.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-medium">
+                    <img src="assets/images/collage/IMG_6068.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-small">
+                    <img src="assets/images/collage/IMG_6083.JPG" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-medium">
+                    <img src="assets/images/collage/IMG_6125.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-large">
+                    <img src="assets/images/collage/IMG_6312.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-small">
+                    <img src="assets/images/collage/IMG_6338.JPG" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-medium">
+                    <img src="assets/images/collage/IMG_6366.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-small">
+                    <img src="assets/images/collage/IMG_8988.jpeg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-medium">
+                    <img src="assets/images/collage/camphoto_1254324197.jpg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+                <div class="photo-item photo-large">
+                    <img src="assets/images/collage/camphoto_1804928587.jpg" alt="Ludovico and Fidelia memory" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    <!-- ========================================= -->
+    <!-- PHOTO COLLAGE SECTION - END             -->
+    <!-- ========================================= -->
+
+    <!-- Celebration Details Section -->
+    <section id="details" class="celebration-details">
+        <div class="details-container">
+            <h2 class="details-title">Celebration Details</h2>
+            <p class="details-subtitle">Everything you need to know for our special day</p>
+
+            <div class="details-grid">
+                <!-- Event Timeline -->
+                <div class="detail-card">
+                    <div class="detail-header" onclick="toggleDetail('timeline')">
+                        <div class="detail-icon">🕰️</div>
+                        <h3>Event Timeline</h3>
+                        <div class="detail-arrow">▼</div>
+                    </div>
+                    <div class="detail-content" id="timeline">
+                        <div class="timeline-section">
+                            <h4>CEREMONY</h4>
+                            <p><strong>Friday, May 29th, 2026</strong></p>
+                            <p>11:00 AM - Guests Arrival</p>
+                            <p>12:00 AM - Ceremony Begins</p>
+                            <p>13:00 AM - Lunch </p>
+                        </div>
+                        <div class="timeline-section">
+                            <h4>RECEPTION</h4>
+                            <p>10:30 AM - Reception Service Opening</p>
+                            <p>17:00 PM - Reception Service Closes</p>
+                            <p>18:00 PM - Last public transport boat ride</p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue & Transportation -->
+                <div class="detail-card">
+                    <div class="detail-header" onclick="toggleDetail('transport')">
+                        <div class="detail-icon">🚤</div>
+                        <h3>Getting There</h3>
+                        <div class="detail-arrow">▼</div>
+                    </div>
+                    <div class="detail-content" id="transport">
+                        <h4>Getting to San Servolo Island</h4>
+                        <p>• Water taxi from Venice Marco Polo Airport (30 minutes)</p>
+                        <p>• Vaporetto Line 2 from Piazzale Roma (20 minutes)</p>
+                        <p>• Private boat transfers available (details upon RSVP)</p>
+                        <br>
+                        <h4>Return Transportation</h4>
+                        <p>Arranged boats departing at event termination</p>
+                    </div>
+                </div>
+
+                <!-- What We Provide -->
+                <div class="detail-card">
+                    <div class="detail-header" onclick="toggleDetail('provided')">
+                        <div class="detail-icon">🎉</div>
+                        <h3>What We Provide</h3>
+                        <div class="detail-arrow">▼</div>
+                    </div>
+                    <div class="detail-content" id="provided">
+                        <p>• Welcome reception upon arrival</p>
+                        <p>• Full lunch service with Italian & Indonesian influences menu</p>
+                        <p>• Open bar</p>
+                        <p>• Sunset view on Venice city</p>
+                        <p>• Arrival & Return boat transportation to Venice*</p>
+                        <p>• Professional photography of the celebration</p>
+                        <p>• Venice local city guide </p>
+                    </div>
+                </div>
+
+                <!-- Attire -->
+                <div class="detail-card">
+                    <div class="detail-header" onclick="toggleDetail('attire')">
+                        <div class="detail-icon">👗</div>
+                        <h3>Attire</h3>
+                        <div class="detail-arrow">▼</div>
+                    </div>
+                    <div class="detail-content" id="attire">
+                        <h4>Dress Code: Elegant/Comfortable</h4>
+                        <p><strong>Ladies:</strong> Elegant Dresses</p>
+                        <p><strong>Gentlemen:</strong> Suits (ties optional)</p>
+                        <br>
+                        <p><em>Consider comfortable & elegant shoes for boat transfers</em></p>
+                    </div>
+                </div>
+
+                <!-- Accommodations -->
+                <div class="detail-card">
+                    <div class="detail-header" onclick="toggleDetail('hotels')">
+                        <div class="detail-icon">🏨</div>
+                        <h3>Accommodations</h3>
+                        <div class="detail-arrow">▼</div>
+                    </div>
+                    <div class="detail-content" id="hotels">
+                        <h4>Recommended Hotels in Venice:</h4>
+                        <p> ADD HERE </p>
+                        <p> Mestre Hotels </p>
+                        <p> Venice city Hotels</p>
+                        </div>
+                </div>
+
+                <!-- Gifts & Appreciations -->
+                <div class="detail-card">
+                    <div class="detail-header" onclick="toggleDetail('gifts')">
+                        <div class="detail-icon">💝</div>
+                        <h3>Gifts & Appreciations</h3>
+                        <div class="detail-arrow">▼</div>
+                    </div>
+                    <div class="detail-content" id="gifts">
+                        <p><strong>Your presence is our greatest gift!</strong></p>
+                        <br>
+                        <p>For those who wish to contribute:</p>
+                        <p>• Honeymoon fund available</p>
+                        <p>• Traditional Italian bomboniere will be provided as our thank you</p>
+                        <br>
+                        <p><em>We're more excited to celebrate with you than receive anything else!</em></p>
+                    </div>
+                </div>
+
+                <!-- Cultural Elements -->
+                <div class="detail-card">
+                    <div class="detail-header" onclick="toggleDetail('culture')">
+                        <div class="detail-icon">🎭</div>
+                        <h3>Cultural Elements</h3>
+                        <div class="detail-arrow">▼</div>
+                    </div>
+                    <div class="detail-content" id="culture">
+                        <p>• Indonesian ceremony</p>
+                        <p>• Fusion of Italian romance & Indonesian traditions</p>
+                    </div>
+                </div>
+
+                <!-- Special Notes -->
+                <div class="detail-card">
+                    <div class="detail-header" onclick="toggleDetail('notes')">
+                        <div class="detail-icon">📝</div>
+                        <h3>Special Notes</h3>
+                        <div class="detail-arrow">▼</div>
+                    </div>
+                    <div class="detail-content" id="notes">
+                        <h4>Weather in Venice (Late May)</h4>
+                        <p>Typically 20-25°C - Light jacket recommended for evening boat rides</p>
+                        <br>
+                        <h4>Photography</h4>
+                        <p>Feel free to take photos, but please be present during ceremony</p>
+                        <br>
+                        <h4>Dietary Needs</h4>
+                        <p>Please specify any dietary requirements in the RSVP form</p>
+                    </div>
+                </div>
+
+                <!-- Stay Connected -->
+                <div class="detail-card">
+                    <div class="detail-header" onclick="toggleDetail('connected')">
+                        <div class="detail-icon">📱</div>
+                        <h3>Stay Connected</h3>
+                        <div class="detail-arrow">▼</div>
+                    </div>
+                    <div class="detail-content" id="connected">
+                        <h4>WhatsApp Wedding Group</h4>
+                        <p>Join our wedding group chat for real-time updates and to connect with other guests!</p>
+                        <p><a href="https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK" target="_blank" style="color: #25D366; font-weight: bold;">📱 Join WhatsApp Group</a></p>
+                        <br>
+                        <h4>Google Drive Photo Album</h4>
+                        <p>All wedding photos will be shared here. Feel free to upload your own photos too!</p>
+                        <p><a href="https://drive.google.com/drive/folders/1PrqYuW-r0TgbHW19ElEZUiYiOsFheHm5?usp=sharing" target="_blank" style="color: #4285F4; font-weight: bold;">📸 Access Photo Album</a></p>
+                        <br>
+                        <p><em>Links will be sent with your RSVP confirmation email</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/RSVP Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-content">
+                <h2>RSVP</h2>
+                <p style="margin-bottom: 30px; color: #666;">Please confirm your attendance by May 1st, 2026</p>
+
+                <form id="rsvp-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="attendance">Will you be attending? *</label>
+                        <select id="attendance" name="attendance" required>
+                            <option value="">Please select</option>
+                            <option value="yes">Yes, I'll be there!</option>
+                            <option value="no">Sorry, can't make it</option>
+                            <option value="maybe">Not sure yet</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="dietary">Dietary Restrictions</label>
+                        <select id="dietary" name="dietary">
+                            <option value="none">No restrictions</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="gluten-free">Gluten-free</option>
+                            <option value="halal">Halal</option>
+                            <option value="kosher">Kosher</option>
+                            <option value="other">Other (please specify below)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Guest names, special requests, dietary details if 'Other' selected..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>Ludovico & Fidelia</h3>
+                </div>
+
+                <div class="footer-center">
+                    <div class="footer-contact">
+                        <p>+39 041 xxx xxxx</p>
+                        <p>ludovico.fidelia.wedding@gmail.com</p>
+                        <p>San Servolo Island<br>Venice, Italy</p>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+
+                    <div class="social-links">
+                        <a href="https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK" aria-label="WhatsApp Group" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.89 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/YOUR_FOLDER_ID" aria-label="Google Drive Photos" target="_blank">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7.4 21.5l6.97-12.07L8.6 21.5z"/>
+                                <path d="M16.6 21.5l-6.97-12.07L15.4 21.5z"/>
+                                <path d="M12 2.5L7.7 10.4h8.6L12 2.5z"/>
+                                <path d="M12 2.5L4.3 16.5h15.4L12 2.5z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ludovico & Fidelia Wedding. San Servolo Island Wedding</p>
+
+                <p>ℹ️ Vibecoded with ❤️ by Ludovico & Claude</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/nAM/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>

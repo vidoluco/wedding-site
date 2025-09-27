@@ -1,0 +1,506 @@
+/* =============================================================================
+   ANIMATIONS & TRANSITIONS
+   Wedding Website - Smooth interactions and scroll effects
+   ============================================================================= */
+
+/* =============================================================================
+   SCROLL ANIMATIONS - FADE IN ON SCROLL
+   ============================================================================= */
+
+/* Base state for animated elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s ease-out;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* =============================================================================
+   LOADING ANIMATIONS
+   ============================================================================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 300px;
+        opacity: 1;
+    }
+}
+
+/* =============================================================================
+   PAGE LOAD ANIMATIONS
+   ============================================================================= */
+
+.hero-title {
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-image {
+    animation: scaleIn 1s ease-out 0.6s both;
+}
+
+.hero-subtitle {
+    animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.cta-button {
+    animation: fadeInUp 1s ease-out 1.2s both;
+}
+
+.side-image.left {
+    animation: fadeInLeft 1s ease-out 0.8s both;
+}
+
+.side-image.right {
+    animation: fadeInRight 1s ease-out 1s both;
+}
+
+/* =============================================================================
+   HOVER ANIMATIONS
+   ============================================================================= */
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Image hover effects */
+.story-image,
+.side-image,
+.hero-image {
+    overflow: hidden;
+}
+
+.story-image img,
+.side-image img,
+.hero-image img {
+    transition: transform 0.5s ease;
+}
+
+.story-image:hover img,
+.side-image:hover img,
+.hero-image:hover img {
+    transform: scale(1.1);
+}
+
+/* =============================================================================
+   BUTTON ANIMATIONS
+   ============================================================================= */
+
+.cta-button,
+.submit-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before,
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before,
+.submit-button:hover::before {
+    left: 100%;
+}
+
+/* Button ripple effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+/* =============================================================================
+   FORM ANIMATIONS
+   ============================================================================= */
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    transform: translateY(-2px);
+}
+
+/* Floating label effect (optional) */
+.floating-label {
+    position: relative;
+}
+
+.floating-label input,
+.floating-label textarea {
+    padding-top: 20px;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    color: var(--text-secondary);
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label,
+.floating-label textarea:focus + label,
+.floating-label textarea:not(:placeholder-shown) + label {
+    top: 5px;
+    font-size: 12px;
+    color: var(--accent-brown);
+}
+
+/* =============================================================================
+   NAVIGATION ANIMATIONS
+   ============================================================================= */
+
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(250, 247, 242, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+    transition: all 0.3s ease;
+}
+
+.nav-menu.active {
+    animation: slideDown 0.3s ease;
+}
+
+/* Mobile menu toggle animation */
+.nav-toggle .bar {
+    transition: all 0.3s ease;
+}
+
+/* =============================================================================
+   PARALLAX EFFECTS
+   ============================================================================= */
+
+.parallax {
+    will-change: transform;
+}
+
+/* Subtle parallax for background elements */
+.date-background {
+    transition: transform 0.1s ease-out;
+}
+
+/* =============================================================================
+   SCROLL INDICATOR
+   ============================================================================= */
+
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        var(--accent-brown),
+        var(--accent-beige)
+    );
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* =============================================================================
+   LOADING SPINNER
+   ============================================================================= */
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =============================================================================
+   SECTION TRANSITIONS
+   ============================================================================= */
+
+.section-transition {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.section-transition.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animations for multiple elements */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* =============================================================================
+   MODAL/POPUP ANIMATIONS
+   ============================================================================= */
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes modalFadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8) translateY(50px);
+    }
+}
+
+.modal-enter {
+    animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+.modal-exit {
+    animation: modalFadeOut 0.3s ease-in forwards;
+}
+
+/* =============================================================================
+   SUCCESS/ERROR ANIMATIONS
+   ============================================================================= */
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.pulse {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* =============================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================================================= */
+
+/* Use hardware acceleration for smooth animations */
+.hero-image,
+.side-image,
+.story-image,
+.cta-button,
+.submit-button {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Optimize repaints */
+.navbar,
+.hero,
+.save-the-date,
+.our-story,
+.contact,
+.footer {
+    will-change: auto;
+}
+
+/* =============================================================================
+   REDUCED MOTION OVERRIDES
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    /* Disable all animations for users who prefer reduced motion */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .parallax {
+        transform: none !important;
+    }
+
+    .hover-lift:hover {
+        transform: none;
+    }
+
+    .hover-scale:hover {
+        transform: none;
+    }
+}

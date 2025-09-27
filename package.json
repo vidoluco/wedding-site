@@ -1,0 +1,17 @@
+{
+  "name": "hiro-elena-wedding",
+  "version": "1.0.0",
+  "description": "Hiro & Elena Wedding Website - A beautiful, responsive wedding invitation website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "npx serve ."
+  },
+  "keywords": ["wedding", "invitation", "website", "hiro", "elena"],
+  "author": "Hiro & Elena",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/hiro-elena-wedding"
+  }
+}
