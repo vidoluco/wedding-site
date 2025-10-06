@@ -1,0 +1,107 @@
+# Wedding Website - Git Ignore File
+
+# =============================================================================
+# Configuration Files with Credentials
+# =============================================================================
+
+# Backup of config file with actual credentials (keep config.js structure but protect filled versions)
+js/config.production.js
+config.local.js
+.env
+.env.local
+.env.production
+
+# =============================================================================
+# Operating System Files
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# =============================================================================
+# IDE and Editor Files
+# =============================================================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# =============================================================================
+# Node Modules and Package Files
+# =============================================================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# =============================================================================
+# Build and Distribution Files
+# =============================================================================
+
+dist/
+build/
+*.log
+
+# =============================================================================
+# Temporary Files
+# =============================================================================
+
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# =============================================================================
+# Testing and Coverage
+# =============================================================================
+
+coverage/
+.nyc_output/
+*.test.js.snap
+
+# =============================================================================
+# Sensitive Data Files
+# =============================================================================
+
+# Backup files that might contain sensitive data
+*.backup
+backup/
+
+# Any files with credentials in the name
+*credentials*
+*secret*
+*private*
+
+# =============================================================================
+# Notes
+# =============================================================================
+
+# The main js/config.js is tracked in git but should have placeholder values
+# Fill in actual values for production deployment but don't commit them
+# For local development, you can create js/config.local.js and it will be ignored

@@ -283,9 +283,11 @@ class FormManager {
 
     initializeEmailJS() {
         // Initialize EmailJS with your public key
-        // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+        // Check if config is available
+        const publicKey = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG.publicKey : 'YOUR_PUBLIC_KEY';
+
         if (typeof emailjs !== 'undefined') {
-            emailjs.init('YOUR_PUBLIC_KEY');
+            emailjs.init(publicKey);
             console.log('📧 EmailJS initialized');
         } else {
             console.warn('EmailJS not loaded');
@@ -293,58 +295,202 @@ class FormManager {
     }
 
     async submitForm(data) {
+        const results = {
+            googleSheets: { success: false, error: null },
+            email: { success: false, error: null }
+        };
+
+        // =============================================================================
+        // 1. SUBMIT TO GOOGLE SHEETS (Primary - Most Important!)
+        // =============================================================================
         try {
-            // Submit via EmailJS
-            if (typeof emailjs !== 'undefined') {
-                const templateParams = {
-                    first_name: data.firstName,
-                    last_name: data.lastName,
-                    email: data.email,
-                    phone: data.phone || 'Not provided',
-                    attendance: data.attendance,
-                    dietary_restrictions: data.dietary,
-                    additional_info: data.message || 'None',
-                    submission_date: new Date().toLocaleDateString(),
-                    submission_time: new Date().toLocaleTimeString()
-                };
+            const sheetsResult = await this.submitToGoogleSheets(data);
+            results.googleSheets.success = sheetsResult.success;
+            console.log('✅ Google Sheets submission successful');
+        } catch (error) {
+            results.googleSheets.error = error.message;
+            console.error('❌ Google Sheets submission failed:', error);
+        }
 
-                // Send email to you (the couple)
-                await emailjs.send(
-                    'YOUR_SERVICE_ID',  // Replace with your EmailJS service ID
-                    'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-                    templateParams
-                );
+        // =============================================================================
+        // 2. SUBMIT VIA EMAILJS (Secondary - Nice to have)
+        // =============================================================================
+        try {
+            const emailResult = await this.submitViaEmail(data);
+            results.email.success = emailResult.success;
+            console.log('✅ Email submission successful');
+        } catch (error) {
+            results.email.error = error.message;
+            console.error('⚠️ Email submission failed:', error);
+        }
 
-                // Send confirmation email to guest
-                const guestTemplateParams = {
-                    to_email: data.email,
-                    guest_name: `${data.firstName} ${data.lastName}`,
-                    attendance_status: data.attendance,
-                    wedding_date: 'Friday, May 29th, 2026',
-                    wedding_time: '5:30 PM',
-                    wedding_venue: 'San Servolo Island, Venice, Italy',
-                    whatsapp_link: 'https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK',
-                    gdrive_link: 'https://drive.google.com/drive/folders/YOUR_FOLDER_ID'
-                };
+        // =============================================================================
+        // 3. EVALUATE RESULTS
+        // =============================================================================
 
-                await emailjs.send(
-                    'YOUR_SERVICE_ID',  // Replace with your EmailJS service ID
-                    'YOUR_GUEST_TEMPLATE_ID', // Replace with your guest confirmation template ID
-                    guestTemplateParams
-                );
+        // If Google Sheets succeeded, we're good!
+        if (results.googleSheets.success) {
+            return {
+                success: true,
+                message: 'RSVP submitted successfully! Check your email for confirmation.',
+                showCalendar: data.attendance === 'yes',
+                details: results
+            };
+        }
+
+        // If Google Sheets failed but email succeeded, warn but still accept
+        if (results.email.success) {
+            return {
+                success: true,
+                message: 'RSVP received via email. We\'ll confirm receipt shortly.',
+                showCalendar: data.attendance === 'yes',
+                details: results,
+                warning: 'Primary logging failed but email sent successfully.'
+            };
+        }
+
+        // Both failed - this is a problem
+        throw new Error(
+            'Unable to submit RSVP. Please try again or contact us directly at ludovico.fidelia.wedding@gmail.com'
+        );
+    }
+
+    async submitToGoogleSheets(data) {
+        // Check if Google Sheets logging is enabled and configured
+        if (typeof GOOGLE_SHEETS_CONFIG === 'undefined' || !GOOGLE_SHEETS_CONFIG.enabled) {
+            console.warn('Google Sheets logging not configured');
+            return { success: false, error: 'Not configured' };
+        }
+
+        const webAppUrl = GOOGLE_SHEETS_CONFIG.webAppUrl;
+
+        if (!webAppUrl || webAppUrl === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+            console.warn('Google Sheets Web App URL not configured');
+            return { success: false, error: 'URL not configured' };
+        }
+
+        // Prepare data for Google Sheets
+        const sheetsData = {
+            timestamp: new Date().toISOString(),
+            firstName: data.firstName || '',
+            lastName: data.lastName || '',
+            email: data.email || '',
+            phone: data.phone || '',
+            attendance: data.attendance || '',
+            dietary: data.dietary || '',
+            message: data.message || '',
+            submissionDate: new Date().toLocaleDateString(),
+            submissionTime: new Date().toLocaleTimeString(),
+            userAgent: navigator.userAgent || '',
+            ipInfo: 'Client-side submission'
+        };
+
+        // Submit with retry logic
+        const maxRetries = GOOGLE_SHEETS_CONFIG.maxRetries || 3;
+        const retryDelay = GOOGLE_SHEETS_CONFIG.retryDelay || 1000;
+
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+                console.log(`📊 Attempting Google Sheets submission (attempt ${attempt}/${maxRetries})...`);
+
+                const response = await fetch(webAppUrl, {
+                    method: 'POST',
+                    mode: 'no-cors', // Important for Google Apps Script
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(sheetsData)
+                });
+
+                // Note: With no-cors mode, we can't read the response
+                // We assume success if no error was thrown
+                console.log('✅ Google Sheets request sent successfully');
 
                 return {
                     success: true,
-                    message: 'RSVP submitted successfully! Check your email for confirmation.',
-                    showCalendar: data.attendance === 'yes'
+                    message: 'Data logged to Google Sheets',
+                    attempt: attempt
                 };
-            } else {
-                throw new Error('Email service not available');
+
+            } catch (error) {
+                console.error(`❌ Google Sheets attempt ${attempt} failed:`, error);
+
+                // If this was the last attempt, throw the error
+                if (attempt === maxRetries) {
+                    throw new Error(`Google Sheets logging failed after ${maxRetries} attempts: ${error.message}`);
+                }
+
+                // Wait before retrying
+                await new Promise(resolve => setTimeout(resolve, retryDelay * attempt));
             }
-        } catch (error) {
-            console.error('EmailJS submission error:', error);
-            throw new Error('Failed to submit RSVP. Please try again or contact us directly.');
         }
+
+        throw new Error('Google Sheets submission failed');
+    }
+
+    async submitViaEmail(data) {
+        // Check if EmailJS is enabled and configured
+        const emailConfig = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : null;
+
+        if (!emailConfig || !emailConfig.enabled) {
+            console.warn('EmailJS not configured or disabled');
+            return { success: false, error: 'Not configured' };
+        }
+
+        if (typeof emailjs === 'undefined') {
+            throw new Error('EmailJS library not loaded');
+        }
+
+        // Get configuration
+        const serviceId = emailConfig.serviceId || 'YOUR_SERVICE_ID';
+        const templateId = emailConfig.templateId || 'YOUR_TEMPLATE_ID';
+        const guestTemplateId = emailConfig.guestTemplateId || 'YOUR_GUEST_TEMPLATE_ID';
+
+        // Get form config for links
+        const formConfig = typeof FORM_CONFIG !== 'undefined' ? FORM_CONFIG : {};
+        const links = formConfig.links || {};
+
+        const templateParams = {
+            first_name: data.firstName,
+            last_name: data.lastName,
+            email: data.email,
+            phone: data.phone || 'Not provided',
+            attendance: data.attendance,
+            dietary_restrictions: data.dietary,
+            additional_info: data.message || 'None',
+            submission_date: new Date().toLocaleDateString(),
+            submission_time: new Date().toLocaleTimeString()
+        };
+
+        // Send email to you (the couple)
+        await emailjs.send(
+            serviceId,
+            templateId,
+            templateParams
+        );
+
+        // Send confirmation email to guest
+        const guestTemplateParams = {
+            to_email: data.email,
+            guest_name: `${data.firstName} ${data.lastName}`,
+            attendance_status: data.attendance,
+            wedding_date: 'Friday, May 29th, 2026',
+            wedding_time: '3:30 PM',
+            wedding_venue: 'San Servolo Island, Venice, Italy',
+            whatsapp_link: links.whatsapp || 'https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK',
+            gdrive_link: links.googleDrive || 'https://drive.google.com/drive/folders/YOUR_FOLDER_ID'
+        };
+
+        await emailjs.send(
+            serviceId,
+            guestTemplateId,
+            guestTemplateParams
+        );
+
+        return {
+            success: true,
+            message: 'Emails sent successfully'
+        };
     }
 
     handleSubmissionSuccess(result, formData) {
@@ -372,6 +518,12 @@ class FormManager {
 
     showEnhancedSuccessMessage(result, formData) {
         const container = document.querySelector('.notification-container');
+
+        // Get links from config
+        const formConfig = typeof FORM_CONFIG !== 'undefined' ? FORM_CONFIG : {};
+        const links = formConfig.links || {};
+        const whatsappLink = links.whatsapp || 'https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK';
+        const gdriveLink = links.googleDrive || 'https://drive.google.com/drive/folders/YOUR_FOLDER_ID';
 
         const notification = document.createElement('div');
         notification.className = 'notification notification-success enhanced-success';
@@ -409,10 +561,10 @@ class FormManager {
                 <div class="success-section">
                     <h4>📱 Stay Connected</h4>
                     <div class="social-buttons">
-                        <a href="https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK" target="_blank" class="social-btn whatsapp">
+                        <a href="${whatsappLink}" target="_blank" class="social-btn whatsapp">
                             📱 Join WhatsApp Group
                         </a>
-                        <a href="https://drive.google.com/drive/folders/YOUR_FOLDER_ID" target="_blank" class="social-btn gdrive">
+                        <a href="${gdriveLink}" target="_blank" class="social-btn gdrive">
                             📸 Access Photo Album
                         </a>
                     </div>
@@ -449,12 +601,16 @@ class FormManager {
     }
 
     generateCalendarLinks() {
+        // Get event details from config if available
+        const formConfig = typeof FORM_CONFIG !== 'undefined' ? FORM_CONFIG : {};
+        const configEvent = formConfig.event || {};
+
         const eventDetails = {
-            title: 'Ludovico & Fidelia Wedding',
-            description: 'Join us for our wedding celebration on the beautiful San Servolo Island in Venice. A fusion of Italian romance and Indonesian traditions awaits!',
-            location: 'San Servolo Island, Venice, Italy',
-            startDate: '20260529T173000Z', // May 29, 2026, 5:30 PM UTC
-            endDate: '20260530T000000Z'    // May 30, 2026, 12:00 AM UTC
+            title: configEvent.title || 'Ludovico & Fidelia Wedding',
+            description: configEvent.description || 'Join us for our wedding celebration on the beautiful San Servolo Island in Venice.',
+            location: configEvent.location || 'San Servolo Island, Venice, Italy',
+            startDate: configEvent.startDate || '20260529T133000Z', // May 29, 2026, 3:30 PM UTC
+            endDate: configEvent.endDate || '20260529T200000Z'      // May 29, 2026, 10:00 PM UTC
         };
 
         // Google Calendar URL
