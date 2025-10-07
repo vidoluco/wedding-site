@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "title": "Ludovico & Fidelia - Wedding",
+    "description": "Join us for the celebration of Ludovico & Fidelia's wedding. RSVP and get all the details about our special day."
+  },
+  "nav": {
+    "brand": "Ludovico & Fidelia",
+    "about": "About",
+    "details": "Details",
+    "rsvp": "RSVP"
+  },
+  "hero": {
+    "title": "Ludovico & Fidelia Are Getting Married!",
+    "subtitle": "Join Us for Our Celebration of Love",
+    "cta": "RSVP Now"
+  },
+  "saveTheDate": {
+    "title": "Save the Date!",
+    "date": "Friday, May 29th, 2026",
+    "time": "at half past three in the afternoon",
+    "year": "2026",
+    "venueName": "San Servolo Island",
+    "venueAddress": "Isola di San Servolo, Venice, Italy"
+  },
+  "ourStory": {
+    "title": "Our Story",
+    "text": "Our wedding brings together two hearts united by our shared passion for culinary creativity and endless kitchen experimentation. We approach life with curiosity and determination, constantly challenging ourselves to grow and support each other's dreams. And yes, we're absolutely devoted to our feline companion who rules our home with equal parts mischief and affection. Join us as we celebrate the beautiful blend of passions, growth, and joy that defines who we are together.",
+    "cta": "RSVP Now"
+  },
+  "details": {
+    "title": "Celebration Details",
+    "subtitle": "Everything you need to know for our special day",
+    "timeline": {
+      "title": "Event Timeline",
+      "heading": "Friday, May 29th, 2026",
+      "welcome": "15:30 - 16:30 - Welcome on the island",
+      "ceremony": "16:30 - 17:30 - Ceremony - Evangelical Mass",
+      "cocktail": "17:30 - 19:00 - Welcome cocktail/aperitif",
+      "cocktailNote": "Guests mingle while newlyweds have photos taken",
+      "dinner": "19:00 - 21:00 - Dinner on the terrace",
+      "cake": "21:00 - 21:30 - Cutting of the wedding cake",
+      "farewell": "21:30 - 22:00 - Farewell"
+    },
+    "transport": {
+      "title": "Getting There",
+      "heading": "Getting to San Servolo Island",
+      "waterTaxi": "• Water taxi from Venice Marco Polo Airport (30 minutes)",
+      "vaporetto": "• Vaporetto Line 2 from Piazzale Roma (20 minutes)",
+      "privateBoat": "• Private boat transfers available (details upon RSVP)",
+      "returnHeading": "Return Transportation",
+      "returnInfo": "Arranged boats departing at event termination"
+    },
+    "provided": {
+      "title": "What We Provide",
+      "welcomeReception": "• Welcome reception upon arrival",
+      "lunch": "• Full lunch service with Italian & Indonesian influences menu",
+      "openBar": "• Open bar",
+      "sunset": "• Sunset view on Venice city",
+      "transportation": "• Arrival & Return boat transportation to Venice*",
+      "photography": "• Professional photography of the celebration",
+      "guide": "• Venice local city guide"
+    },
+    "attire": {
+      "title": "Attire",
+      "dressCode": "Dress Code: Elegant Casual",
+      "ladies": "Ladies:",
+      "ladiesDetails": "Elegant Dresses (please avoid white and blue)",
+      "gentlemen": "Gentlemen:",
+      "gentlemanDetails": "Suits (ties optional)",
+      "note": "Consider comfortable & elegant shoes for boat transfers"
+    },
+    "accommodations": {
+      "title": "Accommodations",
+      "heading": "Recommended Hotels in Venice:",
+      "addHere": "ADD HERE",
+      "mestre": "Mestre Hotels",
+      "veniceCity": "Venice city Hotels"
+    },
+    "gifts": {
+      "title": "Gifts & Appreciations",
+      "presenceGift": "Your presence is our greatest gift!",
+      "intro": "For those who wish to honor us with a contribution toward our future together:",
+      "monetary": "• A monetary gift would be graciously appreciated to help us establish our new home",
+      "howToContribute": "• Contributions can be made via Revolut (QR code available at the event) or placed in an envelope at the celebration",
+      "bomboniere": "• Traditional Italian bomboniere will be provided as our thank you",
+      "excited": "We're more excited to celebrate with you than receive anything else!"
+    },
+    "specialNotes": {
+      "title": "Special Notes",
+      "weatherTitle": "Weather in Venice (Late May)",
+      "weatherInfo": "Typically 20-25°C - Light jacket recommended for evening boat rides",
+      "photographyTitle": "Photography",
+      "photographyInfo": "Feel free to take photos, but please be present during ceremony",
+      "dietaryTitle": "Dietary Needs",
+      "dietaryInfo": "Please specify any dietary requirements in the RSVP form"
+    },
+    "stayConnected": {
+      "title": "Stay Connected",
+      "whatsappHeading": "WhatsApp Wedding Group",
+      "whatsappInfo": "Join our wedding group chat for real-time updates and to connect with other guests!",
+      "whatsappLink": "📱 Join WhatsApp Group",
+      "driveHeading": "Google Drive Photo Album",
+      "driveInfo": "All wedding photos will be shared here. Feel free to upload your own photos too!",
+      "driveLink": "📸 Access Photo Album",
+      "linksNote": "Links will be sent with your RSVP confirmation email"
+    }
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "subtitle": "Please confirm your attendance by May 1st, 2026",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "attendance": "Will you be attending?",
+    "attendanceSelect": "Please select",
+    "attendanceYes": "Yes, I'll be there!",
+    "attendanceNo": "Sorry, can't make it",
+    "attendanceMaybe": "Not sure yet",
+    "dietary": "Dietary Restrictions",
+    "dietaryNone": "No restrictions",
+    "dietaryVegetarian": "Vegetarian",
+    "dietaryVegan": "Vegan",
+    "dietaryGlutenFree": "Gluten-free",
+    "dietaryHalal": "Halal",
+    "dietaryKosher": "Kosher",
+    "dietaryOther": "Other (please specify below)",
+    "message": "Additional Information",
+    "messagePlaceholder": "Guest names, special requests, dietary details if 'Other' selected...",
+    "submit": "Submit",
+    "required": "*"
+  },
+  "footer": {
+    "names": "Ludovico & Fidelia",
+    "phone": "+39 041 xxx xxxx",
+    "email": "ludovico.fidelia.wedding@gmail.com",
+    "location": "San Servolo Island",
+    "city": "Venice, Italy",
+    "copyright": "© 2026 Ludovico & Fidelia Wedding. San Servolo Island Wedding",
+    "credits": "ℹ️ Vibecoded with ❤️ by Ludovico & Claude"
+  }
+}

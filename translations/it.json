@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "title": "Ludovico & Fidelia - Matrimonio",
+    "description": "Unitevi a noi per celebrare il matrimonio di Ludovico & Fidelia. Confermate la vostra presenza e scoprite tutti i dettagli del nostro giorno speciale."
+  },
+  "nav": {
+    "brand": "Ludovico & Fidelia",
+    "about": "Chi Siamo",
+    "details": "Dettagli",
+    "rsvp": "Conferma"
+  },
+  "hero": {
+    "title": "Ludovico & Fidelia Si Sposano!",
+    "subtitle": "Unitevi a Noi per Celebrare il Nostro Amore",
+    "cta": "Conferma Presenza"
+  },
+  "saveTheDate": {
+    "title": "Segna la Data!",
+    "date": "Venerdì 29 Maggio 2026",
+    "time": "alle ore quindici e trenta",
+    "year": "2026",
+    "venueName": "Isola di San Servolo",
+    "venueAddress": "Isola di San Servolo, Venezia, Italia"
+  },
+  "ourStory": {
+    "title": "La Nostra Storia",
+    "text": "Il nostro matrimonio unisce due cuori legati dalla passione condivisa per la creatività culinaria e la sperimentazione infinita in cucina. Affrontiamo la vita con curiosità e determinazione, sfidandoci costantemente a crescere e sostenere i sogni dell'altro. E sì, siamo assolutamente devoti al nostro compagno felino che governa la nostra casa con uguale malizia e affetto. Unitevi a noi mentre celebriamo la bellissima fusione di passioni, crescita e gioia che definisce chi siamo insieme.",
+    "cta": "Conferma Presenza"
+  },
+  "details": {
+    "title": "Dettagli della Celebrazione",
+    "subtitle": "Tutto ciò che vi serve sapere per il nostro giorno speciale",
+    "timeline": {
+      "title": "Programma dell'Evento",
+      "heading": "Venerdì 29 Maggio 2026",
+      "welcome": "15:30 - 16:30 - Accoglienza sull'isola",
+      "ceremony": "16:30 - 17:30 - Cerimonia - Messa Evangelica",
+      "cocktail": "17:30 - 19:00 - Cocktail di benvenuto/aperitivo",
+      "cocktailNote": "Gli ospiti si intrattengono mentre gli sposi fanno le fotografie",
+      "dinner": "19:00 - 21:00 - Cena sulla terrazza",
+      "cake": "21:00 - 21:30 - Taglio della torta nuziale",
+      "farewell": "21:30 - 22:00 - Commiato"
+    },
+    "transport": {
+      "title": "Come Arrivare",
+      "heading": "Raggiungere l'Isola di San Servolo",
+      "waterTaxi": "• Taxi acqueo dall'Aeroporto Marco Polo di Venezia (30 minuti)",
+      "vaporetto": "• Vaporetto Linea 2 da Piazzale Roma (20 minuti)",
+      "privateBoat": "• Trasferimenti in barca privata disponibili (dettagli alla conferma)",
+      "returnHeading": "Trasporto di Ritorno",
+      "returnInfo": "Barche organizzate in partenza al termine dell'evento"
+    },
+    "provided": {
+      "title": "Cosa Offriamo",
+      "welcomeReception": "• Ricevimento di benvenuto all'arrivo",
+      "lunch": "• Servizio pranzo completo con menù dalle influenze italiane e indonesiane",
+      "openBar": "• Open bar",
+      "sunset": "• Vista tramonto sulla città di Venezia",
+      "transportation": "• Trasporto in barca per l'andata e il ritorno da Venezia*",
+      "photography": "• Fotografia professionale della celebrazione",
+      "guide": "• Guida locale della città di Venezia"
+    },
+    "attire": {
+      "title": "Abbigliamento",
+      "dressCode": "Codice di Abbigliamento: Elegante Informale",
+      "ladies": "Signore:",
+      "ladiesDetails": "Abiti Eleganti (si prega di evitare bianco e blu)",
+      "gentlemen": "Signori:",
+      "gentlemanDetails": "Completi (cravatta opzionale)",
+      "note": "Considerate scarpe comode ed eleganti per i trasferimenti in barca"
+    },
+    "accommodations": {
+      "title": "Sistemazioni",
+      "heading": "Hotel Consigliati a Venezia:",
+      "addHere": "DA AGGIUNGERE",
+      "mestre": "Hotel a Mestre",
+      "veniceCity": "Hotel nel centro di Venezia"
+    },
+    "gifts": {
+      "title": "Regali e Apprezzamenti",
+      "presenceGift": "La vostra presenza è il regalo più grande!",
+      "intro": "Per coloro che desiderano onorarci con un contributo per il nostro futuro insieme:",
+      "monetary": "• Un regalo in denaro sarebbe gradito per aiutarci a costruire la nostra nuova casa",
+      "howToContribute": "• I contributi possono essere effettuati tramite Revolut (codice QR disponibile all'evento) o inseriti in una busta durante la celebrazione",
+      "bomboniere": "• Le tradizionali bomboniere italiane saranno fornite come nostro ringraziamento",
+      "excited": "Siamo più entusiasti di festeggiare con voi che di ricevere qualsiasi altra cosa!"
+    },
+    "specialNotes": {
+      "title": "Note Speciali",
+      "weatherTitle": "Meteo a Venezia (Fine Maggio)",
+      "weatherInfo": "Tipicamente 20-25°C - Giacca leggera consigliata per le gite in barca serali",
+      "photographyTitle": "Fotografia",
+      "photographyInfo": "Sentitevi liberi di scattare foto, ma vi preghiamo di essere presenti durante la cerimonia",
+      "dietaryTitle": "Esigenze Alimentari",
+      "dietaryInfo": "Si prega di specificare eventuali requisiti dietetici nel modulo di conferma"
+    },
+    "stayConnected": {
+      "title": "Rimani Connesso",
+      "whatsappHeading": "Gruppo WhatsApp del Matrimonio",
+      "whatsappInfo": "Unitevi alla nostra chat di gruppo per aggiornamenti in tempo reale e per connettervi con gli altri ospiti!",
+      "whatsappLink": "📱 Unisciti al Gruppo WhatsApp",
+      "driveHeading": "Album Fotografico su Google Drive",
+      "driveInfo": "Tutte le foto del matrimonio saranno condivise qui. Sentitevi liberi di caricare anche le vostre foto!",
+      "driveLink": "📸 Accedi all'Album Fotografico",
+      "linksNote": "I link saranno inviati con l'email di conferma della vostra presenza"
+    }
+  },
+  "rsvp": {
+    "title": "Conferma Presenza",
+    "subtitle": "Si prega di confermare la vostra presenza entro il 1° Maggio 2026",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "email": "Email",
+    "phone": "Telefono",
+    "attendance": "Parteciperete?",
+    "attendanceSelect": "Seleziona",
+    "attendanceYes": "Sì, ci sarò!",
+    "attendanceNo": "Spiacente, non posso venire",
+    "attendanceMaybe": "Non sono ancora sicuro",
+    "dietary": "Restrizioni Alimentari",
+    "dietaryNone": "Nessuna restrizione",
+    "dietaryVegetarian": "Vegetariano",
+    "dietaryVegan": "Vegano",
+    "dietaryGlutenFree": "Senza glutine",
+    "dietaryHalal": "Halal",
+    "dietaryKosher": "Kosher",
+    "dietaryOther": "Altro (specificare sotto)",
+    "message": "Informazioni Aggiuntive",
+    "messagePlaceholder": "Nomi degli ospiti, richieste speciali, dettagli dietetici se 'Altro' selezionato...",
+    "submit": "Invia",
+    "required": "*"
+  },
+  "footer": {
+    "names": "Ludovico & Fidelia",
+    "phone": "+39 041 xxx xxxx",
+    "email": "ludovico.fidelia.wedding@gmail.com",
+    "location": "Isola di San Servolo",
+    "city": "Venezia, Italia",
+    "copyright": "© 2026 Matrimonio Ludovico & Fidelia. Matrimonio all'Isola di San Servolo",
+    "credits": "ℹ️ Vibecoded con ❤️ da Ludovico & Claude"
+  }
+}

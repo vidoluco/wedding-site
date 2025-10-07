@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "title": "Ludovico & Fidelia - Pernikahan",
+    "description": "Bergabunglah dengan kami untuk merayakan pernikahan Ludovico & Fidelia. Konfirmasi kehadiran Anda dan dapatkan semua detail tentang hari istimewa kami."
+  },
+  "nav": {
+    "brand": "Ludovico & Fidelia",
+    "about": "Tentang Kami",
+    "details": "Detail",
+    "rsvp": "Konfirmasi"
+  },
+  "hero": {
+    "title": "Ludovico & Fidelia Akan Menikah!",
+    "subtitle": "Bergabunglah dengan Kami untuk Merayakan Cinta Kami",
+    "cta": "Konfirmasi Kehadiran"
+  },
+  "saveTheDate": {
+    "title": "Simpan Tanggalnya!",
+    "date": "Jumat, 29 Mei 2026",
+    "time": "pukul tiga setengah sore",
+    "year": "2026",
+    "venueName": "Pulau San Servolo",
+    "venueAddress": "Isola di San Servolo, Venesia, Italia"
+  },
+  "ourStory": {
+    "title": "Kisah Kami",
+    "text": "Pernikahan kami menyatukan dua hati yang dipersatukan oleh hasrat bersama untuk kreativitas kuliner dan eksperimen dapur tanpa henti. Kami mendekati hidup dengan rasa ingin tahu dan tekad, terus-menerus menantang diri kami untuk tumbuh dan mendukung impian satu sama lain. Dan ya, kami sangat mengabdikan diri kepada teman kucing kami yang memerintah rumah kami dengan kenakalan dan kasih sayang yang sama. Bergabunglah dengan kami saat kami merayakan perpaduan indah dari hasrat, pertumbuhan, dan kegembiraan yang mendefinisikan siapa kami bersama.",
+    "cta": "Konfirmasi Kehadiran"
+  },
+  "details": {
+    "title": "Detail Perayaan",
+    "subtitle": "Semua yang perlu Anda ketahui untuk hari istimewa kami",
+    "timeline": {
+      "title": "Jadwal Acara",
+      "heading": "Jumat, 29 Mei 2026",
+      "welcome": "15:30 - 16:30 - Penyambutan di pulau",
+      "ceremony": "16:30 - 17:30 - Upacara - Misa Injili",
+      "cocktail": "17:30 - 19:00 - Koktail sambutan/aperitif",
+      "cocktailNote": "Tamu bercengkerama sementara pengantin baru berfoto",
+      "dinner": "19:00 - 21:00 - Makan malam di teras",
+      "cake": "21:00 - 21:30 - Pemotongan kue pengantin",
+      "farewell": "21:30 - 22:00 - Perpisahan"
+    },
+    "transport": {
+      "title": "Cara Menuju Lokasi",
+      "heading": "Menuju Pulau San Servolo",
+      "waterTaxi": "• Taksi air dari Bandara Venice Marco Polo (30 menit)",
+      "vaporetto": "• Vaporetto Jalur 2 dari Piazzale Roma (20 menit)",
+      "privateBoat": "• Transfer perahu pribadi tersedia (detail setelah konfirmasi)",
+      "returnHeading": "Transportasi Kembali",
+      "returnInfo": "Perahu yang diatur berangkat pada akhir acara"
+    },
+    "provided": {
+      "title": "Yang Kami Sediakan",
+      "welcomeReception": "• Resepsi sambutan saat kedatangan",
+      "lunch": "• Layanan makan siang lengkap dengan menu pengaruh Italia & Indonesia",
+      "openBar": "• Bar terbuka",
+      "sunset": "• Pemandangan matahari terbenam kota Venesia",
+      "transportation": "• Transportasi perahu kedatangan & kepulangan ke Venesia*",
+      "photography": "• Fotografi profesional perayaan",
+      "guide": "• Panduan kota lokal Venesia"
+    },
+    "attire": {
+      "title": "Pakaian",
+      "dressCode": "Kode Berpakaian: Kasual Elegan",
+      "ladies": "Wanita:",
+      "ladiesDetails": "Gaun Elegan (harap hindari putih dan biru)",
+      "gentlemen": "Pria:",
+      "gentlemanDetails": "Setelan (dasi opsional)",
+      "note": "Pertimbangkan sepatu yang nyaman & elegan untuk transfer perahu"
+    },
+    "accommodations": {
+      "title": "Akomodasi",
+      "heading": "Hotel yang Direkomendasikan di Venesia:",
+      "addHere": "TAMBAHKAN DI SINI",
+      "mestre": "Hotel Mestre",
+      "veniceCity": "Hotel kota Venesia"
+    },
+    "gifts": {
+      "title": "Hadiah & Apresiasi",
+      "presenceGift": "Kehadiran Anda adalah hadiah terbesar kami!",
+      "intro": "Bagi mereka yang ingin menghormati kami dengan kontribusi untuk masa depan kami bersama:",
+      "monetary": "• Hadiah uang akan sangat kami hargai untuk membantu kami membangun rumah baru kami",
+      "howToContribute": "• Kontribusi dapat dilakukan melalui Revolut (kode QR tersedia di acara) atau dimasukkan dalam amplop pada perayaan",
+      "bomboniere": "• Bomboniere Italia tradisional akan diberikan sebagai ucapan terima kasih kami",
+      "excited": "Kami lebih bersemangat untuk merayakan dengan Anda daripada menerima apa pun!"
+    },
+    "specialNotes": {
+      "title": "Catatan Khusus",
+      "weatherTitle": "Cuaca di Venesia (Akhir Mei)",
+      "weatherInfo": "Biasanya 20-25°C - Jaket ringan disarankan untuk perjalanan perahu malam hari",
+      "photographyTitle": "Fotografi",
+      "photographyInfo": "Jangan ragu untuk mengambil foto, tetapi harap hadir selama upacara",
+      "dietaryTitle": "Kebutuhan Makanan",
+      "dietaryInfo": "Harap sebutkan persyaratan diet apa pun di formulir konfirmasi"
+    },
+    "stayConnected": {
+      "title": "Tetap Terhubung",
+      "whatsappHeading": "Grup WhatsApp Pernikahan",
+      "whatsappInfo": "Bergabunglah dengan grup obrolan pernikahan kami untuk pembaruan real-time dan terhubung dengan tamu lainnya!",
+      "whatsappLink": "📱 Bergabung dengan Grup WhatsApp",
+      "driveHeading": "Album Foto Google Drive",
+      "driveInfo": "Semua foto pernikahan akan dibagikan di sini. Jangan ragu untuk mengunggah foto Anda sendiri juga!",
+      "driveLink": "📸 Akses Album Foto",
+      "linksNote": "Tautan akan dikirimkan dengan email konfirmasi kehadiran Anda"
+    }
+  },
+  "rsvp": {
+    "title": "Konfirmasi Kehadiran",
+    "subtitle": "Harap konfirmasi kehadiran Anda sebelum 1 Mei 2026",
+    "firstName": "Nama depan",
+    "lastName": "Nama belakang",
+    "email": "Email",
+    "phone": "Telepon",
+    "attendance": "Apakah Anda akan hadir?",
+    "attendanceSelect": "Silakan pilih",
+    "attendanceYes": "Ya, saya akan hadir!",
+    "attendanceNo": "Maaf, tidak bisa hadir",
+    "attendanceMaybe": "Belum yakin",
+    "dietary": "Pembatasan Diet",
+    "dietaryNone": "Tanpa pembatasan",
+    "dietaryVegetarian": "Vegetarian",
+    "dietaryVegan": "Vegan",
+    "dietaryGlutenFree": "Bebas gluten",
+    "dietaryHalal": "Halal",
+    "dietaryKosher": "Kosher",
+    "dietaryOther": "Lainnya (harap sebutkan di bawah)",
+    "message": "Informasi Tambahan",
+    "messagePlaceholder": "Nama tamu, permintaan khusus, detail diet jika 'Lainnya' dipilih...",
+    "submit": "Kirim",
+    "required": "*"
+  },
+  "footer": {
+    "names": "Ludovico & Fidelia",
+    "phone": "+39 041 xxx xxxx",
+    "email": "ludovico.fidelia.wedding@gmail.com",
+    "location": "Pulau San Servolo",
+    "city": "Venesia, Italia",
+    "copyright": "© 2026 Pernikahan Ludovico & Fidelia. Pernikahan Pulau San Servolo",
+    "credits": "ℹ️ Vibecoded dengan ❤️ oleh Ludovico & Claude"
+  }
+}

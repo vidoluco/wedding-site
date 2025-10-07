@@ -1,0 +1,1066 @@
+/**
+ * Multi-language Translation Manager
+ * Supports English, Italian, and Indonesian
+ *
+ * Priority for language detection:
+ * 1. URL parameter (?lang=it)
+ * 2. localStorage (user preference)
+ * 3. Browser language
+ * 4. Default (English)
+ */
+
+class TranslationManager {
+    constructor() {
+        this.currentLanguage = 'en';
+        this.supportedLanguages = ['en', 'it', 'id'];
+        this.languageNames = {
+            'en': 'English',
+            'it': 'Italiano',
+            'id': 'Indonesia'
+        };
+
+        // Embedded translations - no fetch() needed, works with file:// protocol
+        this.translations = {
+            "en": {
+                "meta": {
+                    "title": "Ludovico & Fidelia - Wedding",
+                    "description": "Join us for the celebration of Ludovico & Fidelia's wedding. RSVP and get all the details about our special day."
+                },
+                "nav": {
+                    "brand": "Ludovico & Fidelia",
+                    "about": "About",
+                    "details": "Details",
+                    "rsvp": "RSVP"
+                },
+                "hero": {
+                    "title": "Ludovico & Fidelia Are Getting Married!",
+                    "subtitle": "Join Us for Our Celebration of Love",
+                    "cta": "RSVP Now"
+                },
+                "saveTheDate": {
+                    "title": "Save the Date!",
+                    "date": "Friday, May 29th, 2026",
+                    "time": "at half past three in the afternoon",
+                    "year": "2026",
+                    "venueName": "San Servolo Island",
+                    "venueAddress": "Isola di San Servolo, Venice, Italy"
+                },
+                "ourStory": {
+                    "title": "Our Story",
+                    "text": "Our wedding brings together two hearts united by our shared passion for culinary creativity and endless kitchen experimentation. We approach life with curiosity and determination, constantly challenging ourselves to grow and support each other's dreams. And yes, we're absolutely devoted to our feline companion who rules our home with equal parts mischief and affection. Join us as we celebrate the beautiful blend of passions, growth, and joy that defines who we are together.",
+                    "cta": "RSVP Now"
+                },
+                "details": {
+                    "title": "Celebration Details",
+                    "subtitle": "Everything you need to know for our special day",
+                    "timeline": {
+                        "title": "Event Timeline",
+                        "heading": "Friday, May 29th, 2026",
+                        "welcome": "15:30 - 16:30 - Welcome on the island",
+                        "ceremony": "16:30 - 17:30 - Ceremony - Evangelical Mass",
+                        "cocktail": "17:30 - 19:00 - Welcome cocktail/aperitif",
+                        "cocktailNote": "Guests mingle while newlyweds have photos taken",
+                        "dinner": "19:00 - 21:00 - Dinner on the terrace",
+                        "cake": "21:00 - 21:30 - Cutting of the wedding cake",
+                        "farewell": "21:30 - 22:00 - Farewell"
+                    },
+                    "transport": {
+                        "title": "Getting There",
+                        "heading": "Getting to San Servolo Island",
+                        "waterTaxi": "• Water taxi from Venice Marco Polo Airport (30 minutes)",
+                        "vaporetto": "• Vaporetto Line 2 from Piazzale Roma (20 minutes)",
+                        "privateBoat": "• Private boat transfers available (details upon RSVP)",
+                        "returnHeading": "Return Transportation",
+                        "returnInfo": "Arranged boats departing at event termination"
+                    },
+                    "provided": {
+                        "title": "What We Provide",
+                        "welcomeReception": "• Welcome reception upon arrival",
+                        "lunch": "• Full lunch service with Italian & Indonesian influences menu",
+                        "openBar": "• Open bar",
+                        "sunset": "• Sunset view on Venice city",
+                        "transportation": "• Arrival & Return boat transportation to Venice*",
+                        "photography": "• Professional photography of the celebration",
+                        "guide": "• Venice local city guide"
+                    },
+                    "attire": {
+                        "title": "Attire",
+                        "dressCode": "Dress Code: Elegant Casual",
+                        "ladies": "Ladies:",
+                        "ladiesDetails": "Elegant Dresses (please avoid white and blue)",
+                        "gentlemen": "Gentlemen:",
+                        "gentlemanDetails": "Suits (ties optional)",
+                        "note": "Consider comfortable & elegant shoes for boat transfers"
+                    },
+                    "accommodations": {
+                        "title": "Accommodations",
+                        "heading": "Recommended Hotels in Venice:",
+                        "addHere": "ADD HERE",
+                        "mestre": "Mestre Hotels",
+                        "veniceCity": "Venice city Hotels"
+                    },
+                    "gifts": {
+                        "title": "Gifts & Appreciations",
+                        "presenceGift": "Your presence is our greatest gift!",
+                        "intro": "For those who wish to honor us with a contribution toward our future together:",
+                        "monetary": "• A monetary gift would be graciously appreciated to help us establish our new home",
+                        "howToContribute": "• Contributions can be made via Revolut (QR code available at the event) or placed in an envelope at the celebration",
+                        "bomboniere": "• Traditional Italian bomboniere will be provided as our thank you",
+                        "excited": "We're more excited to celebrate with you than receive anything else!"
+                    },
+                    "specialNotes": {
+                        "title": "Special Notes",
+                        "weatherTitle": "Weather in Venice (Late May)",
+                        "weatherInfo": "Typically 20-25°C - Light jacket recommended for evening boat rides",
+                        "photographyTitle": "Photography",
+                        "photographyInfo": "Feel free to take photos, but please be present during ceremony",
+                        "dietaryTitle": "Dietary Needs",
+                        "dietaryInfo": "Please specify any dietary requirements in the RSVP form"
+                    },
+                    "stayConnected": {
+                        "title": "Stay Connected",
+                        "whatsappHeading": "WhatsApp Wedding Group",
+                        "whatsappInfo": "Join our wedding group chat for real-time updates and to connect with other guests!",
+                        "whatsappLink": "📱 Join WhatsApp Group",
+                        "driveHeading": "Google Drive Photo Album",
+                        "driveInfo": "All wedding photos will be shared here. Feel free to upload your own photos too!",
+                        "driveLink": "📸 Access Photo Album",
+                        "linksNote": "Links will be sent with your RSVP confirmation email"
+                    }
+                },
+                "rsvp": {
+                    "title": "RSVP",
+                    "subtitle": "Please confirm your attendance by May 1st, 2026",
+                    "firstName": "First name",
+                    "lastName": "Last name",
+                    "email": "Email",
+                    "phone": "Phone",
+                    "attendance": "Will you be attending?",
+                    "attendanceSelect": "Please select",
+                    "attendanceYes": "Yes, I'll be there!",
+                    "attendanceNo": "Sorry, can't make it",
+                    "attendanceMaybe": "Not sure yet",
+                    "dietary": "Dietary Restrictions",
+                    "dietaryNone": "No restrictions",
+                    "dietaryVegetarian": "Vegetarian",
+                    "dietaryVegan": "Vegan",
+                    "dietaryGlutenFree": "Gluten-free",
+                    "dietaryHalal": "Halal",
+                    "dietaryKosher": "Kosher",
+                    "dietaryOther": "Other (please specify below)",
+                    "message": "Additional Information",
+                    "messagePlaceholder": "Guest names, special requests, dietary details if 'Other' selected...",
+                    "submit": "Submit",
+                    "required": "*"
+                },
+                "footer": {
+                    "names": "Ludovico & Fidelia",
+                    "phone": "+39 041 xxx xxxx",
+                    "email": "ludovico.fidelia.wedding@gmail.com",
+                    "location": "San Servolo Island",
+                    "city": "Venice, Italy",
+                    "copyright": "© 2026 Ludovico & Fidelia Wedding. San Servolo Island Wedding",
+                    "credits": "ℹ️ Vibecoded with ❤️ by Ludovico & Claude"
+                }
+            },
+            "it": {
+                "meta": {
+                    "title": "Ludovico & Fidelia - Matrimonio",
+                    "description": "Unitevi a noi per celebrare il matrimonio di Ludovico & Fidelia. Confermate la vostra presenza e scoprite tutti i dettagli del nostro giorno speciale."
+                },
+                "nav": {
+                    "brand": "Ludovico & Fidelia",
+                    "about": "Chi Siamo",
+                    "details": "Dettagli",
+                    "rsvp": "Conferma"
+                },
+                "hero": {
+                    "title": "Ludovico & Fidelia Si Sposano!",
+                    "subtitle": "Unitevi a Noi per Celebrare il Nostro Amore",
+                    "cta": "Conferma Presenza"
+                },
+                "saveTheDate": {
+                    "title": "Segna la Data!",
+                    "date": "Venerdì 29 Maggio 2026",
+                    "time": "alle ore quindici e trenta",
+                    "year": "2026",
+                    "venueName": "Isola di San Servolo",
+                    "venueAddress": "Isola di San Servolo, Venezia, Italia"
+                },
+                "ourStory": {
+                    "title": "La Nostra Storia",
+                    "text": "Il nostro matrimonio unisce due cuori legati dalla passione condivisa per la creatività culinaria e la sperimentazione infinita in cucina. Affrontiamo la vita con curiosità e determinazione, sfidandoci costantemente a crescere e sostenere i sogni dell'altro. E sì, siamo assolutamente devoti al nostro compagno felino che governa la nostra casa con uguale malizia e affetto. Unitevi a noi mentre celebriamo la bellissima fusione di passioni, crescita e gioia che definisce chi siamo insieme.",
+                    "cta": "Conferma Presenza"
+                },
+                "details": {
+                    "title": "Dettagli della Celebrazione",
+                    "subtitle": "Tutto ciò che vi serve sapere per il nostro giorno speciale",
+                    "timeline": {
+                        "title": "Programma dell'Evento",
+                        "heading": "Venerdì 29 Maggio 2026",
+                        "welcome": "15:30 - 16:30 - Accoglienza sull'isola",
+                        "ceremony": "16:30 - 17:30 - Cerimonia - Messa Evangelica",
+                        "cocktail": "17:30 - 19:00 - Cocktail di benvenuto/aperitivo",
+                        "cocktailNote": "Gli ospiti si intrattengono mentre gli sposi fanno le fotografie",
+                        "dinner": "19:00 - 21:00 - Cena sulla terrazza",
+                        "cake": "21:00 - 21:30 - Taglio della torta nuziale",
+                        "farewell": "21:30 - 22:00 - Commiato"
+                    },
+                    "transport": {
+                        "title": "Come Arrivare",
+                        "heading": "Raggiungere l'Isola di San Servolo",
+                        "waterTaxi": "• Taxi acqueo dall'Aeroporto Marco Polo di Venezia (30 minuti)",
+                        "vaporetto": "• Vaporetto Linea 2 da Piazzale Roma (20 minuti)",
+                        "privateBoat": "• Trasferimenti in barca privata disponibili (dettagli alla conferma)",
+                        "returnHeading": "Trasporto di Ritorno",
+                        "returnInfo": "Barche organizzate in partenza al termine dell'evento"
+                    },
+                    "provided": {
+                        "title": "Cosa Offriamo",
+                        "welcomeReception": "• Ricevimento di benvenuto all'arrivo",
+                        "lunch": "• Servizio pranzo completo con menù dalle influenze italiane e indonesiane",
+                        "openBar": "• Open bar",
+                        "sunset": "• Vista tramonto sulla città di Venezia",
+                        "transportation": "• Trasporto in barca per l'andata e il ritorno da Venezia*",
+                        "photography": "• Fotografia professionale della celebrazione",
+                        "guide": "• Guida locale della città di Venezia"
+                    },
+                    "attire": {
+                        "title": "Abbigliamento",
+                        "dressCode": "Codice di Abbigliamento: Elegante Informale",
+                        "ladies": "Signore:",
+                        "ladiesDetails": "Abiti Eleganti (si prega di evitare bianco e blu)",
+                        "gentlemen": "Signori:",
+                        "gentlemanDetails": "Completi (cravatta opzionale)",
+                        "note": "Considerate scarpe comode ed eleganti per i trasferimenti in barca"
+                    },
+                    "accommodations": {
+                        "title": "Sistemazioni",
+                        "heading": "Hotel Consigliati a Venezia:",
+                        "addHere": "DA AGGIUNGERE",
+                        "mestre": "Hotel a Mestre",
+                        "veniceCity": "Hotel nel centro di Venezia"
+                    },
+                    "gifts": {
+                        "title": "Regali e Apprezzamenti",
+                        "presenceGift": "La vostra presenza è il regalo più grande!",
+                        "intro": "Per coloro che desiderano onorarci con un contributo per il nostro futuro insieme:",
+                        "monetary": "• Un regalo in denaro sarebbe gradito per aiutarci a costruire la nostra nuova casa",
+                        "howToContribute": "• I contributi possono essere effettuati tramite Revolut (codice QR disponibile all'evento) o inseriti in una busta durante la celebrazione",
+                        "bomboniere": "• Le tradizionali bomboniere italiane saranno fornite come nostro ringraziamento",
+                        "excited": "Siamo più entusiasti di festeggiare con voi che di ricevere qualsiasi altra cosa!"
+                    },
+                    "specialNotes": {
+                        "title": "Note Speciali",
+                        "weatherTitle": "Meteo a Venezia (Fine Maggio)",
+                        "weatherInfo": "Tipicamente 20-25°C - Giacca leggera consigliata per le gite in barca serali",
+                        "photographyTitle": "Fotografia",
+                        "photographyInfo": "Sentitevi liberi di scattare foto, ma vi preghiamo di essere presenti durante la cerimonia",
+                        "dietaryTitle": "Esigenze Alimentari",
+                        "dietaryInfo": "Si prega di specificare eventuali requisiti dietetici nel modulo di conferma"
+                    },
+                    "stayConnected": {
+                        "title": "Rimani Connesso",
+                        "whatsappHeading": "Gruppo WhatsApp del Matrimonio",
+                        "whatsappInfo": "Unitevi alla nostra chat di gruppo per aggiornamenti in tempo reale e per connettervi con gli altri ospiti!",
+                        "whatsappLink": "📱 Unisciti al Gruppo WhatsApp",
+                        "driveHeading": "Album Fotografico su Google Drive",
+                        "driveInfo": "Tutte le foto del matrimonio saranno condivise qui. Sentitevi liberi di caricare anche le vostre foto!",
+                        "driveLink": "📸 Accedi all'Album Fotografico",
+                        "linksNote": "I link saranno inviati con l'email di conferma della vostra presenza"
+                    }
+                },
+                "rsvp": {
+                    "title": "Conferma Presenza",
+                    "subtitle": "Si prega di confermare la vostra presenza entro il 1° Maggio 2026",
+                    "firstName": "Nome",
+                    "lastName": "Cognome",
+                    "email": "Email",
+                    "phone": "Telefono",
+                    "attendance": "Parteciperete?",
+                    "attendanceSelect": "Seleziona",
+                    "attendanceYes": "Sì, ci sarò!",
+                    "attendanceNo": "Spiacente, non posso venire",
+                    "attendanceMaybe": "Non sono ancora sicuro",
+                    "dietary": "Restrizioni Alimentari",
+                    "dietaryNone": "Nessuna restrizione",
+                    "dietaryVegetarian": "Vegetariano",
+                    "dietaryVegan": "Vegano",
+                    "dietaryGlutenFree": "Senza glutine",
+                    "dietaryHalal": "Halal",
+                    "dietaryKosher": "Kosher",
+                    "dietaryOther": "Altro (specificare sotto)",
+                    "message": "Informazioni Aggiuntive",
+                    "messagePlaceholder": "Nomi degli ospiti, richieste speciali, dettagli dietetici se 'Altro' selezionato...",
+                    "submit": "Invia",
+                    "required": "*"
+                },
+                "footer": {
+                    "names": "Ludovico & Fidelia",
+                    "phone": "+39 041 xxx xxxx",
+                    "email": "ludovico.fidelia.wedding@gmail.com",
+                    "location": "Isola di San Servolo",
+                    "city": "Venezia, Italia",
+                    "copyright": "© 2026 Matrimonio Ludovico & Fidelia. Matrimonio all'Isola di San Servolo",
+                    "credits": "ℹ️ Vibecoded con ❤️ da Ludovico & Claude"
+                }
+            },
+            "id": {
+                "meta": {
+                    "title": "Ludovico & Fidelia - Pernikahan",
+                    "description": "Bergabunglah dengan kami untuk merayakan pernikahan Ludovico & Fidelia. Konfirmasi kehadiran Anda dan dapatkan semua detail tentang hari istimewa kami."
+                },
+                "nav": {
+                    "brand": "Ludovico & Fidelia",
+                    "about": "Tentang Kami",
+                    "details": "Detail",
+                    "rsvp": "Konfirmasi"
+                },
+                "hero": {
+                    "title": "Ludovico & Fidelia Akan Menikah!",
+                    "subtitle": "Bergabunglah dengan Kami untuk Merayakan Cinta Kami",
+                    "cta": "Konfirmasi Kehadiran"
+                },
+                "saveTheDate": {
+                    "title": "Simpan Tanggalnya!",
+                    "date": "Jumat, 29 Mei 2026",
+                    "time": "pukul tiga setengah sore",
+                    "year": "2026",
+                    "venueName": "Pulau San Servolo",
+                    "venueAddress": "Isola di San Servolo, Venesia, Italia"
+                },
+                "ourStory": {
+                    "title": "Kisah Kami",
+                    "text": "Pernikahan kami menyatukan dua hati yang dipersatukan oleh hasrat bersama untuk kreativitas kuliner dan eksperimen dapur tanpa henti. Kami mendekati hidup dengan rasa ingin tahu dan tekad, terus-menerus menantang diri kami untuk tumbuh dan mendukung impian satu sama lain. Dan ya, kami sangat mengabdikan diri kepada teman kucing kami yang memerintah rumah kami dengan kenakalan dan kasih sayang yang sama. Bergabunglah dengan kami saat kami merayakan perpaduan indah dari hasrat, pertumbuhan, dan kegembiraan yang mendefinisikan siapa kami bersama.",
+                    "cta": "Konfirmasi Kehadiran"
+                },
+                "details": {
+                    "title": "Detail Perayaan",
+                    "subtitle": "Semua yang perlu Anda ketahui untuk hari istimewa kami",
+                    "timeline": {
+                        "title": "Jadwal Acara",
+                        "heading": "Jumat, 29 Mei 2026",
+                        "welcome": "15:30 - 16:30 - Penyambutan di pulau",
+                        "ceremony": "16:30 - 17:30 - Upacara - Misa Injili",
+                        "cocktail": "17:30 - 19:00 - Koktail sambutan/aperitif",
+                        "cocktailNote": "Tamu bercengkerama sementara pengantin baru berfoto",
+                        "dinner": "19:00 - 21:00 - Makan malam di teras",
+                        "cake": "21:00 - 21:30 - Pemotongan kue pengantin",
+                        "farewell": "21:30 - 22:00 - Perpisahan"
+                    },
+                    "transport": {
+                        "title": "Cara Menuju Lokasi",
+                        "heading": "Menuju Pulau San Servolo",
+                        "waterTaxi": "• Taksi air dari Bandara Venice Marco Polo (30 menit)",
+                        "vaporetto": "• Vaporetto Jalur 2 dari Piazzale Roma (20 menit)",
+                        "privateBoat": "• Transfer perahu pribadi tersedia (detail setelah konfirmasi)",
+                        "returnHeading": "Transportasi Kembali",
+                        "returnInfo": "Perahu yang diatur berangkat pada akhir acara"
+                    },
+                    "provided": {
+                        "title": "Yang Kami Sediakan",
+                        "welcomeReception": "• Resepsi sambutan saat kedatangan",
+                        "lunch": "• Layanan makan siang lengkap dengan menu pengaruh Italia & Indonesia",
+                        "openBar": "• Bar terbuka",
+                        "sunset": "• Pemandangan matahari terbenam kota Venesia",
+                        "transportation": "• Transportasi perahu kedatangan & kepulangan ke Venesia*",
+                        "photography": "• Fotografi profesional perayaan",
+                        "guide": "• Panduan kota lokal Venesia"
+                    },
+                    "attire": {
+                        "title": "Pakaian",
+                        "dressCode": "Kode Berpakaian: Kasual Elegan",
+                        "ladies": "Wanita:",
+                        "ladiesDetails": "Gaun Elegan (harap hindari putih dan biru)",
+                        "gentlemen": "Pria:",
+                        "gentlemanDetails": "Setelan (dasi opsional)",
+                        "note": "Pertimbangkan sepatu yang nyaman & elegan untuk transfer perahu"
+                    },
+                    "accommodations": {
+                        "title": "Akomodasi",
+                        "heading": "Hotel yang Direkomendasikan di Venesia:",
+                        "addHere": "TAMBAHKAN DI SINI",
+                        "mestre": "Hotel Mestre",
+                        "veniceCity": "Hotel kota Venesia"
+                    },
+                    "gifts": {
+                        "title": "Hadiah & Apresiasi",
+                        "presenceGift": "Kehadiran Anda adalah hadiah terbesar kami!",
+                        "intro": "Bagi mereka yang ingin menghormati kami dengan kontribusi untuk masa depan kami bersama:",
+                        "monetary": "• Hadiah uang akan sangat kami hargai untuk membantu kami membangun rumah baru kami",
+                        "howToContribute": "• Kontribusi dapat dilakukan melalui Revolut (kode QR tersedia di acara) atau dimasukkan dalam amplop pada perayaan",
+                        "bomboniere": "• Bomboniere Italia tradisional akan diberikan sebagai ucapan terima kasih kami",
+                        "excited": "Kami lebih bersemangat untuk merayakan dengan Anda daripada menerima apa pun!"
+                    },
+                    "specialNotes": {
+                        "title": "Catatan Khusus",
+                        "weatherTitle": "Cuaca di Venesia (Akhir Mei)",
+                        "weatherInfo": "Biasanya 20-25°C - Jaket ringan disarankan untuk perjalanan perahu malam hari",
+                        "photographyTitle": "Fotografi",
+                        "photographyInfo": "Jangan ragu untuk mengambil foto, tetapi harap hadir selama upacara",
+                        "dietaryTitle": "Kebutuhan Makanan",
+                        "dietaryInfo": "Harap sebutkan persyaratan diet apa pun di formulir konfirmasi"
+                    },
+                    "stayConnected": {
+                        "title": "Tetap Terhubung",
+                        "whatsappHeading": "Grup WhatsApp Pernikahan",
+                        "whatsappInfo": "Bergabunglah dengan grup obrolan pernikahan kami untuk pembaruan real-time dan terhubung dengan tamu lainnya!",
+                        "whatsappLink": "📱 Bergabung dengan Grup WhatsApp",
+                        "driveHeading": "Album Foto Google Drive",
+                        "driveInfo": "Semua foto pernikahan akan dibagikan di sini. Jangan ragu untuk mengunggah foto Anda sendiri juga!",
+                        "driveLink": "📸 Akses Album Foto",
+                        "linksNote": "Tautan akan dikirimkan dengan email konfirmasi kehadiran Anda"
+                    }
+                },
+                "rsvp": {
+                    "title": "Konfirmasi Kehadiran",
+                    "subtitle": "Harap konfirmasi kehadiran Anda sebelum 1 Mei 2026",
+                    "firstName": "Nama depan",
+                    "lastName": "Nama belakang",
+                    "email": "Email",
+                    "phone": "Telepon",
+                    "attendance": "Apakah Anda akan hadir?",
+                    "attendanceSelect": "Silakan pilih",
+                    "attendanceYes": "Ya, saya akan hadir!",
+                    "attendanceNo": "Maaf, tidak bisa hadir",
+                    "attendanceMaybe": "Belum yakin",
+                    "dietary": "Pembatasan Diet",
+                    "dietaryNone": "Tanpa pembatasan",
+                    "dietaryVegetarian": "Vegetarian",
+                    "dietaryVegan": "Vegan",
+                    "dietaryGlutenFree": "Bebas gluten",
+                    "dietaryHalal": "Halal",
+                    "dietaryKosher": "Kosher",
+                    "dietaryOther": "Lainnya (harap sebutkan di bawah)",
+                    "message": "Informasi Tambahan",
+                    "messagePlaceholder": "Nama tamu, permintaan khusus, detail diet jika 'Lainnya' dipilih...",
+                    "submit": "Kirim",
+                    "required": "*"
+                },
+                "footer": {
+                    "names": "Ludovico & Fidelia",
+                    "phone": "+39 041 xxx xxxx",
+                    "email": "ludovico.fidelia.wedding@gmail.com",
+                    "location": "Pulau San Servolo",
+                    "city": "Venesia, Italia",
+                    "copyright": "© 2026 Pernikahan Ludovico & Fidelia. Pernikahan Pulau San Servolo",
+                    "credits": "ℹ️ Vibecoded dengan ❤️ oleh Ludovico & Claude"
+                }
+            }
+        };
+    }
+
+    /**
+     * Initialize the translation system
+     */
+    init() {
+        try {
+            // Detect and apply the appropriate language
+            const detectedLang = this.detectLanguage();
+            if (detectedLang !== 'en') {
+                this.applyTranslations(detectedLang);
+            }
+
+            // Create language switcher UI
+            this.createLanguageSwitcher();
+
+            console.log(`Translation system initialized. Current language: ${this.currentLanguage}`);
+        } catch (error) {
+            console.error('Failed to initialize translation system:', error);
+        }
+    }
+
+    /**
+     * Detect the user's preferred language
+     * Priority: URL param → localStorage → browser → default (en)
+     */
+    detectLanguage() {
+        // 1. Check URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        if (urlLang && this.supportedLanguages.includes(urlLang)) {
+            this.currentLanguage = urlLang;
+            // Save to localStorage for future visits
+            localStorage.setItem('wedding-language', urlLang);
+            return urlLang;
+        }
+
+        // 2. Check localStorage (user's previous choice)
+        const savedLang = localStorage.getItem('wedding-language');
+        if (savedLang && this.supportedLanguages.includes(savedLang)) {
+            this.currentLanguage = savedLang;
+            return savedLang;
+        }
+
+        // 3. Check browser language
+        const browserLang = navigator.language.split('-')[0];
+        if (this.supportedLanguages.includes(browserLang)) {
+            this.currentLanguage = browserLang;
+            return browserLang;
+        }
+
+        // 4. Default to English
+        this.currentLanguage = 'en';
+        return 'en';
+    }
+
+    /**
+     * Apply translations to the entire page
+     */
+    applyTranslations(lang) {
+        if (!this.translations[lang]) {
+            console.warn(`Translations for ${lang} not available, using English`);
+            lang = 'en';
+        }
+
+        this.currentLanguage = lang;
+        const t = this.translations[lang];
+
+        // Update meta tags
+        this.updateMeta(t);
+
+        // Update navigation
+        this.updateNavigation(t);
+
+        // Update hero section
+        this.updateHero(t);
+
+        // Update Save the Date section
+        this.updateSaveTheDate(t);
+
+        // Update Our Story section
+        this.updateOurStory(t);
+
+        // Update Celebration Details section
+        this.updateDetails(t);
+
+        // Update RSVP form
+        this.updateRSVPForm(t);
+
+        // Update footer
+        this.updateFooter(t);
+
+        // Update active language button
+        this.updateLanguageButtons();
+    }
+
+    /**
+     * Update meta tags
+     */
+    updateMeta(t) {
+        document.title = t.meta.title;
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+            metaDescription.setAttribute('content', t.meta.description);
+        }
+        document.documentElement.lang = this.currentLanguage;
+    }
+
+    /**
+     * Update navigation
+     */
+    updateNavigation(t) {
+        const navBrand = document.querySelector('.nav-brand a');
+        if (navBrand) navBrand.textContent = t.nav.brand;
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks[0].textContent = t.nav.about;
+        navLinks[1].textContent = t.nav.details;
+        navLinks[2].textContent = t.nav.rsvp;
+    }
+
+    /**
+     * Update hero section
+     */
+    updateHero(t) {
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            heroTitle.innerHTML = t.hero.title.replace('&', '<span class="ampersand">&</span>').replace('Are', 'Are<br>');
+        }
+
+        const heroSubtitle = document.querySelector('.hero-subtitle');
+        if (heroSubtitle) heroSubtitle.textContent = t.hero.subtitle;
+
+        const heroCTA = document.querySelector('.hero .cta-button');
+        if (heroCTA) heroCTA.textContent = t.hero.cta;
+    }
+
+    /**
+     * Update Save the Date section
+     */
+    updateSaveTheDate(t) {
+        const dateCard = document.querySelector('.date-card');
+        if (!dateCard) return;
+
+        const dateCardH2 = dateCard.querySelector('h2');
+        if (dateCardH2) dateCardH2.textContent = t.saveTheDate.title;
+
+        const dateLine = dateCard.querySelector('.date-line');
+        if (dateLine) dateLine.textContent = t.saveTheDate.date;
+
+        const timeLine = dateCard.querySelector('.time-line');
+        if (timeLine) timeLine.textContent = t.saveTheDate.time;
+
+        const year = dateCard.querySelector('.year');
+        if (year) year.textContent = t.saveTheDate.year;
+
+        const venueName = dateCard.querySelector('.venue-name');
+        if (venueName) venueName.textContent = t.saveTheDate.venueName;
+
+        const venueAddress = dateCard.querySelector('.venue-address');
+        if (venueAddress) venueAddress.textContent = t.saveTheDate.venueAddress;
+    }
+
+    /**
+     * Update Our Story section
+     */
+    updateOurStory(t) {
+        const storyTitle = document.querySelector('.our-story h2');
+        if (storyTitle) storyTitle.textContent = t.ourStory.title;
+
+        const storyText = document.querySelector('.story-text');
+        if (storyText) storyText.textContent = t.ourStory.text;
+
+        const storyCTA = document.querySelector('.our-story .cta-button');
+        if (storyCTA) storyCTA.textContent = t.ourStory.cta;
+    }
+
+    /**
+     * Update Celebration Details section
+     */
+    updateDetails(t) {
+        const detailsTitle = document.querySelector('.details-title');
+        if (detailsTitle) detailsTitle.textContent = t.details.title;
+
+        const detailsSubtitle = document.querySelector('.details-subtitle');
+        if (detailsSubtitle) detailsSubtitle.textContent = t.details.subtitle;
+
+        // Update each detail card
+        this.updateTimelineCard(t);
+        this.updateTransportCard(t);
+        this.updateProvidedCard(t);
+        this.updateAttireCard(t);
+        this.updateAccommodationsCard(t);
+        this.updateGiftsCard(t);
+        this.updateSpecialNotesCard(t);
+        this.updateStayConnectedCard(t);
+    }
+
+    /**
+     * Update Timeline detail card
+     */
+    updateTimelineCard(t) {
+        const card = document.querySelector('#timeline');
+        if (!card) return;
+
+        const header = card.previousElementSibling.querySelector('h3');
+        if (header) header.textContent = t.details.timeline.title;
+
+        const sections = card.querySelectorAll('.timeline-section');
+        if (sections[0]) {
+            const h4 = sections[0].querySelector('h4');
+            if (h4) h4.textContent = t.details.timeline.heading;
+
+            const paragraphs = sections[0].querySelectorAll('p');
+            if (paragraphs[0]) paragraphs[0].textContent = t.details.timeline.welcome;
+            if (paragraphs[1]) paragraphs[1].textContent = t.details.timeline.ceremony;
+            if (paragraphs[2]) paragraphs[2].textContent = t.details.timeline.cocktail;
+            if (paragraphs[3]) paragraphs[3].innerHTML = `<em>${t.details.timeline.cocktailNote}</em>`;
+        }
+
+        if (sections[1]) {
+            const paragraphs = sections[1].querySelectorAll('p');
+            if (paragraphs[0]) paragraphs[0].textContent = t.details.timeline.dinner;
+            if (paragraphs[1]) paragraphs[1].textContent = t.details.timeline.cake;
+            if (paragraphs[2]) paragraphs[2].textContent = t.details.timeline.farewell;
+        }
+    }
+
+    /**
+     * Update Transport detail card
+     */
+    updateTransportCard(t) {
+        const card = document.querySelector('#transport');
+        if (!card) return;
+
+        const header = card.previousElementSibling.querySelector('h3');
+        if (header) header.textContent = t.details.transport.title;
+
+        const h4s = card.querySelectorAll('h4');
+        if (h4s[0]) h4s[0].textContent = t.details.transport.heading;
+        if (h4s[1]) h4s[1].textContent = t.details.transport.returnHeading;
+
+        const paragraphs = card.querySelectorAll('p');
+        if (paragraphs[0]) paragraphs[0].textContent = t.details.transport.waterTaxi;
+        if (paragraphs[1]) paragraphs[1].textContent = t.details.transport.vaporetto;
+        if (paragraphs[2]) paragraphs[2].textContent = t.details.transport.privateBoat;
+        if (paragraphs[3]) paragraphs[3].textContent = t.details.transport.returnInfo;
+    }
+
+    /**
+     * Update What We Provide card
+     */
+    updateProvidedCard(t) {
+        const card = document.querySelector('#provided');
+        if (!card) return;
+
+        const header = card.previousElementSibling.querySelector('h3');
+        if (header) header.textContent = t.details.provided.title;
+
+        const paragraphs = card.querySelectorAll('p');
+        if (paragraphs[0]) paragraphs[0].textContent = t.details.provided.welcomeReception;
+        if (paragraphs[1]) paragraphs[1].textContent = t.details.provided.lunch;
+        if (paragraphs[2]) paragraphs[2].textContent = t.details.provided.openBar;
+        if (paragraphs[3]) paragraphs[3].textContent = t.details.provided.sunset;
+        if (paragraphs[4]) paragraphs[4].textContent = t.details.provided.transportation;
+        if (paragraphs[5]) paragraphs[5].textContent = t.details.provided.photography;
+        if (paragraphs[6]) paragraphs[6].textContent = t.details.provided.guide;
+    }
+
+    /**
+     * Update Attire card
+     */
+    updateAttireCard(t) {
+        const card = document.querySelector('#attire');
+        if (!card) return;
+
+        const header = card.previousElementSibling.querySelector('h3');
+        if (header) header.textContent = t.details.attire.title;
+
+        const h4 = card.querySelector('h4');
+        if (h4) h4.textContent = t.details.attire.dressCode;
+
+        const paragraphs = card.querySelectorAll('p');
+        const strongs = card.querySelectorAll('strong');
+
+        if (strongs[0]) strongs[0].textContent = t.details.attire.ladies;
+        if (paragraphs[0]) {
+            paragraphs[0].innerHTML = `<strong>${t.details.attire.ladies}</strong> ${t.details.attire.ladiesDetails}`;
+        }
+
+        if (strongs[1]) strongs[1].textContent = t.details.attire.gentlemen;
+        if (paragraphs[1]) {
+            paragraphs[1].innerHTML = `<strong>${t.details.attire.gentlemen}</strong> ${t.details.attire.gentlemanDetails}`;
+        }
+
+        if (paragraphs[2]) {
+            paragraphs[2].innerHTML = `<em>${t.details.attire.note}</em>`;
+        }
+    }
+
+    /**
+     * Update Accommodations card
+     */
+    updateAccommodationsCard(t) {
+        const card = document.querySelector('#hotels');
+        if (!card) return;
+
+        const header = card.previousElementSibling.querySelector('h3');
+        if (header) header.textContent = t.details.accommodations.title;
+
+        const h4 = card.querySelector('h4');
+        if (h4) h4.textContent = t.details.accommodations.heading;
+
+        const paragraphs = card.querySelectorAll('p');
+        if (paragraphs[0]) paragraphs[0].textContent = t.details.accommodations.addHere;
+        if (paragraphs[1]) paragraphs[1].textContent = t.details.accommodations.mestre;
+        if (paragraphs[2]) paragraphs[2].textContent = t.details.accommodations.veniceCity;
+    }
+
+    /**
+     * Update Gifts card
+     */
+    updateGiftsCard(t) {
+        const card = document.querySelector('#gifts');
+        if (!card) return;
+
+        const header = card.previousElementSibling.querySelector('h3');
+        if (header) header.textContent = t.details.gifts.title;
+
+        const paragraphs = card.querySelectorAll('p');
+        const strongs = card.querySelectorAll('strong');
+
+        if (strongs[0]) strongs[0].textContent = t.details.gifts.presenceGift;
+        if (paragraphs[0]) {
+            paragraphs[0].innerHTML = `<strong>${t.details.gifts.presenceGift}</strong>`;
+        }
+
+        if (paragraphs[1]) paragraphs[1].textContent = t.details.gifts.intro;
+        if (paragraphs[2]) paragraphs[2].textContent = t.details.gifts.monetary;
+        if (paragraphs[3]) paragraphs[3].textContent = t.details.gifts.howToContribute;
+        if (paragraphs[4]) paragraphs[4].textContent = t.details.gifts.bomboniere;
+        if (paragraphs[5]) {
+            paragraphs[5].innerHTML = `<em>${t.details.gifts.excited}</em>`;
+        }
+    }
+
+    /**
+     * Update Special Notes card
+     */
+    updateSpecialNotesCard(t) {
+        const card = document.querySelector('#notes');
+        if (!card) return;
+
+        const header = card.previousElementSibling.querySelector('h3');
+        if (header) header.textContent = t.details.specialNotes.title;
+
+        const h4s = card.querySelectorAll('h4');
+        if (h4s[0]) h4s[0].textContent = t.details.specialNotes.weatherTitle;
+        if (h4s[1]) h4s[1].textContent = t.details.specialNotes.photographyTitle;
+        if (h4s[2]) h4s[2].textContent = t.details.specialNotes.dietaryTitle;
+
+        const paragraphs = card.querySelectorAll('p');
+        if (paragraphs[0]) paragraphs[0].textContent = t.details.specialNotes.weatherInfo;
+        if (paragraphs[1]) paragraphs[1].textContent = t.details.specialNotes.photographyInfo;
+        if (paragraphs[2]) paragraphs[2].textContent = t.details.specialNotes.dietaryInfo;
+    }
+
+    /**
+     * Update Stay Connected card
+     */
+    updateStayConnectedCard(t) {
+        const card = document.querySelector('#connected');
+        if (!card) return;
+
+        const header = card.previousElementSibling.querySelector('h3');
+        if (header) header.textContent = t.details.stayConnected.title;
+
+        const h4s = card.querySelectorAll('h4');
+        if (h4s[0]) h4s[0].textContent = t.details.stayConnected.whatsappHeading;
+        if (h4s[1]) h4s[1].textContent = t.details.stayConnected.driveHeading;
+
+        const paragraphs = card.querySelectorAll('p');
+        if (paragraphs[0]) paragraphs[0].textContent = t.details.stayConnected.whatsappInfo;
+        if (paragraphs[2]) paragraphs[2].textContent = t.details.stayConnected.driveInfo;
+        if (paragraphs[4]) {
+            paragraphs[4].innerHTML = `<em>${t.details.stayConnected.linksNote}</em>`;
+        }
+
+        const links = card.querySelectorAll('a');
+        if (links[0]) {
+            links[0].innerHTML = t.details.stayConnected.whatsappLink;
+        }
+        if (links[1]) {
+            links[1].innerHTML = t.details.stayConnected.driveLink;
+        }
+    }
+
+    /**
+     * Update RSVP form
+     */
+    updateRSVPForm(t) {
+        const rsvpTitle = document.querySelector('.contact h2');
+        if (rsvpTitle) rsvpTitle.textContent = t.rsvp.title;
+
+        const rsvpSubtitle = document.querySelector('.contact p');
+        if (rsvpSubtitle) rsvpSubtitle.textContent = t.rsvp.subtitle;
+
+        // Update form labels
+        const labels = document.querySelectorAll('.contact-form label');
+        if (labels[0]) labels[0].innerHTML = `${t.rsvp.firstName} ${t.rsvp.required}`;
+        if (labels[1]) labels[1].innerHTML = `${t.rsvp.lastName} ${t.rsvp.required}`;
+        if (labels[2]) labels[2].innerHTML = `${t.rsvp.email} ${t.rsvp.required}`;
+        if (labels[3]) labels[3].textContent = t.rsvp.phone;
+        if (labels[4]) labels[4].innerHTML = `${t.rsvp.attendance} ${t.rsvp.required}`;
+        if (labels[5]) labels[5].textContent = t.rsvp.dietary;
+        if (labels[6]) labels[6].textContent = t.rsvp.message;
+
+        // Update attendance select options
+        const attendanceSelect = document.querySelector('#attendance');
+        if (attendanceSelect) {
+            const options = attendanceSelect.querySelectorAll('option');
+            if (options[0]) options[0].textContent = t.rsvp.attendanceSelect;
+            if (options[1]) options[1].textContent = t.rsvp.attendanceYes;
+            if (options[2]) options[2].textContent = t.rsvp.attendanceNo;
+            if (options[3]) options[3].textContent = t.rsvp.attendanceMaybe;
+        }
+
+        // Update dietary select options
+        const dietarySelect = document.querySelector('#dietary');
+        if (dietarySelect) {
+            const options = dietarySelect.querySelectorAll('option');
+            if (options[0]) options[0].textContent = t.rsvp.dietaryNone;
+            if (options[1]) options[1].textContent = t.rsvp.dietaryVegetarian;
+            if (options[2]) options[2].textContent = t.rsvp.dietaryVegan;
+            if (options[3]) options[3].textContent = t.rsvp.dietaryGlutenFree;
+            if (options[4]) options[4].textContent = t.rsvp.dietaryHalal;
+            if (options[5]) options[5].textContent = t.rsvp.dietaryKosher;
+            if (options[6]) options[6].textContent = t.rsvp.dietaryOther;
+        }
+
+        // Update message placeholder
+        const messageField = document.querySelector('#message');
+        if (messageField) {
+            messageField.setAttribute('placeholder', t.rsvp.messagePlaceholder);
+        }
+
+        // Update submit button
+        const submitButton = document.querySelector('.submit-button');
+        if (submitButton) submitButton.textContent = t.rsvp.submit;
+    }
+
+    /**
+     * Update footer
+     */
+    updateFooter(t) {
+        const footerH3 = document.querySelector('.footer-left h3');
+        if (footerH3) footerH3.textContent = t.footer.names;
+
+        const footerContact = document.querySelector('.footer-contact');
+        if (footerContact) {
+            const paragraphs = footerContact.querySelectorAll('p');
+            if (paragraphs[0]) paragraphs[0].textContent = t.footer.phone;
+            if (paragraphs[1]) paragraphs[1].textContent = t.footer.email;
+            if (paragraphs[2]) {
+                paragraphs[2].innerHTML = `${t.footer.location}<br>${t.footer.city}`;
+            }
+        }
+
+        const footerBottom = document.querySelector('.footer-bottom');
+        if (footerBottom) {
+            const paragraphs = footerBottom.querySelectorAll('p');
+            if (paragraphs[0]) paragraphs[0].textContent = t.footer.copyright;
+            if (paragraphs[1]) paragraphs[1].textContent = t.footer.credits;
+        }
+    }
+
+    /**
+     * Create language switcher UI
+     */
+    createLanguageSwitcher() {
+        // Create switcher container
+        const switcher = document.createElement('div');
+        switcher.className = 'language-switcher';
+        switcher.innerHTML = `
+            <button class="lang-btn ${this.currentLanguage === 'en' ? 'active' : ''}" data-lang="en">EN</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn ${this.currentLanguage === 'it' ? 'active' : ''}" data-lang="it">IT</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn ${this.currentLanguage === 'id' ? 'active' : ''}" data-lang="id">ID</button>
+        `;
+
+        // Add to navigation
+        const navContainer = document.querySelector('.nav-container');
+        if (navContainer) {
+            navContainer.appendChild(switcher);
+        }
+
+        // Add click event listeners
+        const langButtons = switcher.querySelectorAll('.lang-btn');
+        langButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const lang = e.target.getAttribute('data-lang');
+                this.switchLanguage(lang);
+            });
+        });
+
+        // Add styles
+        this.addLanguageSwitcherStyles();
+    }
+
+    /**
+     * Switch to a different language
+     */
+    switchLanguage(lang) {
+        if (!this.supportedLanguages.includes(lang)) {
+            console.warn(`Language ${lang} not supported`);
+            return;
+        }
+
+        // Save preference
+        localStorage.setItem('wedding-language', lang);
+
+        // Apply translations
+        this.applyTranslations(lang);
+    }
+
+    /**
+     * Update active language button state
+     */
+    updateLanguageButtons() {
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => {
+            const lang = btn.getAttribute('data-lang');
+            if (lang === this.currentLanguage) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    /**
+     * Add CSS styles for language switcher
+     */
+    addLanguageSwitcherStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+            .language-switcher {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-left: 40px;
+                padding: 0 20px;
+            }
+
+            .lang-btn {
+                background: none;
+                border: none;
+                color: #333;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+                padding: 5px 10px;
+                transition: all 0.3s ease;
+                border-radius: 4px;
+            }
+
+            .lang-btn:hover {
+                background-color: rgba(139, 69, 19, 0.1);
+                color: #8B4513;
+            }
+
+            .lang-btn.active {
+                color: #8B4513;
+                font-weight: 600;
+                background-color: rgba(139, 69, 19, 0.15);
+            }
+
+            .lang-divider {
+                color: #ccc;
+                font-size: 14px;
+            }
+
+            @media (max-width: 768px) {
+                .language-switcher {
+                    position: fixed;
+                    top: 10px;
+                    right: 10px;
+                    z-index: 1001;
+                    background: white;
+                    padding: 8px 12px;
+                    border-radius: 20px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                }
+
+                .lang-btn {
+                    font-size: 12px;
+                    padding: 4px 8px;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+// Initialize translation system when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        const translationManager = new TranslationManager();
+        translationManager.init();
+    });
+} else {
+    const translationManager = new TranslationManager();
+    translationManager.init();
+}
