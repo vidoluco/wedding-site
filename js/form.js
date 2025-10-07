@@ -21,9 +21,6 @@ class FormManager {
             message: { maxLength: 500 }
         };
 
-        // Initialize EmailJS
-        this.initializeEmailJS();
-
         if (this.form) {
             this.init();
         }
@@ -281,78 +278,23 @@ class FormManager {
         return data;
     }
 
-    initializeEmailJS() {
-        // Initialize EmailJS with your public key
-        // Check if config is available
-        const publicKey = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG.publicKey : 'YOUR_PUBLIC_KEY';
-
-        if (typeof emailjs !== 'undefined') {
-            emailjs.init(publicKey);
-            console.log('📧 EmailJS initialized');
-        } else {
-            console.warn('EmailJS not loaded');
-        }
-    }
-
     async submitForm(data) {
-        const results = {
-            googleSheets: { success: false, error: null },
-            email: { success: false, error: null }
-        };
-
-        // =============================================================================
-        // 1. SUBMIT TO GOOGLE SHEETS (Primary - Most Important!)
-        // =============================================================================
+        // Submit to Google Sheets via Apps Script
         try {
             const sheetsResult = await this.submitToGoogleSheets(data);
-            results.googleSheets.success = sheetsResult.success;
             console.log('✅ Google Sheets submission successful');
+
+            return {
+                success: true,
+                message: 'RSVP submitted successfully!',
+                showCalendar: data.attendance === 'yes'
+            };
         } catch (error) {
-            results.googleSheets.error = error.message;
             console.error('❌ Google Sheets submission failed:', error);
+            throw new Error(
+                'Unable to submit RSVP. Please try again or contact us directly at ludovico.fidelia.wedding@gmail.com'
+            );
         }
-
-        // =============================================================================
-        // 2. SUBMIT VIA EMAILJS (Secondary - Nice to have)
-        // =============================================================================
-        try {
-            const emailResult = await this.submitViaEmail(data);
-            results.email.success = emailResult.success;
-            console.log('✅ Email submission successful');
-        } catch (error) {
-            results.email.error = error.message;
-            console.error('⚠️ Email submission failed:', error);
-        }
-
-        // =============================================================================
-        // 3. EVALUATE RESULTS
-        // =============================================================================
-
-        // If Google Sheets succeeded, we're good!
-        if (results.googleSheets.success) {
-            return {
-                success: true,
-                message: 'RSVP submitted successfully! Check your email for confirmation.',
-                showCalendar: data.attendance === 'yes',
-                details: results
-            };
-        }
-
-        // If Google Sheets failed but email succeeded, warn but still accept
-        if (results.email.success) {
-            return {
-                success: true,
-                message: 'RSVP received via email. We\'ll confirm receipt shortly.',
-                showCalendar: data.attendance === 'yes',
-                details: results,
-                warning: 'Primary logging failed but email sent successfully.'
-            };
-        }
-
-        // Both failed - this is a problem
-        throw new Error(
-            'Unable to submit RSVP. Please try again or contact us directly at ludovico.fidelia.wedding@gmail.com'
-        );
     }
 
     async submitToGoogleSheets(data) {
@@ -426,71 +368,6 @@ class FormManager {
         }
 
         throw new Error('Google Sheets submission failed');
-    }
-
-    async submitViaEmail(data) {
-        // Check if EmailJS is enabled and configured
-        const emailConfig = typeof EMAILJS_CONFIG !== 'undefined' ? EMAILJS_CONFIG : null;
-
-        if (!emailConfig || !emailConfig.enabled) {
-            console.warn('EmailJS not configured or disabled');
-            return { success: false, error: 'Not configured' };
-        }
-
-        if (typeof emailjs === 'undefined') {
-            throw new Error('EmailJS library not loaded');
-        }
-
-        // Get configuration
-        const serviceId = emailConfig.serviceId || 'YOUR_SERVICE_ID';
-        const templateId = emailConfig.templateId || 'YOUR_TEMPLATE_ID';
-        const guestTemplateId = emailConfig.guestTemplateId || 'YOUR_GUEST_TEMPLATE_ID';
-
-        // Get form config for links
-        const formConfig = typeof FORM_CONFIG !== 'undefined' ? FORM_CONFIG : {};
-        const links = formConfig.links || {};
-
-        const templateParams = {
-            first_name: data.firstName,
-            last_name: data.lastName,
-            email: data.email,
-            phone: data.phone || 'Not provided',
-            attendance: data.attendance,
-            dietary_restrictions: data.dietary,
-            additional_info: data.message || 'None',
-            submission_date: new Date().toLocaleDateString(),
-            submission_time: new Date().toLocaleTimeString()
-        };
-
-        // Send email to you (the couple)
-        await emailjs.send(
-            serviceId,
-            templateId,
-            templateParams
-        );
-
-        // Send confirmation email to guest
-        const guestTemplateParams = {
-            to_email: data.email,
-            guest_name: `${data.firstName} ${data.lastName}`,
-            attendance_status: data.attendance,
-            wedding_date: 'Friday, May 29th, 2026',
-            wedding_time: '3:30 PM',
-            wedding_venue: 'San Servolo Island, Venice, Italy',
-            whatsapp_link: links.whatsapp || 'https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK',
-            gdrive_link: links.googleDrive || 'https://drive.google.com/drive/folders/YOUR_FOLDER_ID'
-        };
-
-        await emailjs.send(
-            serviceId,
-            guestTemplateId,
-            guestTemplateParams
-        );
-
-        return {
-            success: true,
-            message: 'Emails sent successfully'
-        };
     }
 
     handleSubmissionSuccess(result, formData) {
