@@ -271,7 +271,7 @@ class FormManager {
         const formData = new FormData(this.form);
         const data = {};
 
-        for (let [key, value] = formData.entries()) {
+        for (let [key, value] of formData.entries()) {
             data[key] = value.trim();
         }
 

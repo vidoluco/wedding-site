@@ -1,6 +1,10 @@
 /**
- * WEDDING WEBSITE CONFIGURATION
- * Configuration settings for external services
+ * WEDDING WEBSITE CONFIGURATION - EXAMPLE FILE
+ *
+ * SETUP INSTRUCTIONS:
+ * 1. Copy this file to config.js: cp config.example.js config.js
+ * 2. Fill in your actual values in config.js
+ * 3. Never commit config.js (it's in .gitignore)
  */
 
 // =============================================================================
@@ -8,10 +12,9 @@
 // =============================================================================
 
 // Google Apps Script Web App URL for logging RSVP submissions
-// See GOOGLE_SHEETS_SETUP.md for setup instructions
+// Get this from: Extensions > Apps Script > Deploy > New deployment > Web app
 const GOOGLE_SHEETS_CONFIG = {
-    // Replace this URL with your deployed Google Apps Script web app URL
-    // Get this from: Extensions > Apps Script > Deploy > New deployment > Web app
+    // Replace with your deployed Apps Script Web App URL
     webAppUrl: 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE',
 
     // Enable/disable Google Sheets logging
@@ -43,17 +46,17 @@ const EMAILJS_CONFIG = {
 const FORM_CONFIG = {
     // Event details for calendar invites
     event: {
-        title: 'Ludovico & Fidelia Wedding',
-        description: 'Join us for our wedding celebration on the beautiful San Servolo Island in Venice. A fusion of Italian romance and Indonesian traditions awaits!',
-        location: 'San Servolo Island, Venice, Italy',
-        startDate: '20260529T133000Z', // May 29, 2026, 3:30 PM UTC (15:30 Italy time)
-        endDate: '20260529T200000Z',   // May 29, 2026, 10:00 PM UTC (22:00 Italy time)
+        title: 'Your Wedding Title',
+        description: 'Wedding celebration description',
+        location: 'Wedding Venue Location',
+        startDate: '20260529T133000Z', // Format: YYYYMMDDTHHmmssZ
+        endDate: '20260529T200000Z',
     },
 
     // Links to share with guests
     links: {
         whatsapp: 'https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK',
-        googleDrive: 'https://drive.google.com/drive/folders/1PrqYuW-r0TgbHW19ElEZUiYiOsFheHm5?usp=sharing',
+        googleDrive: 'https://drive.google.com/drive/folders/YOUR_FOLDER_ID',
     },
 
     // Form validation settings

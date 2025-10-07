@@ -733,6 +733,7 @@ button {
 .footer-bottom p {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
+    margin: 10px 0;
 }
 
 .footer-bottom a {

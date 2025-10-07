@@ -24,23 +24,12 @@
   },
   "ourStory": {
     "title": "La Nostra Storia",
-    "text": "Il nostro matrimonio unisce due cuori legati dalla passione condivisa per la creatività culinaria e la sperimentazione infinita in cucina. Affrontiamo la vita con curiosità e determinazione, sfidandoci costantemente a crescere e sostenere i sogni dell'altro. E sì, siamo assolutamente devoti al nostro compagno felino che governa la nostra casa con uguale malizia e affetto. Unitevi a noi mentre celebriamo la bellissima fusione di passioni, crescita e gioia che definisce chi siamo insieme.",
+    "text": "Venivamo da mondi diversi, ma in qualche modo, nel mezzo della Romania, tutto è semplicemente scattato. Dalla nostra prima conversazione, c'era una facilità tra noi—una scintilla che è cresciuta in innumerevoli momenti condivisi, chiacchierate notturne e avventure esplorando la vita insieme. Abbiamo riso attraverso il caos, ci siamo sostenuti a vicenda nelle sfide, e abbiamo costruito un amore che si sente come casa. Dopo anni di crescita insieme, siamo pronti a dire \"sì, lo voglio.\" Siamo grati che tu faccia parte del nostro viaggio, e non vediamo l'ora di festeggiare con le persone che significano di più per noi.",
     "cta": "Conferma Presenza"
   },
   "details": {
     "title": "Dettagli della Celebrazione",
     "subtitle": "Tutto ciò che vi serve sapere per il nostro giorno speciale",
-    "timeline": {
-      "title": "Programma dell'Evento",
-      "heading": "Venerdì 29 Maggio 2026",
-      "welcome": "15:30 - 16:30 - Accoglienza sull'isola",
-      "ceremony": "16:30 - 17:30 - Cerimonia - Messa Evangelica",
-      "cocktail": "17:30 - 19:00 - Cocktail di benvenuto/aperitivo",
-      "cocktailNote": "Gli ospiti si intrattengono mentre gli sposi fanno le fotografie",
-      "dinner": "19:00 - 21:00 - Cena sulla terrazza",
-      "cake": "21:00 - 21:30 - Taglio della torta nuziale",
-      "farewell": "21:30 - 22:00 - Commiato"
-    },
     "transport": {
       "title": "Come Arrivare",
       "heading": "Raggiungere l'Isola di San Servolo",
@@ -49,16 +38,6 @@
       "privateBoat": "• Trasferimenti in barca privata disponibili (dettagli alla conferma)",
       "returnHeading": "Trasporto di Ritorno",
       "returnInfo": "Barche organizzate in partenza al termine dell'evento"
-    },
-    "provided": {
-      "title": "Cosa Offriamo",
-      "welcomeReception": "• Ricevimento di benvenuto all'arrivo",
-      "lunch": "• Servizio pranzo completo con menù dalle influenze italiane e indonesiane",
-      "openBar": "• Open bar",
-      "sunset": "• Vista tramonto sulla città di Venezia",
-      "transportation": "• Trasporto in barca per l'andata e il ritorno da Venezia*",
-      "photography": "• Fotografia professionale della celebrazione",
-      "guide": "• Guida locale della città di Venezia"
     },
     "attire": {
       "title": "Abbigliamento",
@@ -89,8 +68,6 @@
       "title": "Note Speciali",
       "weatherTitle": "Meteo a Venezia (Fine Maggio)",
       "weatherInfo": "Tipicamente 20-25°C - Giacca leggera consigliata per le gite in barca serali",
-      "photographyTitle": "Fotografia",
-      "photographyInfo": "Sentitevi liberi di scattare foto, ma vi preghiamo di essere presenti durante la cerimonia",
       "dietaryTitle": "Esigenze Alimentari",
       "dietaryInfo": "Si prega di specificare eventuali requisiti dietetici nel modulo di conferma"
     },
@@ -132,8 +109,6 @@
   },
   "footer": {
     "names": "Ludovico & Fidelia",
-    "phone": "+39 041 xxx xxxx",
-    "email": "ludovico.fidelia.wedding@gmail.com",
     "location": "Isola di San Servolo",
     "city": "Venezia, Italia",
     "copyright": "© 2026 Matrimonio Ludovico & Fidelia. Matrimonio all'Isola di San Servolo",

@@ -24,23 +24,12 @@
   },
   "ourStory": {
     "title": "Kisah Kami",
-    "text": "Pernikahan kami menyatukan dua hati yang dipersatukan oleh hasrat bersama untuk kreativitas kuliner dan eksperimen dapur tanpa henti. Kami mendekati hidup dengan rasa ingin tahu dan tekad, terus-menerus menantang diri kami untuk tumbuh dan mendukung impian satu sama lain. Dan ya, kami sangat mengabdikan diri kepada teman kucing kami yang memerintah rumah kami dengan kenakalan dan kasih sayang yang sama. Bergabunglah dengan kami saat kami merayakan perpaduan indah dari hasrat, pertumbuhan, dan kegembiraan yang mendefinisikan siapa kami bersama.",
+    "text": "Kami datang dari dunia yang berbeda, tetapi entah bagaimana, di tengah-tengah Romania, semuanya langsung terasa pas. Dari percakapan pertama kami, ada ketenangan di antara kami—percikan yang tumbuh menjadi momen bersama yang tak terhitung, obrolan larut malam, dan petualangan menjelajahi hidup bersama. Kami telah tertawa melalui kekacauan, saling mendukung melalui tantangan, dan membangun cinta yang terasa seperti rumah. Setelah bertahun-tahun tumbuh bersama, kami siap untuk mengatakan \"aku bersedia.\" Kami bersyukur Anda menjadi bagian dari perjalanan kami, dan kami tidak sabar untuk merayakan dengan orang-orang yang paling berarti bagi kami.",
     "cta": "Konfirmasi Kehadiran"
   },
   "details": {
     "title": "Detail Perayaan",
     "subtitle": "Semua yang perlu Anda ketahui untuk hari istimewa kami",
-    "timeline": {
-      "title": "Jadwal Acara",
-      "heading": "Jumat, 29 Mei 2026",
-      "welcome": "15:30 - 16:30 - Penyambutan di pulau",
-      "ceremony": "16:30 - 17:30 - Upacara - Misa Injili",
-      "cocktail": "17:30 - 19:00 - Koktail sambutan/aperitif",
-      "cocktailNote": "Tamu bercengkerama sementara pengantin baru berfoto",
-      "dinner": "19:00 - 21:00 - Makan malam di teras",
-      "cake": "21:00 - 21:30 - Pemotongan kue pengantin",
-      "farewell": "21:30 - 22:00 - Perpisahan"
-    },
     "transport": {
       "title": "Cara Menuju Lokasi",
       "heading": "Menuju Pulau San Servolo",
@@ -49,16 +38,6 @@
       "privateBoat": "• Transfer perahu pribadi tersedia (detail setelah konfirmasi)",
       "returnHeading": "Transportasi Kembali",
       "returnInfo": "Perahu yang diatur berangkat pada akhir acara"
-    },
-    "provided": {
-      "title": "Yang Kami Sediakan",
-      "welcomeReception": "• Resepsi sambutan saat kedatangan",
-      "lunch": "• Layanan makan siang lengkap dengan menu pengaruh Italia & Indonesia",
-      "openBar": "• Bar terbuka",
-      "sunset": "• Pemandangan matahari terbenam kota Venesia",
-      "transportation": "• Transportasi perahu kedatangan & kepulangan ke Venesia*",
-      "photography": "• Fotografi profesional perayaan",
-      "guide": "• Panduan kota lokal Venesia"
     },
     "attire": {
       "title": "Pakaian",
@@ -89,8 +68,6 @@
       "title": "Catatan Khusus",
       "weatherTitle": "Cuaca di Venesia (Akhir Mei)",
       "weatherInfo": "Biasanya 20-25°C - Jaket ringan disarankan untuk perjalanan perahu malam hari",
-      "photographyTitle": "Fotografi",
-      "photographyInfo": "Jangan ragu untuk mengambil foto, tetapi harap hadir selama upacara",
       "dietaryTitle": "Kebutuhan Makanan",
       "dietaryInfo": "Harap sebutkan persyaratan diet apa pun di formulir konfirmasi"
     },
@@ -132,8 +109,6 @@
   },
   "footer": {
     "names": "Ludovico & Fidelia",
-    "phone": "+39 041 xxx xxxx",
-    "email": "ludovico.fidelia.wedding@gmail.com",
     "location": "Pulau San Servolo",
     "city": "Venesia, Italia",
     "copyright": "© 2026 Pernikahan Ludovico & Fidelia. Pernikahan Pulau San Servolo",

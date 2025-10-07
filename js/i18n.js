@@ -47,23 +47,12 @@ class TranslationManager {
                 },
                 "ourStory": {
                     "title": "Our Story",
-                    "text": "Our wedding brings together two hearts united by our shared passion for culinary creativity and endless kitchen experimentation. We approach life with curiosity and determination, constantly challenging ourselves to grow and support each other's dreams. And yes, we're absolutely devoted to our feline companion who rules our home with equal parts mischief and affection. Join us as we celebrate the beautiful blend of passions, growth, and joy that defines who we are together.",
+                    "text": "We came from different worlds, but somehow, in the middle of Romania, everything just clicked. From our first conversation, there was an ease between us—a spark that grew into countless shared moments, late-night talks, and adventures exploring life together. We've laughed through the chaos, supported each other through challenges, and built a love that feels like home. After years of growing together, we're ready to say \"I do.\" We're grateful to have you be part of our journey, and we can't wait to celebrate with the people who mean the most to us.",
                     "cta": "RSVP Now"
                 },
                 "details": {
                     "title": "Celebration Details",
                     "subtitle": "Everything you need to know for our special day",
-                    "timeline": {
-                        "title": "Event Timeline",
-                        "heading": "Friday, May 29th, 2026",
-                        "welcome": "15:30 - 16:30 - Welcome on the island",
-                        "ceremony": "16:30 - 17:30 - Ceremony - Evangelical Mass",
-                        "cocktail": "17:30 - 19:00 - Welcome cocktail/aperitif",
-                        "cocktailNote": "Guests mingle while newlyweds have photos taken",
-                        "dinner": "19:00 - 21:00 - Dinner on the terrace",
-                        "cake": "21:00 - 21:30 - Cutting of the wedding cake",
-                        "farewell": "21:30 - 22:00 - Farewell"
-                    },
                     "transport": {
                         "title": "Getting There",
                         "heading": "Getting to San Servolo Island",
@@ -72,16 +61,6 @@ class TranslationManager {
                         "privateBoat": "• Private boat transfers available (details upon RSVP)",
                         "returnHeading": "Return Transportation",
                         "returnInfo": "Arranged boats departing at event termination"
-                    },
-                    "provided": {
-                        "title": "What We Provide",
-                        "welcomeReception": "• Welcome reception upon arrival",
-                        "lunch": "• Full lunch service with Italian & Indonesian influences menu",
-                        "openBar": "• Open bar",
-                        "sunset": "• Sunset view on Venice city",
-                        "transportation": "• Arrival & Return boat transportation to Venice*",
-                        "photography": "• Professional photography of the celebration",
-                        "guide": "• Venice local city guide"
                     },
                     "attire": {
                         "title": "Attire",
@@ -112,8 +91,6 @@ class TranslationManager {
                         "title": "Special Notes",
                         "weatherTitle": "Weather in Venice (Late May)",
                         "weatherInfo": "Typically 20-25°C - Light jacket recommended for evening boat rides",
-                        "photographyTitle": "Photography",
-                        "photographyInfo": "Feel free to take photos, but please be present during ceremony",
                         "dietaryTitle": "Dietary Needs",
                         "dietaryInfo": "Please specify any dietary requirements in the RSVP form"
                     },
@@ -155,8 +132,6 @@ class TranslationManager {
                 },
                 "footer": {
                     "names": "Ludovico & Fidelia",
-                    "phone": "+39 041 xxx xxxx",
-                    "email": "ludovico.fidelia.wedding@gmail.com",
                     "location": "San Servolo Island",
                     "city": "Venice, Italy",
                     "copyright": "© 2026 Ludovico & Fidelia Wedding. San Servolo Island Wedding",
@@ -189,23 +164,12 @@ class TranslationManager {
                 },
                 "ourStory": {
                     "title": "La Nostra Storia",
-                    "text": "Il nostro matrimonio unisce due cuori legati dalla passione condivisa per la creatività culinaria e la sperimentazione infinita in cucina. Affrontiamo la vita con curiosità e determinazione, sfidandoci costantemente a crescere e sostenere i sogni dell'altro. E sì, siamo assolutamente devoti al nostro compagno felino che governa la nostra casa con uguale malizia e affetto. Unitevi a noi mentre celebriamo la bellissima fusione di passioni, crescita e gioia che definisce chi siamo insieme.",
+                    "text": "Venivamo da mondi diversi, ma in qualche modo, nel mezzo della Romania, tutto è semplicemente scattato. Dalla nostra prima conversazione, c'era una facilità tra noi—una scintilla che è cresciuta in innumerevoli momenti condivisi, chiacchierate notturne e avventure esplorando la vita insieme. Abbiamo riso attraverso il caos, ci siamo sostenuti a vicenda nelle sfide, e abbiamo costruito un amore che si sente come casa. Dopo anni di crescita insieme, siamo pronti a dire \"sì, lo voglio.\" Siamo grati che tu faccia parte del nostro viaggio, e non vediamo l'ora di festeggiare con le persone che significano di più per noi.",
                     "cta": "Conferma Presenza"
                 },
                 "details": {
                     "title": "Dettagli della Celebrazione",
                     "subtitle": "Tutto ciò che vi serve sapere per il nostro giorno speciale",
-                    "timeline": {
-                        "title": "Programma dell'Evento",
-                        "heading": "Venerdì 29 Maggio 2026",
-                        "welcome": "15:30 - 16:30 - Accoglienza sull'isola",
-                        "ceremony": "16:30 - 17:30 - Cerimonia - Messa Evangelica",
-                        "cocktail": "17:30 - 19:00 - Cocktail di benvenuto/aperitivo",
-                        "cocktailNote": "Gli ospiti si intrattengono mentre gli sposi fanno le fotografie",
-                        "dinner": "19:00 - 21:00 - Cena sulla terrazza",
-                        "cake": "21:00 - 21:30 - Taglio della torta nuziale",
-                        "farewell": "21:30 - 22:00 - Commiato"
-                    },
                     "transport": {
                         "title": "Come Arrivare",
                         "heading": "Raggiungere l'Isola di San Servolo",
@@ -214,16 +178,6 @@ class TranslationManager {
                         "privateBoat": "• Trasferimenti in barca privata disponibili (dettagli alla conferma)",
                         "returnHeading": "Trasporto di Ritorno",
                         "returnInfo": "Barche organizzate in partenza al termine dell'evento"
-                    },
-                    "provided": {
-                        "title": "Cosa Offriamo",
-                        "welcomeReception": "• Ricevimento di benvenuto all'arrivo",
-                        "lunch": "• Servizio pranzo completo con menù dalle influenze italiane e indonesiane",
-                        "openBar": "• Open bar",
-                        "sunset": "• Vista tramonto sulla città di Venezia",
-                        "transportation": "• Trasporto in barca per l'andata e il ritorno da Venezia*",
-                        "photography": "• Fotografia professionale della celebrazione",
-                        "guide": "• Guida locale della città di Venezia"
                     },
                     "attire": {
                         "title": "Abbigliamento",
@@ -254,8 +208,6 @@ class TranslationManager {
                         "title": "Note Speciali",
                         "weatherTitle": "Meteo a Venezia (Fine Maggio)",
                         "weatherInfo": "Tipicamente 20-25°C - Giacca leggera consigliata per le gite in barca serali",
-                        "photographyTitle": "Fotografia",
-                        "photographyInfo": "Sentitevi liberi di scattare foto, ma vi preghiamo di essere presenti durante la cerimonia",
                         "dietaryTitle": "Esigenze Alimentari",
                         "dietaryInfo": "Si prega di specificare eventuali requisiti dietetici nel modulo di conferma"
                     },
@@ -297,8 +249,6 @@ class TranslationManager {
                 },
                 "footer": {
                     "names": "Ludovico & Fidelia",
-                    "phone": "+39 041 xxx xxxx",
-                    "email": "ludovico.fidelia.wedding@gmail.com",
                     "location": "Isola di San Servolo",
                     "city": "Venezia, Italia",
                     "copyright": "© 2026 Matrimonio Ludovico & Fidelia. Matrimonio all'Isola di San Servolo",
@@ -331,23 +281,12 @@ class TranslationManager {
                 },
                 "ourStory": {
                     "title": "Kisah Kami",
-                    "text": "Pernikahan kami menyatukan dua hati yang dipersatukan oleh hasrat bersama untuk kreativitas kuliner dan eksperimen dapur tanpa henti. Kami mendekati hidup dengan rasa ingin tahu dan tekad, terus-menerus menantang diri kami untuk tumbuh dan mendukung impian satu sama lain. Dan ya, kami sangat mengabdikan diri kepada teman kucing kami yang memerintah rumah kami dengan kenakalan dan kasih sayang yang sama. Bergabunglah dengan kami saat kami merayakan perpaduan indah dari hasrat, pertumbuhan, dan kegembiraan yang mendefinisikan siapa kami bersama.",
+                    "text": "Kami datang dari dunia yang berbeda, tetapi entah bagaimana, di tengah-tengah Romania, semuanya langsung terasa pas. Dari percakapan pertama kami, ada ketenangan di antara kami—percikan yang tumbuh menjadi momen bersama yang tak terhitung, obrolan larut malam, dan petualangan menjelajahi hidup bersama. Kami telah tertawa melalui kekacauan, saling mendukung melalui tantangan, dan membangun cinta yang terasa seperti rumah. Setelah bertahun-tahun tumbuh bersama, kami siap untuk mengatakan \"aku bersedia.\" Kami bersyukur Anda menjadi bagian dari perjalanan kami, dan kami tidak sabar untuk merayakan dengan orang-orang yang paling berarti bagi kami.",
                     "cta": "Konfirmasi Kehadiran"
                 },
                 "details": {
                     "title": "Detail Perayaan",
                     "subtitle": "Semua yang perlu Anda ketahui untuk hari istimewa kami",
-                    "timeline": {
-                        "title": "Jadwal Acara",
-                        "heading": "Jumat, 29 Mei 2026",
-                        "welcome": "15:30 - 16:30 - Penyambutan di pulau",
-                        "ceremony": "16:30 - 17:30 - Upacara - Misa Injili",
-                        "cocktail": "17:30 - 19:00 - Koktail sambutan/aperitif",
-                        "cocktailNote": "Tamu bercengkerama sementara pengantin baru berfoto",
-                        "dinner": "19:00 - 21:00 - Makan malam di teras",
-                        "cake": "21:00 - 21:30 - Pemotongan kue pengantin",
-                        "farewell": "21:30 - 22:00 - Perpisahan"
-                    },
                     "transport": {
                         "title": "Cara Menuju Lokasi",
                         "heading": "Menuju Pulau San Servolo",
@@ -356,16 +295,6 @@ class TranslationManager {
                         "privateBoat": "• Transfer perahu pribadi tersedia (detail setelah konfirmasi)",
                         "returnHeading": "Transportasi Kembali",
                         "returnInfo": "Perahu yang diatur berangkat pada akhir acara"
-                    },
-                    "provided": {
-                        "title": "Yang Kami Sediakan",
-                        "welcomeReception": "• Resepsi sambutan saat kedatangan",
-                        "lunch": "• Layanan makan siang lengkap dengan menu pengaruh Italia & Indonesia",
-                        "openBar": "• Bar terbuka",
-                        "sunset": "• Pemandangan matahari terbenam kota Venesia",
-                        "transportation": "• Transportasi perahu kedatangan & kepulangan ke Venesia*",
-                        "photography": "• Fotografi profesional perayaan",
-                        "guide": "• Panduan kota lokal Venesia"
                     },
                     "attire": {
                         "title": "Pakaian",
@@ -396,8 +325,6 @@ class TranslationManager {
                         "title": "Catatan Khusus",
                         "weatherTitle": "Cuaca di Venesia (Akhir Mei)",
                         "weatherInfo": "Biasanya 20-25°C - Jaket ringan disarankan untuk perjalanan perahu malam hari",
-                        "photographyTitle": "Fotografi",
-                        "photographyInfo": "Jangan ragu untuk mengambil foto, tetapi harap hadir selama upacara",
                         "dietaryTitle": "Kebutuhan Makanan",
                         "dietaryInfo": "Harap sebutkan persyaratan diet apa pun di formulir konfirmasi"
                     },
@@ -439,8 +366,6 @@ class TranslationManager {
                 },
                 "footer": {
                     "names": "Ludovico & Fidelia",
-                    "phone": "+39 041 xxx xxxx",
-                    "email": "ludovico.fidelia.wedding@gmail.com",
                     "location": "Pulau San Servolo",
                     "city": "Venesia, Italia",
                     "copyright": "© 2026 Pernikahan Ludovico & Fidelia. Pernikahan Pulau San Servolo",
@@ -636,44 +561,12 @@ class TranslationManager {
         if (detailsSubtitle) detailsSubtitle.textContent = t.details.subtitle;
 
         // Update each detail card
-        this.updateTimelineCard(t);
         this.updateTransportCard(t);
-        this.updateProvidedCard(t);
         this.updateAttireCard(t);
         this.updateAccommodationsCard(t);
         this.updateGiftsCard(t);
         this.updateSpecialNotesCard(t);
         this.updateStayConnectedCard(t);
-    }
-
-    /**
-     * Update Timeline detail card
-     */
-    updateTimelineCard(t) {
-        const card = document.querySelector('#timeline');
-        if (!card) return;
-
-        const header = card.previousElementSibling.querySelector('h3');
-        if (header) header.textContent = t.details.timeline.title;
-
-        const sections = card.querySelectorAll('.timeline-section');
-        if (sections[0]) {
-            const h4 = sections[0].querySelector('h4');
-            if (h4) h4.textContent = t.details.timeline.heading;
-
-            const paragraphs = sections[0].querySelectorAll('p');
-            if (paragraphs[0]) paragraphs[0].textContent = t.details.timeline.welcome;
-            if (paragraphs[1]) paragraphs[1].textContent = t.details.timeline.ceremony;
-            if (paragraphs[2]) paragraphs[2].textContent = t.details.timeline.cocktail;
-            if (paragraphs[3]) paragraphs[3].innerHTML = `<em>${t.details.timeline.cocktailNote}</em>`;
-        }
-
-        if (sections[1]) {
-            const paragraphs = sections[1].querySelectorAll('p');
-            if (paragraphs[0]) paragraphs[0].textContent = t.details.timeline.dinner;
-            if (paragraphs[1]) paragraphs[1].textContent = t.details.timeline.cake;
-            if (paragraphs[2]) paragraphs[2].textContent = t.details.timeline.farewell;
-        }
     }
 
     /**
@@ -695,26 +588,6 @@ class TranslationManager {
         if (paragraphs[1]) paragraphs[1].textContent = t.details.transport.vaporetto;
         if (paragraphs[2]) paragraphs[2].textContent = t.details.transport.privateBoat;
         if (paragraphs[3]) paragraphs[3].textContent = t.details.transport.returnInfo;
-    }
-
-    /**
-     * Update What We Provide card
-     */
-    updateProvidedCard(t) {
-        const card = document.querySelector('#provided');
-        if (!card) return;
-
-        const header = card.previousElementSibling.querySelector('h3');
-        if (header) header.textContent = t.details.provided.title;
-
-        const paragraphs = card.querySelectorAll('p');
-        if (paragraphs[0]) paragraphs[0].textContent = t.details.provided.welcomeReception;
-        if (paragraphs[1]) paragraphs[1].textContent = t.details.provided.lunch;
-        if (paragraphs[2]) paragraphs[2].textContent = t.details.provided.openBar;
-        if (paragraphs[3]) paragraphs[3].textContent = t.details.provided.sunset;
-        if (paragraphs[4]) paragraphs[4].textContent = t.details.provided.transportation;
-        if (paragraphs[5]) paragraphs[5].textContent = t.details.provided.photography;
-        if (paragraphs[6]) paragraphs[6].textContent = t.details.provided.guide;
     }
 
     /**
@@ -806,13 +679,11 @@ class TranslationManager {
 
         const h4s = card.querySelectorAll('h4');
         if (h4s[0]) h4s[0].textContent = t.details.specialNotes.weatherTitle;
-        if (h4s[1]) h4s[1].textContent = t.details.specialNotes.photographyTitle;
-        if (h4s[2]) h4s[2].textContent = t.details.specialNotes.dietaryTitle;
+        if (h4s[1]) h4s[1].textContent = t.details.specialNotes.dietaryTitle;
 
         const paragraphs = card.querySelectorAll('p');
         if (paragraphs[0]) paragraphs[0].textContent = t.details.specialNotes.weatherInfo;
-        if (paragraphs[1]) paragraphs[1].textContent = t.details.specialNotes.photographyInfo;
-        if (paragraphs[2]) paragraphs[2].textContent = t.details.specialNotes.dietaryInfo;
+        if (paragraphs[1]) paragraphs[1].textContent = t.details.specialNotes.dietaryInfo;
     }
 
     /**
@@ -909,10 +780,8 @@ class TranslationManager {
         const footerContact = document.querySelector('.footer-contact');
         if (footerContact) {
             const paragraphs = footerContact.querySelectorAll('p');
-            if (paragraphs[0]) paragraphs[0].textContent = t.footer.phone;
-            if (paragraphs[1]) paragraphs[1].textContent = t.footer.email;
-            if (paragraphs[2]) {
-                paragraphs[2].innerHTML = `${t.footer.location}<br>${t.footer.city}`;
+            if (paragraphs[0]) {
+                paragraphs[0].innerHTML = `${t.footer.location}<br>${t.footer.city}`;
             }
         }
 

@@ -4,12 +4,20 @@
 # Configuration Files with Credentials
 # =============================================================================
 
-# Backup of config file with actual credentials (keep config.js structure but protect filled versions)
+# Main config file with actual credentials (use config.example.js as template)
+js/config.js
+
+# Backup config files
 js/config.production.js
 config.local.js
+
+# Environment files
 .env
 .env.local
 .env.production
+
+# Apps Script folder with deployment keys
+apps-script/
 
 # =============================================================================
 # Operating System Files
