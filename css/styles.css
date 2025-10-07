@@ -576,6 +576,7 @@ button {
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .form-group.full-width {
@@ -583,17 +584,31 @@ button {
 }
 
 .form-group label {
-    display: block;
-    font-size: 13px;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    font-size: 16px;
     font-weight: 400;
     color: var(--text-secondary);
-    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    pointer-events: none;
     text-transform: none;
     letter-spacing: 0.3px;
 }
 
+/* Move label up when input is focused or filled */
+.form-group.focused label,
+.form-group.filled label,
+.form-group.success label,
+.form-group.error label {
+    top: -20px;
+    font-size: 13px;
+    color: var(--accent-brown);
+}
+
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     padding: 12px 0;
     border: none;
     border-bottom: 1px solid #CCCCCC;
@@ -603,6 +618,10 @@ button {
     background-color: transparent;
     transition: var(--transition-base);
     color: var(--text-primary);
+}
+
+.form-group select {
+    cursor: pointer;
 }
 
 .form-group input:focus,

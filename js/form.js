@@ -14,8 +14,8 @@ class FormManager {
         this.validationRules = {
             firstName: { required: true, minLength: 2 },
             lastName: { required: true, minLength: 2 },
-            email: { required: true, email: true },
-            phone: { phone: true },
+            email: { email: true },
+            phone: { required: true, phone: true },
             attendance: { required: true },
             dietary: {},
             message: { maxLength: 500 }
@@ -41,19 +41,49 @@ class FormManager {
         });
 
         // Field validation on blur
-        const fields = this.form.querySelectorAll('input, textarea');
+        const fields = this.form.querySelectorAll('input, textarea, select');
         fields.forEach(field => {
+            // Handle filled state for floating labels
+            this.updateFilledState(field);
+
             field.addEventListener('blur', () => {
+                const group = field.closest('.form-group');
+                group.classList.remove('focused');
                 this.validateField(field);
+                this.updateFilledState(field);
             });
 
             field.addEventListener('input', () => {
                 this.clearFieldError(field);
+                this.updateFilledState(field);
                 if (field.value.trim() !== '') {
                     this.validateField(field, false); // Silent validation
                 }
             });
+
+            field.addEventListener('change', () => {
+                this.clearFieldError(field);
+                this.updateFilledState(field);
+                if (field.value.trim() !== '') {
+                    this.validateField(field, false); // Silent validation
+                }
+            });
+
+            field.addEventListener('focus', () => {
+                const group = field.closest('.form-group');
+                group.classList.add('focused');
+                this.updateFilledState(field);
+            });
         });
+    }
+
+    updateFilledState(field) {
+        const group = field.closest('.form-group');
+        if (field.value.trim() !== '') {
+            group.classList.add('filled');
+        } else {
+            group.classList.remove('filled');
+        }
     }
 
     setupRealTimeValidation() {
@@ -468,13 +498,8 @@ class FormManager {
 
         container.appendChild(notification);
 
-        // Auto remove after 15 seconds (longer for enhanced message)
-        setTimeout(() => {
-            if (notification.parentElement) {
-                notification.style.animation = 'slideOutRight 0.5s ease';
-                setTimeout(() => notification.remove(), 500);
-            }
-        }, 15000);
+        // Note: Success message stays on screen until user manually closes it
+        // User can click the X button to dismiss
     }
 
     generateCalendarLinks() {
