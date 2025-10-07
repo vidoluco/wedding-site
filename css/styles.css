@@ -584,23 +584,31 @@ button {
 }
 
 .form-group label {
-    position: absolute;
-    top: 12px;
-    left: 0;
-    font-size: 16px;
+    display: block;
+    font-size: 13px;
     font-weight: 400;
     color: var(--text-secondary);
-    transition: all 0.3s ease;
-    pointer-events: none;
+    margin-bottom: 8px;
     text-transform: none;
     letter-spacing: 0.3px;
 }
 
+/* For input and textarea fields - use floating labels */
+.form-group:not(.has-select) label {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    margin-bottom: 0;
+}
+
 /* Move label up when input is focused or filled */
-.form-group.focused label,
-.form-group.filled label,
-.form-group.success label,
-.form-group.error label {
+.form-group:not(.has-select).focused label,
+.form-group:not(.has-select).filled label,
+.form-group:not(.has-select).success label,
+.form-group:not(.has-select).error label {
     top: -20px;
     font-size: 13px;
     color: var(--accent-brown);

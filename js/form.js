@@ -43,11 +43,17 @@ class FormManager {
         // Field validation on blur
         const fields = this.form.querySelectorAll('input, textarea, select');
         fields.forEach(field => {
+            const group = field.closest('.form-group');
+
+            // Mark groups with select elements
+            if (field.tagName === 'SELECT') {
+                group.classList.add('has-select');
+            }
+
             // Handle filled state for floating labels
             this.updateFilledState(field);
 
             field.addEventListener('blur', () => {
-                const group = field.closest('.form-group');
                 group.classList.remove('focused');
                 this.validateField(field);
                 this.updateFilledState(field);
@@ -70,7 +76,6 @@ class FormManager {
             });
 
             field.addEventListener('focus', () => {
-                const group = field.closest('.form-group');
                 group.classList.add('focused');
                 this.updateFilledState(field);
             });
