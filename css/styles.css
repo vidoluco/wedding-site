@@ -43,6 +43,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -52,6 +54,8 @@ body {
     color: var(--text-primary);
     background-color: var(--primary-bg);
     overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
 }
 
 img {
@@ -174,6 +178,7 @@ button {
     padding: 0 20px;
     width: 100%;
     text-align: center;
+    overflow-x: hidden;
 }
 
 /* Title above everything */
@@ -202,6 +207,8 @@ button {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .side-image {
@@ -210,12 +217,15 @@ button {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-width: 0;
+    max-width: 100%;
 }
 
 .side-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .hero-main-image {
@@ -224,12 +234,15 @@ button {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    min-width: 0;
+    max-width: 100%;
 }
 
 .hero-main-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .hero-subtitle {
@@ -270,12 +283,14 @@ button {
     height: 100vh;
     min-height: 600px;
     overflow: hidden;
+    max-width: 100%;
 }
 
 .venue-background {
     position: relative;
     width: 100%;
     height: 100%;
+    max-width: 100%;
 }
 
 .venue-background img {
@@ -343,12 +358,31 @@ button {
         transparent 100%);
 }
 
-/* Centered elegant card */
-.date-card {
+/* Date card clickable link wrapper */
+.date-card-link {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: inherit;
+    z-index: 3;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: block;
+}
+
+.date-card-link:hover {
+    transform: translate(-50%, -50%) scale(1.02);
+}
+
+.date-card-link:hover .date-card {
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+    border-color: rgba(139, 115, 85, 0.5);
+}
+
+/* Centered elegant card */
+.date-card {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(15px);
     padding: 50px 70px;
@@ -357,10 +391,11 @@ button {
     box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
     max-width: 500px;
     min-width: 400px;
-    z-index: 3;
+    width: 90%;
     border: 2px solid rgba(139, 115, 85, 0.3);
     border-top: 4px solid rgba(139, 115, 85, 0.5);
     border-bottom: 4px solid rgba(139, 115, 85, 0.5);
+    transition: all 0.3s ease;
 }
 
 .date-card h2 {
@@ -426,6 +461,8 @@ button {
     padding: var(--section-padding);
     background-color: var(--primary-bg);
     position: relative;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .story-container {
@@ -434,6 +471,7 @@ button {
     padding: var(--container-padding);
     position: relative;
     min-height: 600px;
+    width: 100%;
 }
 
 /* Scattered artistic images */
@@ -540,12 +578,15 @@ button {
 .contact {
     padding: var(--section-padding);
     background-color: var(--secondary-bg);
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .contact-container {
     max-width: 800px;
     margin: 0 auto;
     padding: var(--container-padding);
+    width: 100%;
 }
 
 .contact-content h2 {
@@ -685,12 +726,15 @@ button {
     background-color: var(--dark-bg);
     color: var(--text-light);
     padding: 60px 0 30px;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .footer-container {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: var(--container-padding);
+    width: 100%;
 }
 
 .footer-content {
@@ -776,6 +820,8 @@ button {
     padding: var(--section-padding);
     background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
     position: relative;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .details-container {
@@ -783,6 +829,7 @@ button {
     margin: 0 auto;
     padding: var(--container-padding);
     text-align: center;
+    width: 100%;
 }
 
 .details-title {

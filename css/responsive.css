@@ -17,17 +17,33 @@
         font-size: 2.5rem;
     }
 
-    .hero-images {
+    /* Hero images responsive layout */
+    .hero-images-layout {
         flex-direction: column;
-        gap: 30px;
-        align-items: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-main-image {
+        width: 100%;
+        max-width: 320px;
+        height: 240px;
+        order: -1;
     }
 
     .side-image {
         flex: none;
-        width: 280px;
+        width: 100%;
+        max-width: 280px;
         height: 200px;
         margin-top: 0 !important;
+    }
+
+    .hero-images {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
     }
 
     .main-content {
@@ -42,6 +58,8 @@
     .date-card {
         padding: 30px 20px;
         margin: 0 15px;
+        min-width: 280px;
+        width: calc(100% - 30px);
     }
 
     .date-card h2 {
@@ -124,17 +142,35 @@
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    .hero-images {
+    /* Fix hero images layout for mobile */
+    .hero-images-layout {
         flex-direction: column;
-        gap: 40px;
+        gap: 20px;
         align-items: center;
+        width: 100%;
+        max-width: 100%;
     }
 
     .side-image {
         flex: none;
-        width: 250px;
-        height: 180px;
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
         margin-top: 0 !important;
+    }
+
+    .hero-main-image {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+        order: -1;
+    }
+
+    .hero-images {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
     }
 
     .main-content {
@@ -223,6 +259,11 @@
         min-height: auto;
     }
 
+    .hero-container {
+        padding: 0 15px;
+        width: 100%;
+    }
+
     .hero-title {
         font-size: 2.2rem;
         line-height: 1.1;
@@ -232,6 +273,22 @@
     .hero-subtitle {
         font-size: 1rem;
         margin-bottom: 30px;
+    }
+
+    /* Make hero images fully responsive on small mobile */
+    .hero-images-layout {
+        gap: 15px;
+        padding: 0;
+    }
+
+    .hero-main-image {
+        max-width: 100%;
+        height: 220px;
+    }
+
+    .side-image {
+        max-width: 100%;
+        height: 180px;
     }
 
     .hero-image {
@@ -255,6 +312,8 @@
 
     .date-card {
         padding: 25px 15px;
+        min-width: 0;
+        width: calc(100% - 30px);
     }
 
     .date-card h2 {

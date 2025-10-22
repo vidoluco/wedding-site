@@ -55,8 +55,8 @@ const FORM_CONFIG = {
 
     // Links to share with guests
     links: {
-        whatsapp: 'https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK',
-        googleDrive: 'https://drive.google.com/drive/folders/YOUR_FOLDER_ID',
+        whatsapp: 'https://chat.whatsapp.com/IeEXqXxzhgh7fLk3txiyXL?mode=wwc',
+        googleDrive: 'https://drive.google.com/drive/folders/1PrqYuW-r0TgbHW19ElEZUiYiOsFheHm5?usp=sharing',
     },
 
     // Form validation settings

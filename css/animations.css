@@ -479,6 +479,126 @@
 }
 
 /* =============================================================================
+   KEBAB RAIN EASTER EGG
+   ============================================================================= */
+
+/* Kebab button styling */
+.kebab-easter-egg {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+/* Kebab button in footer - elegant inline placement */
+.kebab-easter-egg-footer {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+    margin-left: 12px;
+    position: relative;
+    top: -2px;
+}
+
+.kebab-easter-egg img,
+.kebab-easter-egg-footer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.kebab-easter-egg:hover,
+.kebab-easter-egg-footer:hover {
+    opacity: 1;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.kebab-easter-egg:active,
+.kebab-easter-egg-footer:active {
+    transform: scale(0.95) rotate(-5deg);
+}
+
+/* Falling kebab animation */
+@keyframes kebab-fall {
+    0% {
+        transform: translateY(-100px) rotate(var(--rotation));
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(calc(100vh + 100px)) rotate(calc(var(--rotation) + var(--spin-rotation)));
+        opacity: 0;
+    }
+}
+
+.falling-kebab {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform, opacity;
+}
+
+.falling-kebab img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Mobile-specific kebab button positioning */
+@media (max-width: 768px) {
+    .kebab-easter-egg {
+        width: 50px;
+        height: 50px;
+        left: 15px;
+        top: 15px;
+    }
+
+    .kebab-easter-egg-footer {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kebab-easter-egg {
+        width: 45px;
+        height: 45px;
+        left: 10px;
+        top: 10px;
+    }
+
+    .kebab-easter-egg-footer {
+        width: 28px;
+        height: 28px;
+        margin-left: 8px;
+        top: -1px;
+    }
+}
+
+/* =============================================================================
    REDUCED MOTION OVERRIDES
    ============================================================================= */
 
@@ -502,5 +622,10 @@
 
     .hover-scale:hover {
         transform: none;
+    }
+
+    /* Disable kebab rain for reduced motion */
+    .falling-kebab {
+        display: none !important;
     }
 }
