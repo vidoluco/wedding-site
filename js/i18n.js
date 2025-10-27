@@ -106,7 +106,7 @@ class TranslationManager {
                 },
                 "rsvp": {
                     "title": "RSVP",
-                    "subtitle": "Please confirm your attendance by May 1st, 2026",
+                    "subtitle": "Please confirm your attendance by December 31st, 2025",
                     "firstName": "First name",
                     "lastName": "Last name",
                     "email": "Email",
@@ -223,7 +223,7 @@ class TranslationManager {
                 },
                 "rsvp": {
                     "title": "Conferma Presenza",
-                    "subtitle": "Si prega di confermare la vostra presenza entro il 1° Maggio 2026",
+                    "subtitle": "Si prega di confermare la vostra presenza entro il 31 Dicembre 2025",
                     "firstName": "Nome",
                     "lastName": "Cognome",
                     "email": "Email",
@@ -340,7 +340,7 @@ class TranslationManager {
                 },
                 "rsvp": {
                     "title": "Konfirmasi Kehadiran",
-                    "subtitle": "Harap konfirmasi kehadiran Anda sebelum 1 Mei 2026",
+                    "subtitle": "Harap konfirmasi kehadiran Anda sebelum 31 Desember 2025",
                     "firstName": "Nama depan",
                     "lastName": "Nama belakang",
                     "email": "Email",
