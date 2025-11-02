@@ -317,6 +317,12 @@ class FormManager {
         // Submit to Google Sheets via Apps Script
         try {
             const sheetsResult = await this.submitToGoogleSheets(data);
+
+            // Check if submission actually succeeded
+            if (!sheetsResult.success) {
+                throw new Error(sheetsResult.error || 'Google Sheets submission failed');
+            }
+
             console.log('✅ Google Sheets submission successful');
 
             return {
