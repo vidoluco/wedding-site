@@ -10,6 +10,7 @@ js/config.js
 # Backup config files
 js/config.production.js
 config.local.js
+assets/images/folder
 
 # Environment files
 .env
