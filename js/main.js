@@ -205,18 +205,42 @@ function initializeParallax() {
 // =============================================================================
 
 function initializeLazyLoading() {
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    const allImages = document.querySelectorAll('img');
 
+    // Elegant fade-in when images actually load
+    allImages.forEach(img => {
+        // If already loaded (from cache), add loaded class immediately
+        if (img.complete && img.naturalHeight !== 0) {
+            img.classList.add('loaded');
+        } else {
+            // Otherwise, wait for the image to load
+            img.addEventListener('load', function() {
+                // Small delay for smooth blur-up effect
+                setTimeout(() => {
+                    img.classList.add('loaded');
+                }, 100);
+            });
+
+            // Handle load errors gracefully
+            img.addEventListener('error', function() {
+                img.classList.add('loaded'); // Still fade in to avoid awkward blank space
+                console.warn('Image failed to load:', img.src);
+            });
+        }
+    });
+
+    // IntersectionObserver for native lazy loading enhancement
     if ('IntersectionObserver' in window) {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
         const imageObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.src = img.src; // Trigger loading
-                    img.classList.add('loaded');
                     imageObserver.unobserve(img);
                 }
             });
+        }, {
+            rootMargin: '50px' // Start loading 50px before image enters viewport
         });
 
         lazyImages.forEach(img => {
