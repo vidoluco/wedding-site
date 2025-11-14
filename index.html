@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/carousel.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -51,18 +52,46 @@
                 Getting Married!
             </h1>
 
-            <!-- Image layout with side images -->
+            <!-- Image layout with side images (Desktop) -->
             <div class="hero-images-layout">
                 <div class="side-image left">
-                    <img src="assets/images/selected/00001_STD.jpg" alt="Bride on elegant stairs" loading="lazy">
+                    <img src="assets/images/cherry-picked-fifi/00018_STD.jpg" alt="Ludovico in elegant formal suit" loading="lazy">
                 </div>
 
                 <div class="hero-main-image">
-                    <img src="assets/images/selected/00049_STD.jpg" alt="Intimate portrait of Ludovico and Fidelia" loading="lazy">
+                    <img src="assets/images/cherry-picked-fifi/00045_STD.jpg" alt="Ludovico and Fidelia in romantic golden hour embrace" loading="lazy">
                 </div>
 
                 <div class="side-image right">
-                    <img src="assets/images/selected/00017_STD.jpg" alt="Groom portrait" loading="lazy">
+                    <img src="assets/images/cherry-picked-fifi/00030_STD.jpg" alt="Fidelia on elegant stone staircase" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Carousel layout (Mobile) -->
+            <div class="hero-images-carousel" role="region" aria-label="Hero images carousel" aria-live="polite">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <div class="side-image left">
+                            <img src="assets/images/cherry-picked-fifi/00018_STD.jpg" alt="Ludovico in elegant formal suit" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="hero-main-image">
+                            <img src="assets/images/cherry-picked-fifi/00045_STD.jpg" alt="Ludovico and Fidelia in romantic golden hour embrace" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="side-image right">
+                            <img src="assets/images/cherry-picked-fifi/00030_STD.jpg" alt="Fidelia on elegant stone staircase" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicator dots -->
+                <div class="carousel-indicators" role="tablist" aria-label="Carousel navigation">
+                    <button class="indicator active" role="tab" aria-label="View image 1" aria-current="true"></button>
+                    <button class="indicator" role="tab" aria-label="View image 2"></button>
+                    <button class="indicator" role="tab" aria-label="View image 3"></button>
                 </div>
             </div>
 
@@ -78,7 +107,7 @@
     <!-- Save the Date Section -->
     <section id="save-the-date" class="save-the-date">
         <div class="venue-background">
-            <img src="assets/images/selected/00117_STD.jpg" alt="Ludovico and Fidelia on tree-lined path" loading="lazy">
+            <img src="assets/images/cherry-picked-fifi/00137_STD.jpg" alt="Intimate detail of Ludovico and Fidelia holding hands" loading="lazy">
 
             <!-- White draping/curtain effects -->
             <div class="draping left"></div>
@@ -93,7 +122,6 @@
                 <div class="date-card">
                     <h2>Save the Date!</h2>
                     <p class="date-line">Friday, May 29th, 2026</p>
-                    <p class="time-line">at half past three in the afternoon</p>
                     <div class="divider">⟡</div>
                     <p class="year">2026</p>
                     <div class="divider">⟡</div>
@@ -110,19 +138,19 @@
             <!-- Scattered artistic images -->
             <div class="story-images-scattered">
                 <div class="story-image top-left">
-                    <img src="assets/images/selected/00045_STD.jpg" alt="Golden hour romance" loading="lazy">
+                    <img src="assets/images/cherry-picked-fifi/00160_STD.jpg" alt="Ludovico and Fidelia holding hands in autumn park" loading="lazy">
                 </div>
 
                 <div class="story-image top-right">
-                    <img src="assets/images/selected/00109_STD.jpg" alt="Joyful moments together" loading="lazy">
+                    <img src="assets/images/cherry-picked-fifi/00137_STD.jpg" alt="Intimate detail of intertwined hands" loading="lazy">
                 </div>
 
                 <div class="story-image bottom-left">
-                    <img src="assets/images/selected/00053_STD.jpg" alt="Walking through autumn" loading="lazy">
+                    <img src="assets/images/cherry-picked-fifi/00153_STD.jpg" alt="Warm couple portrait in autumn setting" loading="lazy">
                 </div>
 
                 <div class="story-image bottom-right">
-                    <img src="assets/images/selected/00081_STD.jpg" alt="Intimate embrace" loading="lazy">
+                    <img src="assets/images/cherry-picked-fifi/00128_STD.jpg" alt="Joyful moment by the greenhouse" loading="lazy">
                 </div>
             </div>
 
@@ -130,7 +158,7 @@
             <div class="story-content">
                 <h2>Our Story</h2>
                 <p class="story-text">
-                    We came from different worlds, but somehow, in the middle of Romania, everything just clicked. From our first conversation, there was an ease between us—a spark that grew into countless shared moments, late-night talks, and adventures exploring life together. We've laughed through the chaos, supported each other through challenges, and built a love that feels like home. After years of growing together, we're ready to say "I do." We're grateful to have you be part of our journey, and we can't wait to celebrate with the people who mean the most to us.
+                    We came from different worlds, but somehow, in the middle of Romania, everything just clicked. A spark that grew into countless shared moments, late-night talks, and adventures exploring life together. We've laughed through the chaos, supported each other through challenges, and built a love that feels like home. After years of growing together, we're ready to say "I do." We're grateful to have you be part of our journey, and we can't wait to celebrate with the people who mean the most to us.
                 </p>
 
                 <button class="cta-button" onclick="scrollToSection('contact')">
@@ -157,10 +185,14 @@
                     </div>
                     <div class="detail-content" id="transport">
                         <h4>Getting to San Servolo Island</h4>
-                        <p>• Private water taxi from designated location near FS Santa Lucia (Station) (Will be provided)</p>
-                        <p>• Transport by boat available on request by RSVP or message </p>
+                        <p>Transportation will be provided from FS Santa Lucia (Station) to San Servolo and back</p>
                         <br>
-                        <h4>Return Transportation included</h4>
+                        <p><strong>Boat departs:</strong> 16:00</p>
+                        <p><strong>Ceremony starts:</strong> 17:00</p>
+                        <br>
+                        <p>• Transport by boat available on request by RSVP or message</p>
+                        <br>
+                        <h4>Return Transportation Included</h4>
                         <p>Arranged boats departing at event termination</p>
                     </div>
                 </div>
@@ -173,27 +205,35 @@
                         <div class="detail-arrow">▼</div>
                     </div>
                     <div class="detail-content" id="attire">
-                        <h4>Dress Code: Elegant Casual</h4>
-                        <p><strong>Ladies:</strong> Elegant Dresses (please avoid white and blue)</p>
-                        <p><strong>Gentlemen:</strong> Suits (ties optional)</p>
+                        <h4>Attire: Dress to Impress!</h4>
+                        <p>Please join us in your favorite stylish and neat outfits. We can't wait to celebrate with you!</p>
                         <br>
-                        <p><em>Consider comfortable & elegant shoes for boat transfers</em></p>
+                        <p><strong>(Please avoid white and blue)</strong></p>
                     </div>
                 </div>
 
-                <!-- Accommodations -->
+                <!-- Event Timeline -->
                 <div class="detail-card">
-                    <div class="detail-header" onclick="toggleDetail('hotels')">
-                        <div class="detail-icon">🏨</div>
-                        <h3>Accommodations</h3>
+                    <div class="detail-header" onclick="toggleDetail('timeline')">
+                        <div class="detail-icon">⏰</div>
+                        <h3>Event Timeline</h3>
                         <div class="detail-arrow">▼</div>
                     </div>
-                    <div class="detail-content" id="hotels">
-                        <h4>Recommended Hotels in Venice:</h4>
-                        <p> ADD HERE </p>
-                        <p> Mestre Hotels </p>
-                        <p> Venice city Hotels</p>
-                        </div>
+                    <div class="detail-content" id="timeline">
+                        <h4>Friday, May 29th, 2026</h4>
+                        <p><strong>15:30</strong> - Mestre to Piazzale Roma (25-30 mins)</p>
+                        <p><strong>16:00</strong> - Boat departure to San Servolo (30 mins)</p>
+                        <p><strong>16:30 - 17:00</strong> - Welcome on the island</p>
+                        <p><strong>17:00 - 18:00</strong> - Ceremony - Evangelical Mass</p>
+                        <br>
+                        <p><em>Brief intermission for newlyweds to change for reception (30 mins)</em></p>
+                        <br>
+                        <p><strong>18:00 - 19:30</strong> - Welcome cocktail/aperitif</p>
+                        <p><em>While the newlyweds have their photos taken, guests are introduced and get to know each other</em></p>
+                        <p><strong>19:30 - 21:00</strong> - Dinner on the terrace</p>
+                        <p><strong>21:00 - 21:30</strong> - Cutting of the wedding cake</p>
+                        <p><strong>21:30 - 22:00</strong> - Farewell</p>
+                    </div>
                 </div>
 
                 <!-- Gifts & Appreciations -->
@@ -209,8 +249,6 @@
                         <p>For those who wish to honor us with a contribution toward our future together:</p>
                         <p>• A monetary gift would be graciously appreciated to help us establish our new home</p>
                         <p>• Contributions can be made via Revolut (QR code available at the event) or placed in an envelope at the celebration</p>
-                        <br>
-                        <p>• Traditional Italian bomboniere will be provided as our thank you</p>
                         <br>
                         <p><em>We're more excited to celebrate with you than receive anything else!</em></p>
                     </div>
@@ -291,7 +329,6 @@
                             <option value="">Please select</option>
                             <option value="yes">Yes, I'll be there!</option>
                             <option value="no">Sorry, can't make it</option>
-                            <option value="maybe">Not sure yet</option>
                         </select>
                     </div>
 
@@ -372,6 +409,7 @@
     <!-- IMPORTANT: config.js must be loaded BEFORE form.js -->
     <script src="js/config.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
     <script src="js/smooth-scroll.js"></script>
     <script src="js/form.js"></script>
     <!-- Kebab rain Easter egg -->

@@ -1,0 +1,225 @@
+/* Hero Images Carousel Styles */
+/* Mobile-first responsive carousel for hero section */
+
+/* ============================================
+   DESKTOP: Hide carousel, show original layout
+   ============================================ */
+@media (min-width: 992px) {
+    .hero-images-carousel {
+        display: none !important;
+    }
+
+    .hero-images-layout {
+        display: flex !important;
+    }
+
+    /* Zoom in on third image (bride on staircase) on DESKTOP too */
+    .hero-images-layout .side-image.right img {
+        object-fit: cover;
+        height: 100%;
+        object-position: center 48%;
+        transform: scale(2.5);
+    }
+}
+
+/* ============================================
+   MOBILE: Hide original, show carousel
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-images-layout {
+        display: none !important;
+    }
+
+    .hero-images-carousel {
+        display: block !important;
+    }
+}
+
+/* ============================================
+   CAROUSEL STRUCTURE
+   ============================================ */
+
+.hero-images-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: none; /* Hidden by default, shown on mobile via media query */
+    touch-action: pan-y; /* Allow vertical scrolling, prevent horizontal */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure images inside carousel maintain their styling */
+.carousel-slide .hero-main-image,
+.carousel-slide .side-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Zoom in on third slide (bride on staircase) to show person better */
+.carousel-slide:nth-child(3) img {
+    object-fit: cover;
+    height: 550px;
+    width: 100%;
+    object-position: center 45%;
+    transform: scale(2.5);
+}
+
+@media (max-width: 576px) {
+    .carousel-slide:nth-child(3) img {
+        height: 450px;
+        object-position: center 48%;
+        transform: scale(2.8);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-slide:nth-child(3) img {
+        height: 380px;
+        object-position: center 48%;
+        transform: scale(3.0);
+    }
+}
+
+/* ============================================
+   INDICATOR DOTS
+   ============================================ */
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 0;
+}
+
+.carousel-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #D4C4B0;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 0;
+    min-width: 44px; /* Accessibility: Touch target size */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Visual dot inside touch target */
+.carousel-indicators .indicator::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #D4C4B0;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: absolute;
+}
+
+.carousel-indicators .indicator:hover::before {
+    background-color: #8B7355;
+    transform: scale(1.2);
+}
+
+.carousel-indicators .indicator.active::before {
+    background-color: #8B7355;
+    transform: scale(1.3);
+}
+
+.carousel-indicators .indicator:focus {
+    outline: 2px solid #8B7355;
+    outline-offset: 4px;
+}
+
+/* Focus visible for keyboard navigation */
+.carousel-indicators .indicator:focus-visible {
+    outline: 2px solid #8B7355;
+    outline-offset: 4px;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-track {
+        transition: none !important;
+    }
+
+    .carousel-indicators .indicator,
+    .carousel-indicators .indicator::before {
+        transition: none !important;
+    }
+}
+
+/* ============================================
+   MOBILE SPECIFIC ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 576px) {
+    .hero-images-carousel {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .carousel-slide img {
+        border-radius: 8px;
+    }
+
+    .carousel-indicators {
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .carousel-indicators .indicator {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .carousel-indicators .indicator::before {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+
+.carousel-slide img:not(.loaded) {
+    opacity: 0;
+    filter: blur(10px);
+}
+
+.carousel-slide img.loaded {
+    opacity: 1;
+    filter: blur(0);
+}
