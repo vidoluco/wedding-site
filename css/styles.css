@@ -383,6 +383,10 @@ button {
 
 /* Centered elegant card */
 .date-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(15px);
     padding: 50px 70px;
@@ -396,6 +400,7 @@ button {
     border-top: 4px solid rgba(139, 115, 85, 0.5);
     border-bottom: 4px solid rgba(139, 115, 85, 0.5);
     transition: all 0.3s ease;
+    z-index: 3;
 }
 
 .date-card h2 {

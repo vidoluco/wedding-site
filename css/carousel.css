@@ -12,14 +12,6 @@
     .hero-images-layout {
         display: flex !important;
     }
-
-    /* Zoom in on third image (bride on staircase) on DESKTOP too */
-    .hero-images-layout .side-image.right img {
-        object-fit: cover;
-        height: 100%;
-        object-position: center 48%;
-        transform: scale(2.5);
-    }
 }
 
 /* ============================================
@@ -76,31 +68,6 @@
     object-fit: contain;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* Zoom in on third slide (bride on staircase) to show person better */
-.carousel-slide:nth-child(3) img {
-    object-fit: cover;
-    height: 550px;
-    width: 100%;
-    object-position: center 45%;
-    transform: scale(2.5);
-}
-
-@media (max-width: 576px) {
-    .carousel-slide:nth-child(3) img {
-        height: 450px;
-        object-position: center 48%;
-        transform: scale(2.8);
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-slide:nth-child(3) img {
-        height: 380px;
-        object-position: center 48%;
-        transform: scale(3.0);
-    }
 }
 
 /* ============================================

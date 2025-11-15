@@ -40,10 +40,10 @@ class TranslationManager {
                 "saveTheDate": {
                     "title": "Save the Date!",
                     "date": "Friday, May 29th, 2026",
-                    "time": "at half past three in the afternoon",
                     "year": "2026",
                     "venueName": "San Servolo Island",
-                    "venueAddress": "Isola di San Servolo, Venice, Italy"
+                    "venueAddress": "Isola di San Servolo, Venice, Italy",
+                    "eventDetailsBtn": "Event Details"
                 },
                 "ourStory": {
                     "title": "Our Story",
@@ -156,10 +156,10 @@ class TranslationManager {
                 "saveTheDate": {
                     "title": "Segna la Data!",
                     "date": "Venerdì 29 Maggio 2026",
-                    "time": "alle ore quindici e trenta",
                     "year": "2026",
                     "venueName": "Isola di San Servolo",
-                    "venueAddress": "Isola di San Servolo, Venezia, Italia"
+                    "venueAddress": "Isola di San Servolo, Venezia, Italia",
+                    "eventDetailsBtn": "Dettagli Evento"
                 },
                 "ourStory": {
                     "title": "La Nostra Storia",
@@ -273,10 +273,10 @@ class TranslationManager {
                 "saveTheDate": {
                     "title": "Simpan Tanggalnya!",
                     "date": "Jumat, 29 Mei 2026",
-                    "time": "pukul tiga setengah sore",
                     "year": "2026",
                     "venueName": "Pulau San Servolo",
-                    "venueAddress": "Isola di San Servolo, Venesia, Italia"
+                    "venueAddress": "Isola di San Servolo, Venesia, Italia",
+                    "eventDetailsBtn": "Detail Acara"
                 },
                 "ourStory": {
                     "title": "Kisah Kami",
@@ -522,9 +522,6 @@ class TranslationManager {
         const dateLine = dateCard.querySelector('.date-line');
         if (dateLine) dateLine.textContent = t.saveTheDate.date;
 
-        const timeLine = dateCard.querySelector('.time-line');
-        if (timeLine) timeLine.textContent = t.saveTheDate.time;
-
         const year = dateCard.querySelector('.year');
         if (year) year.textContent = t.saveTheDate.year;
 
@@ -533,6 +530,9 @@ class TranslationManager {
 
         const venueAddress = dateCard.querySelector('.venue-address');
         if (venueAddress) venueAddress.textContent = t.saveTheDate.venueAddress;
+
+        const eventDetailsBtn = dateCard.querySelector('.cta-button');
+        if (eventDetailsBtn) eventDetailsBtn.textContent = t.saveTheDate.eventDetailsBtn;
     }
 
     /**
