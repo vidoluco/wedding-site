@@ -8,7 +8,7 @@ class HeroCarousel {
 
         this.track = this.carousel.querySelector('.carousel-track');
         this.slides = Array.from(this.track.querySelectorAll('.carousel-slide'));
-        this.indicators = Array.from(this.carousel.querySelectorAll('.indicator'));
+        this.indicators = Array.from(this.carousel.querySelectorAll('.indicator') || []);
 
         this.currentIndex = 0;
         this.startX = 0;
@@ -39,14 +39,16 @@ class HeroCarousel {
         this.track.addEventListener('mouseup', (e) => this.handleMouseUp(e));
         this.track.addEventListener('mouseleave', (e) => this.handleMouseLeave(e));
 
-        // Indicator click events
-        this.indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                this.goToSlide(index);
-                this.pauseAutoPlay();
-                this.hasUserInteracted = true;
+        // Indicator click events (only if indicators exist)
+        if (this.indicators.length > 0) {
+            this.indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    this.goToSlide(index);
+                    this.pauseAutoPlay();
+                    this.hasUserInteracted = true;
+                });
             });
-        });
+        }
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeyboard(e));
@@ -187,16 +189,18 @@ class HeroCarousel {
 
         this.track.style.transform = `translateX(${offset}%)`;
 
-        // Update indicators
-        this.indicators.forEach((indicator, index) => {
-            if (index === this.currentIndex) {
-                indicator.classList.add('active');
-                indicator.setAttribute('aria-current', 'true');
-            } else {
-                indicator.classList.remove('active');
-                indicator.removeAttribute('aria-current');
-            }
-        });
+        // Update indicators (only if they exist)
+        if (this.indicators.length > 0) {
+            this.indicators.forEach((indicator, index) => {
+                if (index === this.currentIndex) {
+                    indicator.classList.add('active');
+                    indicator.setAttribute('aria-current', 'true');
+                } else {
+                    indicator.classList.remove('active');
+                    indicator.removeAttribute('aria-current');
+                }
+            });
+        }
 
         // Update aria-live region for screen readers
         const currentSlideNumber = this.currentIndex + 1;
