@@ -84,7 +84,8 @@ class FormManager {
 
     updateFilledState(field) {
         const group = field.closest('.form-group');
-        if (field.value.trim() !== '') {
+        // Add filled class if field has value OR has a placeholder
+        if (field.value.trim() !== '' || field.placeholder) {
             group.classList.add('filled');
         } else {
             group.classList.remove('filled');
