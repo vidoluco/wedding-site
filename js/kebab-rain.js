@@ -56,6 +56,7 @@
         const randomImage = randomChoice(CONFIG.kebabImages);
         img.src = CONFIG.imagePath + randomImage;
         img.alt = '🥙';
+        img.className = 'loaded'; // Bypass lazy loading to make kebab visible immediately
 
         kebab.appendChild(img);
 
@@ -89,6 +90,8 @@
      * Make it rain kebabs!
      */
     function makeItRain() {
+        console.log('🥙 Making it rain kebabs!');
+
         // Don't animate if user prefers reduced motion
         if (prefersReducedMotion) {
             console.log('Kebab rain disabled: user prefers reduced motion');

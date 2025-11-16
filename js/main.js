@@ -514,12 +514,28 @@ window.addEventListener('load', function() {
 // =============================================================================
 
 function toggleDetail(detailId) {
+    console.log('toggleDetail called with ID:', detailId);
+
     const content = document.getElementById(detailId);
+    if (!content) {
+        console.error('Detail content not found:', detailId);
+        return;
+    }
+    console.log('Content element found:', content);
+
     const header = content.previousElementSibling;
+    if (!header) {
+        console.error('Detail header not found for:', detailId);
+        return;
+    }
+    console.log('Header element found:', header);
 
     // Simply toggle the clicked detail without affecting others
     content.classList.toggle('active');
     header.classList.toggle('active');
+
+    console.log('Classes toggled. Content active?', content.classList.contains('active'));
+    console.log('Classes toggled. Header active?', header.classList.contains('active'));
 }
 
 // Initialize celebration details
@@ -543,6 +559,10 @@ function initializeCelebrationDetails() {
 
         // Update aria-expanded when clicked
         header.addEventListener('click', function() {
+            const detailId = this.nextElementSibling.id;
+            toggleDetail(detailId);
+
+            // Update aria-expanded AFTER toggle
             const content = this.nextElementSibling;
             const isExpanded = content.classList.contains('active');
             this.setAttribute('aria-expanded', isExpanded);
