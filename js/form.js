@@ -438,6 +438,22 @@ class FormManager {
     showEnhancedSuccessMessage(result, formData) {
         const container = document.querySelector('.notification-container');
 
+        // Get current language translations
+        const translationManager = window.translationManager;
+        const currentLang = translationManager ? translationManager.currentLanguage : 'en';
+        const translations = translationManager ? translationManager.translations[currentLang] : null;
+        const t = translations ? translations.rsvp : {
+            successTitle: 'Thank You',
+            successMessage: 'RSVP submitted successfully!',
+            calendarTitle: 'Add to Your Calendar',
+            calendarGoogle: 'Google Calendar',
+            calendarDownload: 'Download ICS',
+            stayConnectedTitle: 'Stay Connected',
+            whatsappBtn: 'Join WhatsApp Group',
+            gdriveBtn: 'Access Photo Album',
+            successFooter: 'We can\'t wait to celebrate with you! 💕'
+        };
+
         // Get links from config
         const formConfig = typeof FORM_CONFIG !== 'undefined' ? FORM_CONFIG : {};
         const links = formConfig.links || {};
@@ -452,13 +468,13 @@ class FormManager {
             const calendarLinks = this.generateCalendarLinks();
             calendarSection = `
                 <div class="success-section">
-                    <h4>📅 Add to Your Calendar</h4>
+                    <h4>📅 ${t.calendarTitle}</h4>
                     <div class="calendar-buttons">
                         <a href="${calendarLinks.google}" target="_blank" class="calendar-btn google">
-                            📅 Google Calendar
+                            📅 ${t.calendarGoogle}
                         </a>
                         <a href="${calendarLinks.ics}" download="ludovico-fidelia-wedding.ics" class="calendar-btn ics">
-                            📄 Download ICS
+                            📄 ${t.calendarDownload}
                         </a>
                     </div>
                 </div>
@@ -469,28 +485,28 @@ class FormManager {
             <div class="enhanced-success-content">
                 <div class="success-header">
                     <span class="success-icon">🎉</span>
-                    <h3>Thank You, ${formData.firstName}!</h3>
+                    <h3>${t.successTitle}, ${formData.firstName}!</h3>
                     <button class="notification-close" onclick="this.closest('.notification').remove()">×</button>
                 </div>
 
-                <p class="success-message">${result.message}</p>
+                <p class="success-message">${t.successMessage}</p>
 
                 ${calendarSection}
 
                 <div class="success-section">
-                    <h4>📱 Stay Connected</h4>
+                    <h4>📱 ${t.stayConnectedTitle}</h4>
                     <div class="social-buttons">
                         <a href="${whatsappLink}" target="_blank" class="social-btn whatsapp">
-                            📱 Join WhatsApp Group
+                            📱 ${t.whatsappBtn}
                         </a>
                         <a href="${gdriveLink}" target="_blank" class="social-btn gdrive">
-                            📸 Access Photo Album
+                            📸 ${t.gdriveBtn}
                         </a>
                     </div>
                 </div>
 
                 <div class="success-footer">
-                    <p><em>We can't wait to celebrate with you! 💕</em></p>
+                    <p><em>${t.successFooter}</em></p>
                 </div>
             </div>
         `;

@@ -10,7 +10,7 @@
     const CONFIG = {
         kebabCount: 40,                // Number of kebabs per click
         kebabImages: ['kebab-1.png', 'kebab-2.png', 'kebab-3.png', 'kebab-4.png'],
-        imagePath: 'assets/images/',
+        imagePath: 'assets/images/stickers/',
         minSize: 40,                   // Minimum kebab size in pixels
         maxSize: 80,                   // Maximum kebab size in pixels
         minDuration: 2000,             // Minimum fall duration in ms

@@ -127,7 +127,16 @@ class TranslationManager {
                     "message": "Additional Information",
                     "messagePlaceholder": "Guest names, special requests, dietary details if 'Other' selected...",
                     "submit": "Submit",
-                    "required": "*"
+                    "required": "*",
+                    "successTitle": "Thank You",
+                    "successMessage": "RSVP submitted successfully!",
+                    "calendarTitle": "Add to Your Calendar",
+                    "calendarGoogle": "Google Calendar",
+                    "calendarDownload": "Download ICS",
+                    "stayConnectedTitle": "Stay Connected",
+                    "whatsappBtn": "Join WhatsApp Group",
+                    "gdriveBtn": "Access Photo Album",
+                    "successFooter": "We can't wait to celebrate with you! 💕"
                 },
                 "footer": {
                     "names": "Ludovico & Fidelia",
@@ -244,7 +253,16 @@ class TranslationManager {
                     "message": "Informazioni Aggiuntive",
                     "messagePlaceholder": "Nomi degli ospiti, richieste speciali, dettagli dietetici se 'Altro' selezionato...",
                     "submit": "Invia",
-                    "required": "*"
+                    "required": "*",
+                    "successTitle": "Grazie",
+                    "successMessage": "RSVP inviato con successo!",
+                    "calendarTitle": "Aggiungi al Calendario",
+                    "calendarGoogle": "Google Calendar",
+                    "calendarDownload": "Scarica ICS",
+                    "stayConnectedTitle": "Rimani Connesso",
+                    "whatsappBtn": "Unisciti al Gruppo WhatsApp",
+                    "gdriveBtn": "Accedi all'Album Fotografico",
+                    "successFooter": "Non vediamo l'ora di festeggiare con voi! 💕"
                 },
                 "footer": {
                     "names": "Ludovico & Fidelia",
@@ -361,7 +379,16 @@ class TranslationManager {
                     "message": "Informasi Tambahan",
                     "messagePlaceholder": "Nama tamu, permintaan khusus, detail diet jika 'Lainnya' dipilih...",
                     "submit": "Kirim",
-                    "required": "*"
+                    "required": "*",
+                    "successTitle": "Terima Kasih",
+                    "successMessage": "RSVP berhasil dikirim!",
+                    "calendarTitle": "Tambahkan ke Kalender",
+                    "calendarGoogle": "Google Calendar",
+                    "calendarDownload": "Unduh ICS",
+                    "stayConnectedTitle": "Tetap Terhubung",
+                    "whatsappBtn": "Bergabung dengan Grup WhatsApp",
+                    "gdriveBtn": "Akses Album Foto",
+                    "successFooter": "Kami tidak sabar untuk merayakan dengan Anda! 💕"
                 },
                 "footer": {
                     "names": "Ludovico & Fidelia",
@@ -929,10 +956,10 @@ class TranslationManager {
 // Initialize translation system when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-        const translationManager = new TranslationManager();
-        translationManager.init();
+        window.translationManager = new TranslationManager();
+        window.translationManager.init();
     });
 } else {
-    const translationManager = new TranslationManager();
-    translationManager.init();
+    window.translationManager = new TranslationManager();
+    window.translationManager.init();
 }
