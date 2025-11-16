@@ -903,18 +903,23 @@ class TranslationManager {
             @media (max-width: 768px) {
                 .language-switcher {
                     position: fixed;
-                    top: 10px;
-                    right: 10px;
+                    top: 15px;
+                    right: 70px;
                     z-index: 1001;
                     background: white;
-                    padding: 8px 12px;
+                    padding: 6px 10px;
                     border-radius: 20px;
                     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                    margin-left: 0;
                 }
 
                 .lang-btn {
-                    font-size: 12px;
-                    padding: 4px 8px;
+                    font-size: 11px;
+                    padding: 3px 6px;
+                }
+
+                .lang-divider {
+                    font-size: 11px;
                 }
             }
         `;
