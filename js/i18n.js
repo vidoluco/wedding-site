@@ -47,7 +47,7 @@ class TranslationManager {
                 },
                 "ourStory": {
                     "title": "Our Story",
-                    "text": "We came from different worlds, but somehow, in the middle of Romania, everything just clicked. From our first conversation, there was an ease between us—a spark that grew into countless shared moments, late-night talks, and adventures exploring life together. We've laughed through the chaos, supported each other through challenges, and built a love that feels like home. After years of growing together, we're ready to say \"I do.\" We're grateful to have you be part of our journey, and we can't wait to celebrate with the people who mean the most to us.",
+                    "text": "We came from different worlds, but somehow, in the middle of Romania, everything just clicked. A spark that grew into countless shared moments, late-night talks, and adventures exploring life together. We've laughed through the chaos, supported each other through challenges, and built a love that feels like home. After years of growing together, we're ready to say \"I do.\" We're grateful to have you be part of our journey, and we can't wait to celebrate with the people who mean the most to us.",
                     "cta": "RSVP Now"
                 },
                 "details": {
@@ -163,7 +163,7 @@ class TranslationManager {
                 },
                 "ourStory": {
                     "title": "La Nostra Storia",
-                    "text": "Venivamo da mondi diversi, ma in qualche modo, nel mezzo della Romania, tutto è semplicemente scattato. Dalla nostra prima conversazione, c'era una facilità tra noi—una scintilla che è cresciuta in innumerevoli momenti condivisi, chiacchierate notturne e avventure esplorando la vita insieme. Abbiamo riso attraverso il caos, ci siamo sostenuti a vicenda nelle sfide, e abbiamo costruito un amore che si sente come casa. Dopo anni di crescita insieme, siamo pronti a dire \"sì, lo voglio.\" Siamo grati che tu faccia parte del nostro viaggio, e non vediamo l'ora di festeggiare con le persone che significano di più per noi.",
+                    "text": "Venivamo da mondi diversi, ma in qualche modo, nel mezzo della Romania, tutto è semplicemente scattato. Una scintilla che è cresciuta in innumerevoli momenti condivisi, chiacchierate notturne e avventure esplorando la vita insieme. Abbiamo riso attraverso il caos, ci siamo sostenuti a vicenda nelle sfide, e abbiamo costruito un amore che si sente come casa. Dopo anni di crescita insieme, siamo pronti a dire \"sì, lo voglio.\" Siamo grati che tu faccia parte del nostro viaggio, e non vediamo l'ora di festeggiare con le persone che significano di più per noi.",
                     "cta": "Conferma Presenza"
                 },
                 "details": {
@@ -280,7 +280,7 @@ class TranslationManager {
                 },
                 "ourStory": {
                     "title": "Kisah Kami",
-                    "text": "Kami datang dari dunia yang berbeda, tetapi entah bagaimana, di tengah-tengah Romania, semuanya langsung terasa pas. Dari percakapan pertama kami, ada ketenangan di antara kami—percikan yang tumbuh menjadi momen bersama yang tak terhitung, obrolan larut malam, dan petualangan menjelajahi hidup bersama. Kami telah tertawa melalui kekacauan, saling mendukung melalui tantangan, dan membangun cinta yang terasa seperti rumah. Setelah bertahun-tahun tumbuh bersama, kami siap untuk mengatakan \"aku bersedia.\" Kami bersyukur Anda menjadi bagian dari perjalanan kami, dan kami tidak sabar untuk merayakan dengan orang-orang yang paling berarti bagi kami.",
+                    "text": "Kami datang dari dunia yang berbeda, tetapi entah bagaimana, di tengah-tengah Romania, semuanya langsung terasa pas. Percikan yang tumbuh menjadi momen bersama yang tak terhitung, obrolan larut malam, dan petualangan menjelajahi hidup bersama. Kami telah tertawa melalui kekacauan, saling mendukung melalui tantangan, dan membangun cinta yang terasa seperti rumah. Setelah bertahun-tahun tumbuh bersama, kami siap untuk mengatakan \"aku bersedia.\" Kami bersyukur Anda menjadi bagian dari perjalanan kami, dan kami tidak sabar untuk merayakan dengan orang-orang yang paling berarti bagi kami.",
                     "cta": "Konfirmasi Kehadiran"
                 },
                 "details": {
