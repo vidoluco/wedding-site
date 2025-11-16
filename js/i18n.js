@@ -903,8 +903,9 @@ class TranslationManager {
             @media (max-width: 768px) {
                 .language-switcher {
                     position: fixed;
-                    top: 15px;
-                    right: 70px;
+                    top: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
                     z-index: 1001;
                     background: white;
                     padding: 6px 10px;
