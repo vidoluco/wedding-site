@@ -925,9 +925,12 @@ button {
 }
 
 .detail-content.active {
-    padding: 25px;
-    max-height: 1000px;
-    overflow-y: auto;
+    display: block !important;
+    padding: 25px !important;
+    max-height: 2000px !important;
+    overflow-y: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .detail-content h4 {

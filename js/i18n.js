@@ -600,24 +600,13 @@ class TranslationManager {
         if (header) header.textContent = t.details.attire.title;
 
         const h4 = card.querySelector('h4');
-        if (h4) h4.textContent = t.details.attire.dressCode;
+        if (h4) h4.textContent = t.details.attire.heading;
 
         const paragraphs = card.querySelectorAll('p');
+        if (paragraphs[0]) paragraphs[0].textContent = t.details.attire.intro;
+
         const strongs = card.querySelectorAll('strong');
-
-        if (strongs[0]) strongs[0].textContent = t.details.attire.ladies;
-        if (paragraphs[0]) {
-            paragraphs[0].innerHTML = `<strong>${t.details.attire.ladies}</strong> ${t.details.attire.ladiesDetails}`;
-        }
-
-        if (strongs[1]) strongs[1].textContent = t.details.attire.gentlemen;
-        if (paragraphs[1]) {
-            paragraphs[1].innerHTML = `<strong>${t.details.attire.gentlemen}</strong> ${t.details.attire.gentlemanDetails}`;
-        }
-
-        if (paragraphs[2]) {
-            paragraphs[2].innerHTML = `<em>${t.details.attire.note}</em>`;
-        }
+        if (strongs[0]) strongs[0].textContent = t.details.attire.note;
     }
 
     /**
@@ -774,7 +763,15 @@ class TranslationManager {
      */
     updateFooter(t) {
         const footerH3 = document.querySelector('.footer-left h3');
-        if (footerH3) footerH3.textContent = t.footer.names;
+        if (footerH3) {
+            // Preserve the kebab button while updating the text
+            const kebabButton = footerH3.querySelector('#kebab-button');
+            footerH3.textContent = t.footer.names;
+            if (kebabButton) {
+                footerH3.appendChild(document.createTextNode(' '));
+                footerH3.appendChild(kebabButton);
+            }
+        }
 
         const footerContact = document.querySelector('.footer-contact');
         if (footerContact) {

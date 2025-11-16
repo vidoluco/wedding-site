@@ -559,10 +559,6 @@ function initializeCelebrationDetails() {
 
         // Update aria-expanded when clicked
         header.addEventListener('click', function() {
-            const detailId = this.nextElementSibling.id;
-            toggleDetail(detailId);
-
-            // Update aria-expanded AFTER toggle
             const content = this.nextElementSibling;
             const isExpanded = content.classList.contains('active');
             this.setAttribute('aria-expanded', isExpanded);

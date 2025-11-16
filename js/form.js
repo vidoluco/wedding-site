@@ -727,15 +727,9 @@ END:VCALENDAR`;
     }
 
     formatPhoneNumber(field) {
-        let value = field.value.replace(/\D/g, '');
-
-        if (value.length >= 6) {
-            value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
-        } else if (value.length >= 3) {
-            value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
-        }
-
-        field.value = value;
+        // Don't format - allow international numbers with +, spaces, and dashes
+        // Users can type numbers in their own format (e.g., +40 750 402 301, +39 345 321 3909)
+        // Validation will strip non-digits and check length
     }
 }
 
