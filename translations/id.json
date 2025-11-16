@@ -33,14 +33,17 @@
     "transport": {
       "title": "Cara Menuju Lokasi",
       "heading": "Menuju Pulau San Servolo",
-      "waterTaxi": "• Taksi air dari Bandara Venice Marco Polo (30 menit)",
-      "vaporetto": "• Vaporetto Jalur 2 dari Piazzale Roma (20 menit)",
-      "privateBoat": "• Transfer perahu pribadi tersedia (detail setelah konfirmasi)",
-      "returnHeading": "Transportasi Kembali",
+      "info": "Transportasi akan disediakan dari Piazzale Roma ke San Servolo dan kembali",
+      "boatDeparts": "Perahu berangkat:",
+      "ceremonyStarts": "Upacara dimulai:",
+      "returnHeading": "Transportasi Kembali Termasuk",
       "returnInfo": "Perahu yang diatur berangkat pada akhir acara"
     },
     "attire": {
       "title": "Pakaian",
+      "heading": "Pakaian: Berpakaian untuk Membuat Kesan!",
+      "description": "Bergabunglah dengan kami dalam pakaian favorit Anda yang bergaya dan rapi. Kami tidak sabar untuk merayakan dengan Anda!",
+      "avoidColors": "(Harap hindari putih dan biru muda)",
       "dressCode": "Kode Berpakaian: Kasual Elegan",
       "ladies": "Wanita:",
       "ladiesDetails": "Gaun Elegan (harap hindari putih dan biru)",

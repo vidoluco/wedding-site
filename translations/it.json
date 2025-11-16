@@ -24,7 +24,7 @@
   },
   "ourStory": {
     "title": "La Nostra Storia",
-    "text": "Venivamo da mondi diversi, ma in qualche modo, nel mezzo della Romania, tutto è semplicemente scattato. Dalla nostra prima conversazione, c'era una facilità tra noi—una scintilla che è cresciuta in innumerevoli momenti condivisi, chiacchierate notturne e avventure esplorando la vita insieme. Abbiamo riso attraverso il caos, ci siamo sostenuti a vicenda nelle sfide, e abbiamo costruito un amore che si sente come casa. Dopo anni di crescita insieme, siamo pronti a dire \"sì, lo voglio.\" Siamo grati che tu faccia parte del nostro viaggio, e non vediamo l'ora di festeggiare con le persone che significano di più per noi.",
+    "text": "Proveniamo da mondi diversi, ma in qualche modo, nel mezzo della Romania, tutto è semplicemente scattato. Dalla nostra prima conversazione, c'era una facilità tra noi—una scintilla che è cresciuta in innumerevoli momenti condivisi, chiacchierate notturne e avventure esplorando la vita insieme. Abbiamo riso attraverso il caos, ci siamo sostenuti a vicenda nelle sfide, e abbiamo costruito un amore che si sente come casa. Dopo anni di crescita insieme, siamo pronti a dire \"sì, lo voglio.\" Siamo grati che tu faccia parte del nostro viaggio, e non vediamo l'ora di festeggiare con le persone che significano di più per noi.",
     "cta": "Conferma Presenza"
   },
   "details": {
@@ -33,14 +33,17 @@
     "transport": {
       "title": "Come Arrivare",
       "heading": "Raggiungere l'Isola di San Servolo",
-      "waterTaxi": "• Taxi acqueo dall'Aeroporto Marco Polo di Venezia (30 minuti)",
-      "vaporetto": "• Vaporetto Linea 2 da Piazzale Roma (20 minuti)",
-      "privateBoat": "• Trasferimenti in barca privata disponibili (dettagli alla conferma)",
-      "returnHeading": "Trasporto di Ritorno",
+      "info": "Il trasporto sarà fornito da Piazzale Roma a San Servolo e ritorno",
+      "boatDeparts": "Partenza barca:",
+      "ceremonyStarts": "Inizio cerimonia:",
+      "returnHeading": "Trasporto di Ritorno Incluso",
       "returnInfo": "Barche organizzate in partenza al termine dell'evento"
     },
     "attire": {
       "title": "Abbigliamento",
+      "heading": "Abbigliamento: Vestitevi per Impressionare!",
+      "description": "Unitevi a noi con i vostri outfit più eleganti e curati. Non vediamo l'ora di festeggiare con voi!",
+      "avoidColors": "(Si prega di evitare bianco e azzurro)",
       "dressCode": "Codice di Abbigliamento: Elegante Informale",
       "ladies": "Signore:",
       "ladiesDetails": "Abiti Eleganti (si prega di evitare bianco e blu)",

@@ -8,7 +8,7 @@ class HeroCarousel {
 
         this.track = this.carousel.querySelector('.carousel-track');
         this.slides = Array.from(this.track.querySelectorAll('.carousel-slide'));
-        this.indicators = Array.from(this.carousel.querySelectorAll('.indicator') || []);
+        this.indicators = [];
 
         this.currentIndex = 0;
         this.startX = 0;

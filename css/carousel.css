@@ -38,7 +38,7 @@
     margin: 0 auto;
     overflow: hidden;
     display: none; /* Hidden by default, shown on mobile via media query */
-    touch-action: pan-y; /* Allow vertical scrolling, prevent horizontal */
+    touch-action: pan-x; /* Allow horizontal scrolling for carousel */
 }
 
 .carousel-track {

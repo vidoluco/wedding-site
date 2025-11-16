@@ -33,14 +33,17 @@
     "transport": {
       "title": "Getting There",
       "heading": "Getting to San Servolo Island",
-      "waterTaxi": "• Water taxi from Venice Marco Polo Airport (30 minutes)",
-      "vaporetto": "• Vaporetto Line 2 from Piazzale Roma (20 minutes)",
-      "privateBoat": "• Private boat transfers available (details upon RSVP)",
-      "returnHeading": "Return Transportation",
+      "info": "Transportation will be provided from Piazzale Roma to San Servolo and back",
+      "boatDeparts": "Boat departs:",
+      "ceremonyStarts": "Ceremony starts:",
+      "returnHeading": "Return Transportation Included",
       "returnInfo": "Arranged boats departing at event termination"
     },
     "attire": {
       "title": "Attire",
+      "heading": "Attire: Dress to Impress!",
+      "description": "Please join us in your favorite stylish and neat outfits. We can't wait to celebrate with you!",
+      "avoidColors": "(Please avoid white and light blue)",
       "dressCode": "Dress Code: Elegant Casual",
       "ladies": "Ladies:",
       "ladiesDetails": "Elegant Dresses (please avoid white and blue)",
