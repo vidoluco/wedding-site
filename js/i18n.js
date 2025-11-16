@@ -64,12 +64,9 @@ class TranslationManager {
                     },
                     "attire": {
                         "title": "Attire",
-                        "dressCode": "Dress Code: Elegant Casual",
-                        "ladies": "Ladies:",
-                        "ladiesDetails": "Elegant Dresses (please avoid white and blue)",
-                        "gentlemen": "Gentlemen:",
-                        "gentlemanDetails": "Suits (ties optional)",
-                        "note": "Consider comfortable & elegant shoes for boat transfers"
+                        "heading": "Attire: Dress to Impress!",
+                        "intro": "Please join us in your favorite stylish and neat outfits. We can't wait to celebrate with you!",
+                        "note": "(Please avoid white and light blue)"
                     },
                     "accommodations": {
                         "title": "Accommodations",
@@ -83,8 +80,11 @@ class TranslationManager {
                         "presenceGift": "Your presence is our greatest gift!",
                         "intro": "For those who wish to honor us with a contribution toward our future together:",
                         "monetary": "• A monetary gift would be graciously appreciated to help us establish our new home",
-                        "howToContribute": "• Contributions can be made via Revolut (QR code available at the event) or placed in an envelope at the celebration",
-                        "bomboniere": "• Traditional Italian bomboniere will be provided as our thank you",
+                        "howToContribute": "• Contributions can be made via Revolut or placed in an envelope at the celebration",
+                        "bankDetailsHeading": "Romanian Leu Account Details:",
+                        "beneficiary": "Beneficiary: Ludovico Cesaro & FIDELIA FIDELIA",
+                        "iban": "IBAN: RO10 REVO 0000 2098 6240 2783",
+                        "swift": "BIC / SWIFT code: REVOROBB",
                         "excited": "We're more excited to celebrate with you than receive anything else!"
                     },
                     "specialNotes": {
@@ -180,12 +180,9 @@ class TranslationManager {
                     },
                     "attire": {
                         "title": "Abbigliamento",
-                        "dressCode": "Codice di Abbigliamento: Elegante Informale",
-                        "ladies": "Signore:",
-                        "ladiesDetails": "Abiti Eleganti (si prega di evitare bianco e blu)",
-                        "gentlemen": "Signori:",
-                        "gentlemanDetails": "Completi (cravatta opzionale)",
-                        "note": "Considerate scarpe comode ed eleganti per i trasferimenti in barca"
+                        "heading": "Abbigliamento: Vestiti per Impressionare!",
+                        "intro": "Vi preghiamo di unirvi a noi nei vostri outfit più eleganti e curati. Non vediamo l'ora di festeggiare con voi!",
+                        "note": "(Si prega di evitare bianco e azzurro)"
                     },
                     "accommodations": {
                         "title": "Sistemazioni",
@@ -199,8 +196,11 @@ class TranslationManager {
                         "presenceGift": "La vostra presenza è il regalo più grande!",
                         "intro": "Per coloro che desiderano onorarci con un contributo per il nostro futuro insieme:",
                         "monetary": "• Un regalo in denaro sarebbe gradito per aiutarci a costruire la nostra nuova casa",
-                        "howToContribute": "• I contributi possono essere effettuati tramite Revolut (codice QR disponibile all'evento) o inseriti in una busta durante la celebrazione",
-                        "bomboniere": "• Le tradizionali bomboniere italiane saranno fornite come nostro ringraziamento",
+                        "howToContribute": "• I contributi possono essere effettuati tramite Revolut o inseriti in una busta durante la celebrazione",
+                        "bankDetailsHeading": "Dettagli Conto in Lei Romeni:",
+                        "beneficiary": "Beneficiario: Ludovico Cesaro & FIDELIA FIDELIA",
+                        "iban": "IBAN: RO10 REVO 0000 2098 6240 2783",
+                        "swift": "Codice BIC / SWIFT: REVOROBB",
                         "excited": "Siamo più entusiasti di festeggiare con voi che di ricevere qualsiasi altra cosa!"
                     },
                     "specialNotes": {
@@ -297,12 +297,9 @@ class TranslationManager {
                     },
                     "attire": {
                         "title": "Pakaian",
-                        "dressCode": "Kode Berpakaian: Kasual Elegan",
-                        "ladies": "Wanita:",
-                        "ladiesDetails": "Gaun Elegan (harap hindari putih dan biru)",
-                        "gentlemen": "Pria:",
-                        "gentlemanDetails": "Setelan (dasi opsional)",
-                        "note": "Pertimbangkan sepatu yang nyaman & elegan untuk transfer perahu"
+                        "heading": "Pakaian: Berpakaian untuk Mengesankan!",
+                        "intro": "Bergabunglah dengan kami dalam pakaian bergaya dan rapi favorit Anda. Kami tidak sabar untuk merayakan dengan Anda!",
+                        "note": "(Harap hindari putih dan biru muda)"
                     },
                     "accommodations": {
                         "title": "Akomodasi",
@@ -316,8 +313,11 @@ class TranslationManager {
                         "presenceGift": "Kehadiran Anda adalah hadiah terbesar kami!",
                         "intro": "Bagi mereka yang ingin menghormati kami dengan kontribusi untuk masa depan kami bersama:",
                         "monetary": "• Hadiah uang akan sangat kami hargai untuk membantu kami membangun rumah baru kami",
-                        "howToContribute": "• Kontribusi dapat dilakukan melalui Revolut (kode QR tersedia di acara) atau dimasukkan dalam amplop pada perayaan",
-                        "bomboniere": "• Bomboniere Italia tradisional akan diberikan sebagai ucapan terima kasih kami",
+                        "howToContribute": "• Kontribusi dapat dilakukan melalui Revolut atau dimasukkan dalam amplop pada perayaan",
+                        "bankDetailsHeading": "Detail Rekening Lei Rumania:",
+                        "beneficiary": "Penerima: Ludovico Cesaro & FIDELIA FIDELIA",
+                        "iban": "IBAN: RO10 REVO 0000 2098 6240 2783",
+                        "swift": "Kode BIC / SWIFT: REVOROBB",
                         "excited": "Kami lebih bersemangat untuk merayakan dengan Anda daripada menerima apa pun!"
                     },
                     "specialNotes": {
