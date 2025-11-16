@@ -903,11 +903,11 @@ class TranslationManager {
             @media (max-width: 768px) {
                 .language-switcher {
                     position: fixed;
-                    top: 20px;
+                    top: 70px;
                     left: 50%;
                     transform: translateX(-50%);
                     z-index: 1001;
-                    background: white;
+                    background: rgba(255, 255, 255, 0.95);
                     padding: 6px 10px;
                     border-radius: 20px;
                     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
