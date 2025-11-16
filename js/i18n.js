@@ -56,17 +56,17 @@ class TranslationManager {
                     "transport": {
                         "title": "Getting There",
                         "heading": "Getting to San Servolo Island",
-                        "waterTaxi": "• Water taxi from Venice Marco Polo Airport (30 minutes)",
-                        "vaporetto": "• Vaporetto Line 2 from Piazzale Roma (20 minutes)",
-                        "privateBoat": "• Private boat transfers available (details upon RSVP)",
-                        "returnHeading": "Return Transportation",
+                        "info": "Transportation will be provided from Piazzale Roma to San Servolo and back",
+                        "boatDeparts": "Boat departs:",
+                        "ceremonyStarts": "Ceremony starts:",
+                        "returnHeading": "Return Transportation Included",
                         "returnInfo": "Arranged boats departing at event termination"
                     },
                     "attire": {
                         "title": "Attire",
                         "heading": "Attire: Dress to Impress!",
-                        "intro": "Please join us in your favorite stylish and neat outfits. We can't wait to celebrate with you!",
-                        "note": "(Please avoid white and light blue)"
+                        "description": "Please join us in your favorite stylish and neat outfits. We can't wait to celebrate with you!",
+                        "avoidColors": "(Please avoid white and light blue)"
                     },
                     "accommodations": {
                         "title": "Accommodations",
@@ -172,7 +172,7 @@ class TranslationManager {
                 },
                 "ourStory": {
                     "title": "La Nostra Storia",
-                    "text": "Venivamo da mondi diversi, ma in qualche modo, nel mezzo della Romania, tutto è semplicemente scattato. Una scintilla che è cresciuta in innumerevoli momenti condivisi, chiacchierate notturne e avventure esplorando la vita insieme. Abbiamo riso attraverso il caos, ci siamo sostenuti a vicenda nelle sfide, e abbiamo costruito un amore che si sente come casa. Dopo anni di crescita insieme, siamo pronti a dire \"sì, lo voglio.\" Siamo grati che tu faccia parte del nostro viaggio, e non vediamo l'ora di festeggiare con le persone che significano di più per noi.",
+                    "text": "Proveniamo da mondi diversi, ma in qualche modo, nel mezzo della Romania, tutto è semplicemente scattato. Una scintilla che è cresciuta in innumerevoli momenti condivisi, chiacchierate notturne e avventure esplorando la vita insieme. Abbiamo riso attraverso il caos, ci siamo sostenuti a vicenda nelle sfide, e abbiamo costruito un amore che si sente come casa. Dopo anni di crescita insieme, siamo pronti a dire \"sì, lo voglio.\" Siamo grati che tu faccia parte del nostro viaggio, e non vediamo l'ora di festeggiare con le persone che significano di più per noi.",
                     "cta": "Conferma Presenza"
                 },
                 "details": {
@@ -181,17 +181,17 @@ class TranslationManager {
                     "transport": {
                         "title": "Come Arrivare",
                         "heading": "Raggiungere l'Isola di San Servolo",
-                        "waterTaxi": "• Taxi acqueo dall'Aeroporto Marco Polo di Venezia (30 minuti)",
-                        "vaporetto": "• Vaporetto Linea 2 da Piazzale Roma (20 minuti)",
-                        "privateBoat": "• Trasferimenti in barca privata disponibili (dettagli alla conferma)",
-                        "returnHeading": "Trasporto di Ritorno",
+                        "info": "Il trasporto sarà fornito da Piazzale Roma a San Servolo e ritorno",
+                        "boatDeparts": "Partenza barca:",
+                        "ceremonyStarts": "Inizio cerimonia:",
+                        "returnHeading": "Trasporto di Ritorno Incluso",
                         "returnInfo": "Barche organizzate in partenza al termine dell'evento"
                     },
                     "attire": {
                         "title": "Abbigliamento",
-                        "heading": "Abbigliamento: Vestiti per Impressionare!",
-                        "intro": "Vi preghiamo di unirvi a noi nei vostri outfit più eleganti e curati. Non vediamo l'ora di festeggiare con voi!",
-                        "note": "(Si prega di evitare bianco e azzurro)"
+                        "heading": "Abbigliamento: Vestitevi per Impressionare!",
+                        "description": "Unitevi a noi con i vostri outfit più eleganti e curati. Non vediamo l'ora di festeggiare con voi!",
+                        "avoidColors": "(Si prega di evitare bianco e azzurro)"
                     },
                     "accommodations": {
                         "title": "Sistemazioni",
@@ -307,17 +307,17 @@ class TranslationManager {
                     "transport": {
                         "title": "Cara Menuju Lokasi",
                         "heading": "Menuju Pulau San Servolo",
-                        "waterTaxi": "• Taksi air dari Bandara Venice Marco Polo (30 menit)",
-                        "vaporetto": "• Vaporetto Jalur 2 dari Piazzale Roma (20 menit)",
-                        "privateBoat": "• Transfer perahu pribadi tersedia (detail setelah konfirmasi)",
-                        "returnHeading": "Transportasi Kembali",
+                        "info": "Transportasi akan disediakan dari Piazzale Roma ke San Servolo dan kembali",
+                        "boatDeparts": "Perahu berangkat:",
+                        "ceremonyStarts": "Upacara dimulai:",
+                        "returnHeading": "Transportasi Kembali Termasuk",
                         "returnInfo": "Perahu yang diatur berangkat pada akhir acara"
                     },
                     "attire": {
                         "title": "Pakaian",
                         "heading": "Pakaian: Berpakaian untuk Mengesankan!",
-                        "intro": "Bergabunglah dengan kami dalam pakaian bergaya dan rapi favorit Anda. Kami tidak sabar untuk merayakan dengan Anda!",
-                        "note": "(Harap hindari putih dan biru muda)"
+                        "description": "Bergabunglah dengan kami dalam pakaian bergaya dan rapi favorit Anda. Kami tidak sabar untuk merayakan dengan Anda!",
+                        "avoidColors": "(Harap hindari putih dan biru muda)"
                     },
                     "accommodations": {
                         "title": "Akomodasi",
@@ -610,9 +610,12 @@ class TranslationManager {
         if (h4s[1]) h4s[1].textContent = t.details.transport.returnHeading;
 
         const paragraphs = card.querySelectorAll('p');
-        if (paragraphs[0]) paragraphs[0].textContent = t.details.transport.waterTaxi;
-        if (paragraphs[1]) paragraphs[1].textContent = t.details.transport.vaporetto;
-        if (paragraphs[2]) paragraphs[2].textContent = t.details.transport.privateBoat;
+        if (paragraphs[0]) paragraphs[0].textContent = t.details.transport.info;
+
+        const strongs = card.querySelectorAll('strong');
+        if (strongs[0]) strongs[0].textContent = t.details.transport.boatDeparts;
+        if (strongs[1]) strongs[1].textContent = t.details.transport.ceremonyStarts;
+
         if (paragraphs[3]) paragraphs[3].textContent = t.details.transport.returnInfo;
     }
 
@@ -630,10 +633,10 @@ class TranslationManager {
         if (h4) h4.textContent = t.details.attire.heading;
 
         const paragraphs = card.querySelectorAll('p');
-        if (paragraphs[0]) paragraphs[0].textContent = t.details.attire.intro;
+        if (paragraphs[0]) paragraphs[0].textContent = t.details.attire.description;
 
         const strongs = card.querySelectorAll('strong');
-        if (strongs[0]) strongs[0].textContent = t.details.attire.note;
+        if (strongs[0]) strongs[0].textContent = t.details.attire.avoidColors;
     }
 
     /**
