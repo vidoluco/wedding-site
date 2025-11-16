@@ -903,24 +903,25 @@ class TranslationManager {
             @media (max-width: 768px) {
                 .language-switcher {
                     position: fixed;
-                    top: 70px;
-                    left: 50%;
-                    transform: translateX(-50%);
+                    top: 15px;
+                    right: 60px;
+                    left: auto;
+                    transform: none;
                     z-index: 1001;
                     background: rgba(255, 255, 255, 0.95);
-                    padding: 6px 10px;
-                    border-radius: 20px;
+                    padding: 4px 8px;
+                    border-radius: 15px;
                     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
                     margin-left: 0;
                 }
 
                 .lang-btn {
-                    font-size: 11px;
-                    padding: 3px 6px;
+                    font-size: 10px;
+                    padding: 2px 4px;
                 }
 
                 .lang-divider {
-                    font-size: 11px;
+                    font-size: 10px;
                 }
             }
         `;
