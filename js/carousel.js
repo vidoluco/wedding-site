@@ -29,7 +29,7 @@ class HeroCarousel {
         this.updateCarousel(false);
 
         // Touch events
-        this.track.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
+        this.track.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: false });
         this.track.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
         this.track.addEventListener('touchend', (e) => this.handleTouchEnd(e));
 
@@ -103,11 +103,6 @@ class HeroCarousel {
         }
 
         this.isDragging = false;
-
-        // Resume auto-play if user hasn't interacted extensively
-        if (!this.hasUserInteracted) {
-            this.startAutoPlay();
-        }
     }
 
     handleMouseDown(e) {

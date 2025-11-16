@@ -38,7 +38,7 @@
     margin: 0 auto;
     overflow: hidden;
     display: none; /* Hidden by default, shown on mobile via media query */
-    touch-action: manipulation; /* Allow touch events but prevent default behaviors */
+    touch-action: pan-y pinch-zoom; /* Allow vertical scroll and pinch zoom, JS handles horizontal swipes */
 }
 
 .carousel-track {
