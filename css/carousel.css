@@ -59,13 +59,13 @@
 .carousel-slide .side-image {
     width: 100%;
     max-width: 350px;
-    height: auto;
+    height: 450px;
 }
 
 .carousel-slide img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 450px;
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
@@ -157,7 +157,13 @@
         padding: 0 20px;
     }
 
+    .carousel-slide .hero-main-image,
+    .carousel-slide .side-image {
+        height: 400px;
+    }
+
     .carousel-slide img {
+        height: 400px;
         border-radius: 8px;
     }
 
