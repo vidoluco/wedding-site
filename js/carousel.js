@@ -1,5 +1,5 @@
 // Hero Images Carousel for Mobile
-// Vanilla JavaScript carousel with touch support, auto-play, and infinite loop
+// Vanilla JavaScript carousel with improved touch support, auto-play, and infinite loop
 
 class HeroCarousel {
     constructor() {
@@ -8,12 +8,19 @@ class HeroCarousel {
 
         this.track = this.carousel.querySelector('.carousel-track');
         this.slides = Array.from(this.track.querySelectorAll('.carousel-slide'));
-        this.indicators = [];
+        this.indicators = Array.from(this.carousel.querySelectorAll('.indicator'));
 
         this.currentIndex = 0;
+
+        // Touch/drag tracking
         this.startX = 0;
+        this.startY = 0;
         this.currentX = 0;
+        this.currentY = 0;
         this.isDragging = false;
+        this.swipeDirection = null; // 'horizontal', 'vertical', or null
+
+        // Auto-play settings
         this.autoPlayInterval = null;
         this.autoPlayDelay = 4000; // 4 seconds
         this.hasUserInteracted = false;
@@ -28,10 +35,13 @@ class HeroCarousel {
         // Set initial active states
         this.updateCarousel(false);
 
-        // Touch events
-        this.track.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: false });
+        // Touch events with better handling
+        // Use passive: true for touchstart to improve scroll performance
+        this.track.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
+        // touchmove needs passive: false only to allow conditional preventDefault
         this.track.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
-        this.track.addEventListener('touchend', (e) => this.handleTouchEnd(e));
+        this.track.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
+        this.track.addEventListener('touchcancel', (e) => this.handleTouchCancel(e), { passive: true });
 
         // Mouse events (for desktop testing)
         this.track.addEventListener('mousedown', (e) => this.handleMouseDown(e));
@@ -39,16 +49,14 @@ class HeroCarousel {
         this.track.addEventListener('mouseup', (e) => this.handleMouseUp(e));
         this.track.addEventListener('mouseleave', (e) => this.handleMouseLeave(e));
 
-        // Indicator click events (only if indicators exist)
-        if (this.indicators.length > 0) {
-            this.indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    this.goToSlide(index);
-                    this.pauseAutoPlay();
-                    this.hasUserInteracted = true;
-                });
+        // Indicator click events
+        this.indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                this.goToSlide(index);
+                this.pauseAutoPlay();
+                this.hasUserInteracted = true;
             });
-        }
+        });
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeyboard(e));
@@ -67,20 +75,47 @@ class HeroCarousel {
     }
 
     handleTouchStart(e) {
+        // Only track single touch
+        if (e.touches.length !== 1) return;
+
         this.startX = e.touches[0].clientX;
+        this.startY = e.touches[0].clientY;
         this.currentX = this.startX;
+        this.currentY = this.startY;
         this.isDragging = true;
+        this.swipeDirection = null; // Reset swipe direction
         this.pauseAutoPlay();
     }
 
     handleTouchMove(e) {
-        if (!this.isDragging) return;
+        if (!this.isDragging || e.touches.length !== 1) return;
 
         this.currentX = e.touches[0].clientX;
-        const diff = this.currentX - this.startX;
+        this.currentY = e.touches[0].clientY;
 
-        // Prevent default to stop scrolling while swiping
-        if (Math.abs(diff) > 10) {
+        const diffX = this.currentX - this.startX;
+        const diffY = this.currentY - this.startY;
+
+        // Determine swipe direction if not already determined
+        if (this.swipeDirection === null) {
+            const absX = Math.abs(diffX);
+            const absY = Math.abs(diffY);
+
+            // Need at least 10px movement to determine direction
+            if (absX > 10 || absY > 10) {
+                // Determine if this is primarily horizontal or vertical movement
+                if (absX > absY * 1.5) {
+                    // Horizontal swipe (X movement is significantly larger than Y)
+                    this.swipeDirection = 'horizontal';
+                } else {
+                    // Vertical swipe or ambiguous - allow default scroll behavior
+                    this.swipeDirection = 'vertical';
+                }
+            }
+        }
+
+        // Only prevent default scrolling if this is a horizontal swipe
+        if (this.swipeDirection === 'horizontal') {
             e.preventDefault();
         }
     }
@@ -88,11 +123,13 @@ class HeroCarousel {
     handleTouchEnd(e) {
         if (!this.isDragging) return;
 
-        const diff = this.currentX - this.startX;
+        const diffX = this.currentX - this.startX;
+        const diffY = this.currentY - this.startY;
         const threshold = 50; // Minimum swipe distance in pixels
 
-        if (Math.abs(diff) > threshold) {
-            if (diff > 0) {
+        // Only process as a swipe if it was horizontal movement
+        if (this.swipeDirection === 'horizontal' && Math.abs(diffX) > threshold) {
+            if (diffX > 0) {
                 // Swipe right - go to previous
                 this.prevSlide();
             } else {
@@ -102,13 +139,30 @@ class HeroCarousel {
             this.hasUserInteracted = true;
         }
 
+        this.resetDragState();
+    }
+
+    handleTouchCancel(e) {
+        // Reset state if touch is cancelled
+        this.resetDragState();
+    }
+
+    resetDragState() {
         this.isDragging = false;
+        this.swipeDirection = null;
+        this.startX = 0;
+        this.startY = 0;
+        this.currentX = 0;
+        this.currentY = 0;
     }
 
     handleMouseDown(e) {
         this.startX = e.clientX;
+        this.startY = e.clientY;
         this.currentX = this.startX;
+        this.currentY = this.startY;
         this.isDragging = true;
+        this.swipeDirection = 'horizontal'; // Mouse drags are always for carousel
         this.pauseAutoPlay();
         e.preventDefault();
     }
@@ -116,6 +170,7 @@ class HeroCarousel {
     handleMouseMove(e) {
         if (!this.isDragging) return;
         this.currentX = e.clientX;
+        this.currentY = e.clientY;
     }
 
     handleMouseUp(e) {
@@ -133,12 +188,12 @@ class HeroCarousel {
             this.hasUserInteracted = true;
         }
 
-        this.isDragging = false;
+        this.resetDragState();
     }
 
     handleMouseLeave(e) {
         if (this.isDragging) {
-            this.isDragging = false;
+            this.resetDragState();
         }
     }
 
@@ -184,18 +239,16 @@ class HeroCarousel {
 
         this.track.style.transform = `translateX(${offset}%)`;
 
-        // Update indicators (only if they exist)
-        if (this.indicators.length > 0) {
-            this.indicators.forEach((indicator, index) => {
-                if (index === this.currentIndex) {
-                    indicator.classList.add('active');
-                    indicator.setAttribute('aria-current', 'true');
-                } else {
-                    indicator.classList.remove('active');
-                    indicator.removeAttribute('aria-current');
-                }
-            });
-        }
+        // Update indicators
+        this.indicators.forEach((indicator, index) => {
+            if (index === this.currentIndex) {
+                indicator.classList.add('active');
+                indicator.setAttribute('aria-current', 'true');
+            } else {
+                indicator.classList.remove('active');
+                indicator.removeAttribute('aria-current');
+            }
+        });
 
         // Update aria-live region for screen readers
         const currentSlideNumber = this.currentIndex + 1;
