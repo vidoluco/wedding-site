@@ -334,7 +334,7 @@ class FormManager {
         } catch (error) {
             console.error('❌ Google Sheets submission failed:', error);
             throw new Error(
-                'Unable to submit RSVP. Please try again or contact us directly at ludovico.fidelia.wedding@gmail.com'
+                'Unable to submit RSVP. Please try again or contact us directly at ludovicocesaro3@gmail.com'
             );
         }
     }
