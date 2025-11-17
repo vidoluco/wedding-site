@@ -4,9 +4,6 @@
 # Configuration Files with Credentials
 # =============================================================================
 
-# Main config file with actual credentials (use config.example.js as template)
-js/config.js
-
 # Backup config files
 js/config.production.js
 config.local.js
