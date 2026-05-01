@@ -669,9 +669,7 @@ class TranslationManager {
         if (header) header.textContent = t.details.gifts.title;
 
         const paragraphs = card.querySelectorAll('p');
-        const strongs = card.querySelectorAll('strong');
 
-        if (strongs[0]) strongs[0].textContent = t.details.gifts.presenceGift;
         if (paragraphs[0]) {
             paragraphs[0].innerHTML = `<strong>${t.details.gifts.presenceGift}</strong>`;
         }
@@ -679,9 +677,22 @@ class TranslationManager {
         if (paragraphs[1]) paragraphs[1].textContent = t.details.gifts.intro;
         if (paragraphs[2]) paragraphs[2].textContent = t.details.gifts.monetary;
         if (paragraphs[3]) paragraphs[3].textContent = t.details.gifts.howToContribute;
-        if (paragraphs[4]) paragraphs[4].textContent = t.details.gifts.bomboniere;
+
+        const boldLabel = (s) => {
+            if (!s) return '';
+            const i = s.indexOf(':');
+            if (i === -1) return s;
+            return `<strong>${s.slice(0, i + 1)}</strong>${s.slice(i + 1)}`;
+        };
+
+        if (paragraphs[4]) {
+            paragraphs[4].innerHTML = `<strong>${t.details.gifts.bankDetailsHeading}</strong>`;
+        }
         if (paragraphs[5]) {
-            paragraphs[5].innerHTML = `<em>${t.details.gifts.excited}</em>`;
+            paragraphs[5].innerHTML = `${boldLabel(t.details.gifts.beneficiary)}<br>${boldLabel(t.details.gifts.iban)}<br>${boldLabel(t.details.gifts.swift)}`;
+        }
+        if (paragraphs[6]) {
+            paragraphs[6].innerHTML = `<em>${t.details.gifts.excited}</em>`;
         }
     }
 
