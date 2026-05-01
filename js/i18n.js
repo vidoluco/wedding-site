@@ -56,24 +56,20 @@ class TranslationManager {
                     "transport": {
                         "title": "Getting There",
                         "heading": "Getting to San Servolo Island",
-                        "info": "Transportation will be provided from Piazzale Roma to San Servolo and back",
+                        "info": "A private boat will take us from Piazzale Roma to San Servolo and back after the reception",
                         "boatDeparts": "Boat departs:",
-                        "ceremonyStarts": "Ceremony starts:",
-                        "returnHeading": "Return Transportation Included",
-                        "returnInfo": "Arranged boats departing at event termination"
+                        "ceremonyStarts": "Ceremony:",
+                        "cocktailTime": "Aperitif:",
+                        "dinnerTime": "Dinner:",
+                        "returnHeading": "Return:",
+                        "returnInfo": "~22:30 — boat back to Piazzale Roma",
+                        "meetingPoint": "Meeting point: Venezia Santa Lucia train station, boat dock"
                     },
                     "attire": {
                         "title": "Attire",
                         "heading": "Attire: Dress to Impress!",
                         "description": "Please join us in your favorite stylish and neat outfits. We can't wait to celebrate with you!",
-                        "avoidColors": "(Please avoid white and light blue)"
-                    },
-                    "accommodations": {
-                        "title": "Accommodations",
-                        "heading": "Recommended Hotels in Venice:",
-                        "addHere": "ADD HERE",
-                        "mestre": "Mestre Hotels",
-                        "veniceCity": "Venice city Hotels"
+                        "avoidColors": "(Please avoid white and blue)"
                     },
                     "gifts": {
                         "title": "Gifts & Appreciations",
@@ -84,7 +80,7 @@ class TranslationManager {
                         "bankDetailsHeading": "Romanian Leu Account Details:",
                         "beneficiary": "Beneficiary: Ludovico Cesaro & FIDELIA FIDELIA",
                         "iban": "IBAN: RO10 REVO 0000 2098 6240 2783",
-                        "swift": "BIC / SWIFT code: REVOROBB",
+                        "swift": "BIC / SWIFT code: REVORUM2",
                         "excited": "We're more excited to celebrate with you than receive anything else!"
                     },
                     "specialNotes": {
@@ -115,7 +111,6 @@ class TranslationManager {
                     "attendanceSelect": "Please select",
                     "attendanceYes": "Yes, I'll be there!",
                     "attendanceNo": "Sorry, can't make it",
-                    "attendanceMaybe": "Not sure yet",
                     "dietary": "Dietary Restrictions",
                     "dietaryNone": "No restrictions",
                     "dietaryVegetarian": "Vegetarian",
@@ -181,24 +176,20 @@ class TranslationManager {
                     "transport": {
                         "title": "Come Arrivare",
                         "heading": "Raggiungere l'Isola di San Servolo",
-                        "info": "Il trasporto sarà fornito da Piazzale Roma a San Servolo e ritorno",
+                        "info": "Una barca privata ci porterà da Piazzale Roma a San Servolo e ritorno dopo il ricevimento",
                         "boatDeparts": "Partenza barca:",
-                        "ceremonyStarts": "Inizio cerimonia:",
-                        "returnHeading": "Trasporto di Ritorno Incluso",
-                        "returnInfo": "Barche organizzate in partenza al termine dell'evento"
+                        "ceremonyStarts": "Cerimonia:",
+                        "cocktailTime": "Aperitivo:",
+                        "dinnerTime": "Cena:",
+                        "returnHeading": "Ritorno:",
+                        "returnInfo": "~22:30 — barca di ritorno a Piazzale Roma",
+                        "meetingPoint": "Punto d'incontro: stazione Venezia Santa Lucia, molo barche"
                     },
                     "attire": {
                         "title": "Abbigliamento",
                         "heading": "Abbigliamento: Vestitevi per Impressionare!",
                         "description": "Unitevi a noi con i vostri outfit più eleganti e curati. Non vediamo l'ora di festeggiare con voi!",
-                        "avoidColors": "(Si prega di evitare bianco e azzurro)"
-                    },
-                    "accommodations": {
-                        "title": "Sistemazioni",
-                        "heading": "Hotel Consigliati a Venezia:",
-                        "addHere": "DA AGGIUNGERE",
-                        "mestre": "Hotel a Mestre",
-                        "veniceCity": "Hotel nel centro di Venezia"
+                        "avoidColors": "(Si prega di evitare bianco e blu)"
                     },
                     "gifts": {
                         "title": "Regali e Apprezzamenti",
@@ -209,7 +200,7 @@ class TranslationManager {
                         "bankDetailsHeading": "Dettagli Conto in Lei Romeni:",
                         "beneficiary": "Beneficiario: Ludovico Cesaro & FIDELIA FIDELIA",
                         "iban": "IBAN: RO10 REVO 0000 2098 6240 2783",
-                        "swift": "Codice BIC / SWIFT: REVOROBB",
+                        "swift": "Codice BIC / SWIFT: REVORUM2",
                         "excited": "Siamo più entusiasti di festeggiare con voi che di ricevere qualsiasi altra cosa!"
                     },
                     "specialNotes": {
@@ -241,7 +232,6 @@ class TranslationManager {
                     "attendanceSelect": "Seleziona",
                     "attendanceYes": "Sì, ci sarò!",
                     "attendanceNo": "Spiacente, non posso venire",
-                    "attendanceMaybe": "Non sono ancora sicuro",
                     "dietary": "Restrizioni Alimentari",
                     "dietaryNone": "Nessuna restrizione",
                     "dietaryVegetarian": "Vegetariano",
@@ -307,24 +297,20 @@ class TranslationManager {
                     "transport": {
                         "title": "Cara Menuju Lokasi",
                         "heading": "Menuju Pulau San Servolo",
-                        "info": "Transportasi akan disediakan dari Piazzale Roma ke San Servolo dan kembali",
+                        "info": "Kapal pribadi akan membawa kita dari Piazzale Roma ke San Servolo dan kembali setelah resepsi",
                         "boatDeparts": "Perahu berangkat:",
-                        "ceremonyStarts": "Upacara dimulai:",
-                        "returnHeading": "Transportasi Kembali Termasuk",
-                        "returnInfo": "Perahu yang diatur berangkat pada akhir acara"
+                        "ceremonyStarts": "Upacara:",
+                        "cocktailTime": "Aperitif:",
+                        "dinnerTime": "Makan malam:",
+                        "returnHeading": "Kembali:",
+                        "returnInfo": "~22:30 — kapal kembali ke Piazzale Roma",
+                        "meetingPoint": "Titik temu: stasiun Venezia Santa Lucia, dermaga kapal"
                     },
                     "attire": {
                         "title": "Pakaian",
                         "heading": "Pakaian: Berpakaian untuk Mengesankan!",
                         "description": "Bergabunglah dengan kami dalam pakaian bergaya dan rapi favorit Anda. Kami tidak sabar untuk merayakan dengan Anda!",
-                        "avoidColors": "(Harap hindari putih dan biru muda)"
-                    },
-                    "accommodations": {
-                        "title": "Akomodasi",
-                        "heading": "Hotel yang Direkomendasikan di Venesia:",
-                        "addHere": "TAMBAHKAN DI SINI",
-                        "mestre": "Hotel Mestre",
-                        "veniceCity": "Hotel kota Venesia"
+                        "avoidColors": "(Harap hindari putih dan biru)"
                     },
                     "gifts": {
                         "title": "Hadiah & Apresiasi",
@@ -335,7 +321,7 @@ class TranslationManager {
                         "bankDetailsHeading": "Detail Rekening Lei Rumania:",
                         "beneficiary": "Penerima: Ludovico Cesaro & FIDELIA FIDELIA",
                         "iban": "IBAN: RO10 REVO 0000 2098 6240 2783",
-                        "swift": "Kode BIC / SWIFT: REVOROBB",
+                        "swift": "Kode BIC / SWIFT: REVORUM2",
                         "excited": "Kami lebih bersemangat untuk merayakan dengan Anda daripada menerima apa pun!"
                     },
                     "specialNotes": {
@@ -367,7 +353,6 @@ class TranslationManager {
                     "attendanceSelect": "Silakan pilih",
                     "attendanceYes": "Ya, saya akan hadir!",
                     "attendanceNo": "Maaf, tidak bisa hadir",
-                    "attendanceMaybe": "Belum yakin",
                     "dietary": "Pembatasan Diet",
                     "dietaryNone": "Tanpa pembatasan",
                     "dietaryVegetarian": "Vegetarian",
@@ -607,7 +592,6 @@ class TranslationManager {
 
         const h4s = card.querySelectorAll('h4');
         if (h4s[0]) h4s[0].textContent = t.details.transport.heading;
-        if (h4s[1]) h4s[1].textContent = t.details.transport.returnHeading;
 
         const paragraphs = card.querySelectorAll('p');
         if (paragraphs[0]) paragraphs[0].textContent = t.details.transport.info;
@@ -615,8 +599,14 @@ class TranslationManager {
         const strongs = card.querySelectorAll('strong');
         if (strongs[0]) strongs[0].textContent = t.details.transport.boatDeparts;
         if (strongs[1]) strongs[1].textContent = t.details.transport.ceremonyStarts;
-
-        if (paragraphs[3]) paragraphs[3].textContent = t.details.transport.returnInfo;
+        if (strongs[2]) strongs[2].textContent = t.details.transport.cocktailTime;
+        if (strongs[3]) strongs[3].textContent = t.details.transport.dinnerTime;
+        if (strongs[4]) {
+            strongs[4].textContent = t.details.transport.returnHeading;
+            // Update the full paragraph with return info text
+            paragraphs[5].innerHTML = '<strong>' + t.details.transport.returnHeading + '</strong> ' + t.details.transport.returnInfo;
+        }
+        if (paragraphs[6]) paragraphs[6].textContent = t.details.transport.meetingPoint;
     }
 
     /**
@@ -772,7 +762,6 @@ class TranslationManager {
             if (options[0]) options[0].textContent = t.rsvp.attendanceSelect;
             if (options[1]) options[1].textContent = t.rsvp.attendanceYes;
             if (options[2]) options[2].textContent = t.rsvp.attendanceNo;
-            if (options[3]) options[3].textContent = t.rsvp.attendanceMaybe;
         }
 
         // Update dietary select options
@@ -947,19 +936,20 @@ class TranslationManager {
                     transform: none;
                     z-index: 1001;
                     background: rgba(255, 255, 255, 0.95);
-                    padding: 4px 8px;
+                    padding: 6px 10px;
                     border-radius: 15px;
                     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
                     margin-left: 0;
                 }
 
                 .lang-btn {
-                    font-size: 10px;
-                    padding: 2px 4px;
+                    font-size: 13px;
+                    padding: 6px 8px;
+                    min-width: 32px;
                 }
 
                 .lang-divider {
-                    font-size: 10px;
+                    font-size: 13px;
                 }
             }
         `;

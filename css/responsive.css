@@ -150,6 +150,23 @@
     .nav-toggle {
         display: flex;
         z-index: 2001;
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-item {
+        pointer-events: all;
+    }
+
+    .nav-link {
+        pointer-events: all;
+        display: block;
+        padding: 12px 20px;
+        min-height: 44px;
+        font-size: 16px;
+        line-height: 20px;
     }
 
     .nav-toggle.active .bar:nth-child(2) {

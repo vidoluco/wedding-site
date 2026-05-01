@@ -880,16 +880,11 @@ button {
     padding: 25px;
     background: linear-gradient(45deg, var(--accent-brown), var(--accent-beige));
     color: white;
-    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 15px;
     transition: var(--transition-base);
     position: relative;
-}
-
-.detail-header:hover {
-    background: linear-gradient(45deg, #7a6147, #dac8b9);
 }
 
 .detail-icon {
@@ -905,32 +900,14 @@ button {
     text-align: left;
 }
 
-.detail-arrow {
-    font-size: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.detail-header.active .detail-arrow {
-    transform: rotate(180deg);
-}
-
 .detail-content {
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
+    padding: 25px;
     text-align: left;
-    border-radius: 0 0 15px 15px;
     background: rgba(255, 255, 255, 0.95);
 }
 
-.detail-content.active {
+.detail-content.flat {
     display: block !important;
-    padding: 25px !important;
-    max-height: 2000px !important;
-    overflow-y: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
 }
 
 .detail-content h4 {
@@ -983,7 +960,7 @@ button {
         padding: 20px;
     }
 
-    .detail-content.active {
+    .detail-content {
         padding: 20px;
     }
 
